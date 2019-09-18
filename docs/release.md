@@ -10,7 +10,7 @@ The next release of Mobexler is planned to have:
 - More automation
 
 
-# Want to share something which might help us in improving Mobexler? Want to contribute? Send us an email at 
+### Want to share something which might help us in improving Mobexler? Want to contribute? Send us an email at 
 
 ```
 hello[at]enciphers[dot]com
