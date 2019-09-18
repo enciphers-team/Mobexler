@@ -1,0 +1,13 @@
+language: python
+
+install:
+    - pip install mkdocs mkdocs-bootswatch
+script:
+    - mkdocs build --verbose --clean
+deploy:
+    provider: pages
+    skip_cleanup: true
+    github_token: $github_token
+    local_dir: site
+    on:
+        branch: master
