@@ -1,14 +1,13 @@
 # Releases
 
-## Mobexler v1.1 - Planed Changes
+## Mobexler v1.1 - Planned Changes
 
-The next release of Mobexler is planned to have: 
+The next release of Mobexler is planned to have:
 
-- Improved and more tools 
+- Improved and more tools
 - Reduced VM size
 - Training content as a part of the virtual machine.
 - More automation
-
 
 ### Want to share something which might help us in improving Mobexler? Want to contribute? Send us an email at 
 

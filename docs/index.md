@@ -7,7 +7,6 @@ prerequisites etc. which are needed for security testing Android & iOS applicati
 
 ![Mobexler](img/main.png)
 
-
 Mobexler is **unique** for several reasons:
 
 1. One platform capable of managing Android Device/emulator and iOS devices, both
@@ -26,8 +25,7 @@ to perform the testing, like Frida, Objection, Hopper etc.
 
 6. Free for everyone to use.
 
-
-## Default Configuration 
+## Default Configuration
 - OVA file size: ~16GB
 - RAM: 4GB
 - Disk Space: ~35GB
