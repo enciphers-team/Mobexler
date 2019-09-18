@@ -8,6 +8,7 @@ nav:
     - License & Disclaimer: license.md
     - Download : download.md
     - Credits : credits.md
+    - Learn Mobile Security: training.md
     
 theme : 
         name: simplex
