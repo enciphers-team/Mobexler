@@ -27,7 +27,7 @@ to perform the testing, like Frida, Objection, Hopper etc.
 6. Free for everyone to use.
 
 
-## Default Configuration: 
+## Default Configuration 
 - OVA file size: ~16GB
 - RAM: 4GB
 - Disk Space: ~35GB
@@ -79,7 +79,7 @@ to perform the testing, like Frida, Objection, Hopper etc.
 - Sslscan
 - Ghidra
 
-### Some Screenshots:
+## Some Screenshots:
 
 ![Mobexler](img/014.png)
 
