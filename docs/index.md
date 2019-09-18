@@ -27,6 +27,11 @@ to perform the testing, like Frida, Objection, Hopper etc.
 6. Free for everyone to use.
 
 
+## Default Configuration: 
+- OVA file size: ~16GB
+- RAM: 4GB
+- Disk Space: ~35GB
+
 ## List of tools
 
 ### Android Zone
