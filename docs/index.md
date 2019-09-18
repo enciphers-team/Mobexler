@@ -6,4 +6,4 @@ Mobexler comes preinstalled with various open source tools, scripts,
 prerequisites etc. which are needed for security testing Android & iOS application.
 
 ![Mobexler](img/logo.png)
-![Mobexler](img/0002.png)
+![Mobexler](img/002.png)
