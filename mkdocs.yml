@@ -1,0 +1,15 @@
+site_name: Mobexler Usage Guide 
+
+nav:
+    - Home : index.md
+    - About : details.md
+    - Tools : Awesome_tools.md
+    - Setup : setup.md
+    - Releases : release.md
+    - Disclaimer : disclaimer.md
+    - License : license.md
+    - Download : download.md
+    - Credits : credits.md
+    
+theme : 
+        name: simplex
