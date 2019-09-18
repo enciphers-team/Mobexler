@@ -1,7 +1,5 @@
 # Awesome Tools
 
-![img](img/0001.png/)
-
 **Android Studio** :
 
 It is Integrated development Enviroment (IDE) and Used for Android App Development.

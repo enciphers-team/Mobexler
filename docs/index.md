@@ -5,5 +5,5 @@ designed to help in penetration testing of Android & iOS applications.
 Mobexler comes preinstalled with various open source tools, scripts,
 prerequisites etc. which are needed for security testing Android & iOS application.
 
-![Mobexler](img/logo.png)
-![Mobexler](img/002.png)
+![Mobexler](img/main.png)
+![Mobexler](img/0001.png)
