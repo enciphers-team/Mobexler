@@ -50,7 +50,6 @@ to perform the testing, like Frida, Objection, Hopper etc.
 - SUPER-Analyzer
 - Wireshark
 - Smali & baksmali
-- Radare2
 - Mara Framework
 - SIGN
 - Android Backup Extractor
