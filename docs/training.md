@@ -26,7 +26,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 + Viewing Android Logs Logcat on Mobexler
 
-<a href="https://www.youtube.com/watch?v=D4J93NR53YY" target="_blank"><img src="hhttps://i.ytimg.com/vi/D4J93NR53YY/hqdefault.jpg" 
+<a href="https://www.youtube.com/watch?v=D4J93NR53YY" target="_blank"><img src="https://i.ytimg.com/vi/D4J93NR53YY/hqdefault.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 
