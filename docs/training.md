@@ -1,12 +1,12 @@
 ### Learning Resources
 
-
+-----------------------------------
 
 #### Mobile Application Security Books:
 + [OWASP Mobile Security Testing Guide](https://www.owasp.org/index.php/OWASP_Mobile_Security_Testing_Guide)
 + [The Mobile Application Hacker's Handbook](https://www.amazon.in/Mobile-Application-Hackers-Handbook-MISL-WILEY/dp/8126554916)
 
-
+-----------------------------------
 #### Using Mobexler:
 
 + Connecting Genymotion Android Emulator with Mobexler
