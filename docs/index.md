@@ -56,6 +56,7 @@ to perform the testing, like Frida, Objection, Hopper etc.
 - Tcpdump
 - Objection
 - Drozer
+- radare2
 - Ghidra
 
 ### iOS Zone
