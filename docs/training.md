@@ -30,5 +30,6 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 
-#### Mobile Security Training:
+-----------------------------------
+#### Mobile Security Training
 - ENCIPHERS provide a fully hands on training on Mobile Application Security. Contact us at training@enciphers.com 
