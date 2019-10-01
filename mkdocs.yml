@@ -2,13 +2,13 @@ site_name: Mobexler Usage Guide
 
 nav:
     - Home : index.md
-    - Tools : Awesome_tools.md
+    - Download : download.md
     - Setup : setup.md
+    - Tools : Awesome_tools.md
     - Releases : release.md
     - License : license.md
-    - Download : download.md
     - Credits : credits.md
-    - Learn Mobile Security: training.md
+    - Resources: training.md
     
 theme : 
         name: simplex
