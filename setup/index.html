@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Setup - Mobexler Usage Guide</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-forest-light.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">Mobexler Usage Guide</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../download/">Download</a>
+                            </li>
+                            <li class="active">
+                                <a href="./">Setup</a>
+                            </li>
+                            <li >
+                                <a href="../Awesome_tools/">Tools</a>
+                            </li>
+                            <li >
+                                <a href="../release/">Releases</a>
+                            </li>
+                            <li >
+                                <a href="../license/">License</a>
+                            </li>
+                            <li >
+                                <a href="../credits/">Credits</a>
+                            </li>
+                            <li >
+                                <a href="../training/">Resources</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../download/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../Awesome_tools/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#setting-up-penetration-testing-lab-using-mobexler">Setting Up Penetration Testing Lab Using Mobexler</a></li>
+            <li><a href="#importing-mobexler-as-a-virtual-machine">Importing Mobexler As A Virtual Machine</a></li>
+            <li><a href="#setting-up-genymotion-as-a-test-deviceemulator">Setting Up Genymotion As a Test Device/Emulator</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="setting-up-penetration-testing-lab-using-mobexler">Setting Up Penetration Testing Lab Using Mobexler</h1>
+<h2 id="importing-mobexler-as-a-virtual-machine">Importing Mobexler As A Virtual Machine</h2>
+<pre><code>The default configuration:
+Hard Disk: ~50 GB
+Ram: 4 GB
+</code></pre>
+<p>Steps:</p>
+<ol>
+<li>
+<p>Download the ova file from links given above.</p>
+</li>
+<li>
+<p>Install VirtualBox latest version available: Download Link</p>
+</li>
+<li>
+<p>Once installed, start virtual box, go to File → Import Appliance → Select the
+Downloaded OVA file →Click Import → Click Import.</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="Importing the downloaded OVA file" src="../img/001.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>Importing the downloaded OVA file</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="Select the default configuration" src="../img/002.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>Select the default configuration</em></td>
+</tr>
+</tbody>
+</table>
+<p>4.Once the virtual box image has been imported successfully,
+go to Mobexler v1.0 → Settings → Network and confirm that one of the network
+cards has NAT and other has Host Only Adapter connection.</p>
+<p>Note: The name of Host Only Adapter can change depending upon the operating
+system you are using and the name you have given to it.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="NAT Adapter" src="../img/003.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>NAT Adapter</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="Host-only Adapter" src="../img/004.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>Host-only Adapter</em></td>
+</tr>
+</tbody>
+</table>
+<p>5.Start the Mobexler virtual machine, and login with the password: 12345</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="Login screen" src="../img/005.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>Login screen</em></td>
+</tr>
+</tbody>
+</table>
+<p>6.Once logged in, verify if you can connect to the internet. Go to Applications →
+Internet → Launch Firefox and open any website.</p>
+<blockquote>
+<p>Note: Mobexler comes preinstalled with Android Studio. But because of the
+limitation of running an ARM based emulator inside the virtualbox, the emulator
+becomes extremely slow (10 times slower). Due to this reason, we strongly
+suggest setting up the lab using Genymotion as the emulator, or using any
+real android device as the test device.</p>
+</blockquote>
+<h2 id="setting-up-genymotion-as-a-test-deviceemulator">Setting Up Genymotion As a Test Device/Emulator</h2>
+<p>Steps:</p>
+<ol>
+<li>
+<p>Go to the Genymotion Website and download a “Genymotion For Fun” application →
+Genymotion For Fun.</p>
+</li>
+<li>
+<p>Installed the downloaded application, register/sign in to free account and
+launch “Genymotion” from application/program list.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="Genymotion Application Showing List Of Available Emulators" src="../img/006.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>Genymotion Application Showing List Of Available Emulators</em></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note: For testing, you are free to download and setup any available genymotion
+image. In this tutorial, we will use “Google Nexus 5X - 7.0 API 24”.</p>
+</blockquote>
+</li>
+<li>
+<p>Now from the genymotion application, select the device
+“Google Nexus 5X - 7.0 API 24” → Install</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="installing Emulator" src="../img/007.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>Installting Emulator</em></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Once the Genymotion device image has been downloaded,
+run the image to make sure it’s working fine.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="genymotion" src="../img/008.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>genymotion</em></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Now, go to the website ​<a href="https://apkpure.com/​">https://apkpure.com/​</a> and download the APK for
+“Wifi  ADB” application.</p>
+</li>
+<li>
+<p>Link: ​<a href="https://apkpure.com/search?q=wifi+adb">https://apkpure.com/search?q=wifi+adb</a></p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="Wifi ADB" src="../img/009.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">* *</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Once the apk is downloaded, simply drag and drop the apk over the running
+Genymotion Device. This will install and launch the application, Wifi ADB.
+8.Now, go to setting of Android Emulator → WiFi settings → Forget Wifi.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="Wifi Adb" src="../img/010.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">* *</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Once the wifi has been disconnected, go to Wifi ADB application and select
+the button to start Wifi over ADB. If asked for Root Permissions →
+Select  Allow or Allow Always.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="IMG" src="../img/011.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>ADB over Wifi started</em></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Ensure that the ADB is running over a wifi address which is on
+“Host-only  Adapter”, generally it will start with 192.168.X.X</p>
+</li>
+<li>
+<p>Go to Mobexler → Launch Terminal from Dock at bottom → Enter the
+command “adb connect IP:PORT”. Here, IP:PORT is the IP address and port
+which is showing on Wifi ADB application.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="img" src="../img/012.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>Genymotion Connected to Mobexler through ADB</em></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Launch Android Studio, from Applications → Android Zone → Android Studio.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="img" src="../img/013.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>Android Studio Connected To Genymotion</em></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

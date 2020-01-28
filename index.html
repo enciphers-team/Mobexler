@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Mobexler Usage Guide</title>
+        <link href="css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-forest-light.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href=".">Mobexler Usage Guide</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href=".">Home</a>
+                            </li>
+                            <li >
+                                <a href="download/">Download</a>
+                            </li>
+                            <li >
+                                <a href="setup/">Setup</a>
+                            </li>
+                            <li >
+                                <a href="Awesome_tools/">Tools</a>
+                            </li>
+                            <li >
+                                <a href="release/">Releases</a>
+                            </li>
+                            <li >
+                                <a href="license/">License</a>
+                            </li>
+                            <li >
+                                <a href="credits/">Credits</a>
+                            </li>
+                            <li >
+                                <a href="training/">Resources</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="disabled">
+                                <a rel="next" >
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="download/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#mobexler-a-mobile-application-penetration-testing-platform">MOBEXLER - A Mobile Application Penetration Testing Platform</a></li>
+            <li><a href="#default-configuration">Default Configuration</a></li>
+            <li><a href="#list-of-tools">List of tools</a></li>
+            <li><a href="#some-screenshots">Some Screenshots:</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="mobexler-a-mobile-application-penetration-testing-platform">MOBEXLER - A Mobile Application Penetration Testing Platform</h1>
+<p>Mobexler is a customised virtual machine, based on Elementary OS ,
+designed to help in penetration testing of Android &amp; iOS applications.
+Mobexler comes preinstalled with various open source tools, scripts,
+prerequisites etc. which are needed for security testing Android &amp; iOS application.</p>
+<p><img alt="Mobexler" src="img/main.png" /></p>
+<p>Mobexler is <strong>unique</strong> for several reasons:</p>
+<ol>
+<li>
+<p>One platform capable of managing Android Device/emulator and iOS devices, both
+at the same time.</p>
+</li>
+<li>
+<p>Comes preinstalled with various updated tools which are needed for security testing.</p>
+</li>
+<li>
+<p>Tools like MobSF are run inside a docker container,
+which ensures that it is easier to download the newer versions.</p>
+</li>
+<li>
+<p>Running MobSF in container also gives capability to perform static analysis
+on IPA, which otherwise requires Xcode tools.</p>
+</li>
+<li>
+<p>iOS devices can easily be connected through USB and various tools can be used
+to perform the testing, like Frida, Objection, Hopper etc.</p>
+</li>
+<li>
+<p>Free for everyone to use.</p>
+</li>
+</ol>
+<h2 id="default-configuration">Default Configuration</h2>
+<ul>
+<li>OVA file size: ~16GB</li>
+<li>RAM: 4GB</li>
+<li>Disk Space: ~35GB</li>
+</ul>
+<h2 id="list-of-tools">List of tools</h2>
+<h3 id="android-zone">Android Zone</h3>
+<ul>
+<li>Android Studio</li>
+<li>Burp Suite Proxy (Community Edition)</li>
+<li>Bytecode Viewer</li>
+<li>DB Browser for SQLite</li>
+<li>Frida</li>
+<li>JADX-GUI</li>
+<li>JDGUI</li>
+<li>Logcat - Pidcat</li>
+<li>MobSF</li>
+<li>AVD - Emulator</li>
+<li>Androbugs</li>
+<li>Dex2Jar</li>
+<li>Pidcat</li>
+<li>SUPER-Analyzer</li>
+<li>Wireshark</li>
+<li>Smali &amp; baksmali</li>
+<li>Mara Framework</li>
+<li>SIGN</li>
+<li>Android Backup Extractor</li>
+<li>Tcpdump</li>
+<li>Objection</li>
+<li>Drozer</li>
+<li>radare2</li>
+<li>Ghidra</li>
+</ul>
+<h3 id="ios-zone">iOS Zone</h3>
+<ul>
+<li>Frida</li>
+<li>Cydia Impactor</li>
+<li>Filezilla</li>
+<li>Putty</li>
+<li>Objection</li>
+<li>Hopper Disassembler</li>
+<li>MobSF</li>
+</ul>
+<h3 id="general-penetration-testing-tools">General Penetration Testing Tools</h3>
+<ul>
+<li>Metasploit</li>
+<li>Sqlmap</li>
+<li>Nmap</li>
+<li>Sslscan</li>
+<li>Ghidra</li>
+</ul>
+<h2 id="some-screenshots">Some Screenshots:</h2>
+<p><img alt="Mobexler" src="img/014.png" /></p>
+<p><img alt="Mobexler" src="img/abc.jpeg" /></p>
+<p><img alt="Mobexler" src="img/def.jpeg" /></p>
+<hr /></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2020-01-28 13:06:06
+-->

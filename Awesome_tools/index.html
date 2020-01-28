@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Tools - Mobexler Usage Guide</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-forest-light.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">Mobexler Usage Guide</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="..">Home</a>
+                            </li>
+                            <li >
+                                <a href="../download/">Download</a>
+                            </li>
+                            <li >
+                                <a href="../setup/">Setup</a>
+                            </li>
+                            <li class="active">
+                                <a href="./">Tools</a>
+                            </li>
+                            <li >
+                                <a href="../release/">Releases</a>
+                            </li>
+                            <li >
+                                <a href="../license/">License</a>
+                            </li>
+                            <li >
+                                <a href="../credits/">Credits</a>
+                            </li>
+                            <li >
+                                <a href="../training/">Resources</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../setup/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../release/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#awesome-tools">Awesome Tools</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="awesome-tools">Awesome Tools</h1>
+<p><strong>Android Studio</strong> :</p>
+<p>It is Integrated development Enviroment (IDE) and Used for Android App Development.</p>
+<pre><code>How to use ?
+
+It is a GUI based tool,so simply run and use it.
+</code></pre>
+<p>For more info <a href="https://developer.android.com/studio/intro/" title="read">read</a>.</p>
+<p><strong>Burp Suite</strong> :</p>
+<p>Burp community version includes few essential manual tools from the Burp platform,
+however some of the
+features are available only in paid version.</p>
+<pre><code>How to use it?
+
+It is one of the good GUI based tool for pentesters to use for pentesting.
+It is simple to run and use:).
+</code></pre>
+<p>For more info <a href="https://portswigger.net/burp/">read</a>.</p>
+<p><strong>Bytecode Viewer</strong> :</p>
+<p>Free open source user friendly and advance java Reverse engineering suite
+with six diffrent java decompilers two byte code editors,a java compiler,plugins,
+jars and many more</p>
+<pre><code>How to use ?
+
+drag and drop the file(APK,class,jar,dex,zip) and explore it.
+</code></pre>
+<p>for more info <a href="https://bytecodeviewer.com/">read</a></p>
+<p><strong>Frida</strong> :</p>
+<p>It is a toolkit which allows run time hooking into application for developers,
+reverse-engineers and security researchers.</p>
+<pre><code>How to use ?
+
+adb push frida-server /data/local/tmp
+adb shell "chmod+x /data/local/tmp/frida-server"
+adb shell "/data/local/tmp/frida-server &amp;"
+</code></pre>
+<p><strong>JADX-GUI</strong> :</p>
+<p>JADX has Command line and GUI tools for produce Java source code from Android
+Dex and JADX-GUI is UI based.</p>
+<pre><code>How to use ?
+
+It is gui based tool and support(APK,zip etc.)file formats to analyse in 
+java source code.
+</code></pre>
+<p>For more info <a href="https://github.com/skylot/jadx">read</a></p>
+<p><strong>JD-GUI</strong> :</p>
+<p>It is a standalone graphical utility it helps in displays
+Java sources from CLASS files.</p>
+<pre><code>How to use ?
+
+It is GUI tool and just need to open class file to read it in java source code.
+</code></pre>
+<p>For more info <a href="https://github.com/java-decompiler/jd-gui">read</a></p>
+<p><strong>Logcat - Pidcat</strong> :</p>
+<p>It shows log entries for processes from a specific application package.</p>
+<pre><code>How to use ?
+
+Run it and it will show you options to use :)
+</code></pre>
+<p>For more info <a href="https://github.com/JakeWharton/pidcat">read</a></p>
+<p><strong>MobSF</strong> :</p>
+<p>Mobile Security Framework (MobSF) is an automated, all-in-one mobile application
+(Android/iOS/Windows)
+pen-testing framework capable of performing static, dynamic and malware analysis</p>
+<pre><code>How to use ?
+
+Run it docker app of MobSF and it i ask you for the password of lab.
+once password is entered ,go and browse 127.0.0.1:8000 you will see MobSF interface.
+Drag and drop to analyse apk.
+</code></pre>
+<p>For more info <a href="https://github.com/MobSF/Mobile-Security-Framework-MobSF">read</a></p>
+<p><strong>SUPER-Analyzer</strong> :</p>
+<p>It is a command-line application that can be used in Windows, MacOS X and Linux,
+that analyzes .apk
+files in search for vulnerabilities.</p>
+<pre><code>How to use ?
+
+Run it and give the absolute path of Apk
+</code></pre>
+<p>For more info <a href="https://superanalyzer.rocks/">read</a></p>
+<p><strong>Wireshark</strong> :</p>
+<p>Wireshark is a free and open-source packet analyzer. It is used for network
+troubleshooting, analysis,
+software and communications protocol development, and education.</p>
+<pre><code>How to use ?
+
+It has UI interface and easy to use.
+</code></pre>
+<p>For more info <a href="https://www.wireshark.org/">read</a></p>
+<p><strong>Smali &amp; baksmali</strong> :</p>
+<p>Smali/baksmali is an assembler/disassembler for the dex format used by dalvik,
+Android's Java VM implementation.</p>
+<pre><code>How to use ?
+
+java -jar smali-x.x.x.jar
+</code></pre>
+<p><strong>Radare2</strong> :</p>
+<p>Radare is a portable reversing framework that can Disassemble/assemble
+many different architectures.</p>
+<pre><code>How to use ?
+
+Use r2 to run it.
+</code></pre>
+<p>For more info <a href="https://rada.re/r/">read</a></p>
+<p><strong>Mara Framework</strong> :</p>
+<p>MARA is a Mobile Application Reverse engineering and Analysis Framework.
+It is a toolkit that puts together
+commonly used mobile application reverse engineering and analysis tools.</p>
+<pre><code>How to use ?
+
+Goto mara folder and run ./mara.sh it will show the supported options with mara-framework.
+</code></pre>
+<p>For more info <a href="https://github.com/xtiankisutsa/MARA_Framework">read</a></p>
+<p><strong>SIGN</strong> :</p>
+<pre><code>How to use ?.
+java -jar sign.jar
+</code></pre>
+<p><strong>tcpdump</strong> :</p>
+<p>It is a powerful command-line packet analyzer; and libpcap for network traffic capture.</p>
+<pre><code>How to use ?
+
+tcpdump --help and it wil show the available options for this command line tool.
+</code></pre>
+<p><strong>Objection</strong> :</p>
+<p>Objection is a runtime mobile exploration toolkit, powered by Frida It was built
+with the aim of helping
+assess mobile applications and their security posture without the need for a
+jailbroken or rooted mobile device.</p>
+<pre><code>How to use?
+
+Run objection --help and it will show all the available info/options for frida.
+</code></pre>
+<p>For more info <a href="https://github.com/sensepost/objection">read</a></p>
+<p><strong>Drozer</strong> :</p>
+<p>It is a security pentesting framework.Drozer allows pentesters to search for
+security vulnerabilities in apps and devices by assuming the role of an app
+and interacting with the Dalvik VM.</p>
+<pre><code>How to use ?
+
+Run drozer command and also install the drozer client(adb install agent.apk) 
+in Mobile device. 
+port forword using : adb forword tcp:31415 tcp:31415
+launch Drozer console using : drozer console connect
+</code></pre>
+<p>For more info <a href="https://github.com/mwrlabs/drozer">read</a></p>
+<p><strong>Ghidra</strong> :</p>
+<p>A software reverse engineering (SRE) suite of tools developed by NSA's Research
+Directorate and this reverse engineering tool helps to dig up the source code
+of a proprietary program which further gives you the ability
+to detect virus threats or potential bugs</p>
+<pre><code>How to use ?
+
+got to Ghidra folder and run ./ghidraRun. It will open the GUI interface
+and you can use it.
+</code></pre>
+<p>For more info <a href="https://ghidra-sre.org/">read</a></p>
+<p><strong>Cydia Impactor</strong> :</p>
+<p>You can use this tool to install IPA files on iOS and APK files on Android.
+It also can help you exploit the series of Android "Master Key" vulnerabilities.</p>
+<pre><code>How to use ?
+
+Run Cydia and connect your IOS device to computer ,wait until it gets detected.
+Drag IPA to cydia impactor window and install.
+It will prompt for Apple ID and password and IPA file will be instlled 
+successfully.
+</code></pre>
+<p>For more info <a href="http://www.cydiaimpactor.com/">read</a></p>
+<p><strong>Filezilla</strong> :</p>
+<p>It is used for transferring files over the Network.</p>
+<pre><code>How to use ?
+
+Filezilla is GUI based so it is pretty easy to use :) just simply run !!!
+</code></pre>
+<p><strong>Putty</strong> :</p>
+<p>it is an SSH and telnet client..</p>
+<pre><code>How to use it ?
+
+It has Ui interface,Simply run and use it.
+</code></pre>
+<p>For more info <a href="https://www.putty.org/">read</a></p>
+<p><strong>Hopper Disassembler</strong> :</p>
+<p>Hopper Disassembler, the reverse engineering tool that lets you disassemble,
+decompile and debug your applications.</p>
+<pre><code>How to use it?
+
+Hopper Disassembler is UI based tool so simply run and use it.
+</code></pre>
+<p>For more info <a href="https://www.hopperapp.com/">read</a></p>
+<p><strong>Metasploit</strong> :</p>
+<p>It is a penetration testing framework that enables pentesters to find,
+exploit, and validate vulnerabilities.</p>
+<pre><code>How to use ?
+
+To start metasploit use command "msfconsole"
+</code></pre>
+<p>For more info <a href="https://www.offensive-security.com/metasploit-unleashed/requirements/">read</a></p>
+<p><strong>Sqlmap</strong> :</p>
+<p>sqlmap is an open source penetration testing tool that automates the process
+of detecting and exploiting SQL injection flaws</p>
+<pre><code>How to use ?
+
+just run sqlmap -h and it will show available options to use with it.
+</code></pre>
+<p>For more info <a href="https://github.com/sqlmapproject/sqlmap">read</a></p>
+<p><strong>Nmap</strong> :</p>
+<p>Nmap Free Security Scanner, Port Scanner, &amp; Network Exploration Tool.</p>
+<pre><code>How to use ?
+
+nmap --help will show all the available options to use.
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
