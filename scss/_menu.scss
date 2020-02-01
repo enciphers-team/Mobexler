@@ -1,0 +1,215 @@
+/* 
+// 2. Menu
+*/
+
+.nav-item {
+    .nav-link {
+        display: inline-block;
+        color: $dark;
+        text-decoration: none;
+    }
+}
+
+.navbar-custom {
+    padding: 14px 0px;
+    width: 100%;
+    border-radius: 0px;
+    z-index: 999;
+    margin-bottom: 0px;
+    transition: all 0.5s ease-in-out;
+    background-color: transparent;
+    .logo {
+        .logo-dark {
+            display: none;
+        }
+        .ligo-light {
+            display: inline-block;
+        }
+    }
+    .navbar-nav {
+        li {
+            a {
+                line-height: 26px;
+                color: rgba($white, 0.7);
+                font-size: 15px;
+                font-weight: 600;
+                transition: all 0.3s;
+                background-color: transparent !important;
+                padding: 6px 0;
+                margin: 0 20px;
+            }
+            .nav-link {
+                padding-right: 0px;
+                padding-left: 0px;
+            }
+        }
+        li.active a, li a:hover, li a:active {
+            color: $white !important;
+        }
+    }
+    .navbar-toggles {
+        padding: .25rem .75rem;
+        font-size: 18px;
+        background: 0 0;
+        border: 1px solid transparent;
+        color: $white;
+        outline: 0;
+    }
+}
+
+.navbar-toggler {
+    font-size: 24px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: $white;
+}
+
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover {
+    background-color: transparent;
+    border-color: $primary;
+}
+
+.menu-toggle {
+    padding: 4.5px 10px !important;
+    span {
+        line-height: 27px;
+    }
+}
+
+
+/*---NAVBAR STICKY--*/
+
+.nav-sticky {
+    &.navbar-custom {
+        margin-top: 0px;
+        background-color: $white;
+        box-shadow: 0 0 10px 0 rgba($black, 0.06);
+        color: $black !important;
+        .navbar-toggles {
+            padding: .25rem .75rem;
+            border: 1px solid transparent;
+            outline: 0;
+        }
+        .navbar-nav {
+            margin-top: 0px;
+            li {
+                a {
+                    color: darken($muted, 6%) !important;
+                }
+            }
+            li.active a, li a:hover, li a:active {
+                color: $primary !important;
+            }
+        }
+    }
+    
+    .logo {
+        .logo-dark {
+            display: inline-block !important;
+        }
+        .logo-light {
+            display: none !important;
+        }
+    }
+}
+
+.navbar-toggler {
+    &:focus {
+        outline: none;
+    }
+}
+
+// NAVBAR LIGHT
+
+.navbar-light {
+    .navbar-nav {
+        li {
+            a {
+                color: darken($muted, 6%) !important;
+            }
+        }
+        li.active a, li a:hover, li a:active {
+            color: $primary !important;
+        }
+    }
+}
+
+
+
+@media (min-width: 200px) and (max-width: 768px) {
+    .navbar-custom {
+        margin-top: 0px;
+        background-color: $white !important;
+        box-shadow: 0 3px 10px rgba($black, 0.08);
+        color: $white !important;
+        .navbar-nav {
+            margin-top: 0px;
+            li {
+                a {
+                    transition: all 0.4s;
+                    color: $muted !important;
+                    margin: 0px;
+                }
+                &.active {
+                    a {
+                        border-color: transparent;
+                    }
+                }
+            }
+            li.active a, li a:hover, li a:active {
+                color: $primary !important;
+            }
+        }
+        &>.container {
+            width: 90%;
+        }
+        .logo {
+            .logo-dark {
+                display: inline-block !important;
+            }
+            .logo-light {
+                display: none !important;
+            }
+        }
+        &.navbar-light {
+            .navbar-nav {
+                li.active a, li a:hover, li a:active {
+                    color: $dark !important;
+                }
+            }
+        }
+    }
+    .navbar-toggler {
+        font-size: 24px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        color: $dark;
+    }
+    .navbar-collapse {
+        padding: 0 20px;
+    }
+    .navbar-light {
+        .nav-item {
+            .nav-link:after {
+                background: $dark;
+            }
+        }
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav-dark {
+        .navbar-nav {
+            li {
+                a {
+                    color: darken($muted, 4%) !important;
+                }
+            }
+            li.active a, li a:hover, li a:active {
+                color: $primary !important;
+            }
+        }
+    }
+}

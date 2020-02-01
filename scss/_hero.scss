@@ -1,0 +1,225 @@
+/* 
+// 06.Hero
+*/
+
+// ***** Hero 1 *****// 
+.hero-1-bg {
+    padding: 170px 0 140px;
+    .hero-small-title {
+        letter-spacing: 2px;
+    }
+    .main-title {
+        font-size: 2.8rem;
+        line-height: 1.35;
+        color: $primary;
+    }
+}
+
+// ***** Hero 2 *****// 
+.hero-2-bg {
+    padding: 220px 0px 0px;
+    .hero-2-img {
+        position: relative;
+        top: 92px;
+    }
+}
+
+// ***** Hero 3 *****// 
+.hero-3-bg {
+    padding: 200px 0 170px;
+}
+
+// ***** Hero 4 *****// 
+.hero-4-bg {
+    padding: 220px 0 190px;
+    .hero-login-form {
+        background: $light;
+        box-shadow: 0 2px 12px rgba($black, 0.1);
+        .form-border {
+            border: 1px solid lighten($muted, 1%);
+        }
+    }
+    .hero-4-title {
+        line-height: 1.4;
+    }
+}
+
+// ***** Hero 5 *****// 
+.hero-5-bg {
+    position: relative;
+    overflow: hidden;
+    .carousel-control-next,
+    .carousel-control-prev {
+        width: 6%;
+    }
+    .carousel-item,
+    .carousel {
+        height: 100vh;
+        width: 100%;
+    }
+    .carousel-item {
+        background-position: center center !important;
+        background-size: cover !important;
+        .play-icon-circle {
+            background: $white;
+            height: 46px;
+            width: 46px;
+            line-height: 46px;
+            text-align: center;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    }
+    .slide-icon {
+        i {
+            font-size: 50px;
+        }
+    }
+}
+
+// ***** Hero 5 *****//  
+.hero-6-bg {
+    padding: 280px 0 300px;
+    .hero-6-title {
+        z-index: 1;
+        position: relative;
+    }
+    .subcribe-form {
+        form {
+            position: relative;
+            margin: 0px auto;
+        }
+        input {
+            padding: 12px 20px;
+            width: 60%;
+            font-size: 17px;
+            color: $muted !important;
+            border: none;
+            outline: none !important;
+            background-color: rgba($light, 0.85);
+            box-shadow: 0 2px 10px rgba($dark, 0.12);
+            border-radius: 30px;
+            position: relative;
+            top: 3px;
+        }
+    }
+}
+
+// ***** Hero 7 *****// 
+.hero-7-bg {
+    padding: 160px 0 200px;
+    .hero-7-title {
+        position: relative;
+        font-weight: 200;
+        font-size: 3.55em;
+        .text-wrapper {
+            position: relative;
+            display: inline-block;
+            padding-top: 0.2em;
+            padding-right: 0.05em;
+            padding-bottom: 0.1em;
+            overflow: hidden;
+        }
+        .letter {
+            transform-origin: 50% 100%;
+            display: inline-block;
+            line-height: 1em;
+        }
+    }
+    .hero-7-bg-overlay {
+        background-image: url("../images/hero-7-bg.png");
+        background-repeat: no-repeat;
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+    .shape-light {
+        display: $display-light;
+    }
+    .shape-dark {
+        display: $display-dark;
+    }
+}
+
+// ***** Responsive *****// 
+@media (max-width: 425px) {
+    .hero-1-bg {
+        .main-title {
+            font-size: 2rem;
+        }
+    }
+    .hero-2-bg {
+        .hero-2-img {
+            top: 50px !important;
+        }
+    }
+    .hero-5-bg {
+        .carousel-item,
+        .carousel {
+            height: 100vh !important;
+            .hero-5-title {
+                font-size: 2rem !important;
+            }
+            .hero-5-subtitle {
+                font-size: 14px !important;
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+    }
+    .hero-6-bg {
+        padding: 160px 0 160px !important;
+        .subcribe-form {
+            input {
+                width: 100%;
+            }
+        }
+    }
+    .hero-7-bg {
+        .hero-7-title {
+            font-size: 2.55em;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-1-bg {
+        padding: 120px 0;
+    }
+    .hero-2-bg {
+        padding: 150px 0px 0px;
+        .hero-2-img {
+            top: 90px;
+        }
+    }
+    .hero-4-bg {
+        padding: 160px 0 100px;
+    }
+    .hero-5-bg {
+        .carousel-item,
+        .carousel {
+            height: 75vh;
+        }
+    }
+    .hero-6-bg {
+        padding: 220px 0 200px;
+    }
+    .hero-7-bg {
+        padding: 140px 0;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-1-bg {
+        background: none !important;
+    }
+    .hero-5-bg {
+        .carousel-item,
+        .carousel {
+            height: 60vh;
+        }
+    }
+}

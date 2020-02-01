@@ -1,0 +1,32 @@
+/* 
+// 10.Features
+*/
+
+.feature-box {
+    box-shadow: 0 0px 10px rgba($dark, 0.08);
+    margin-bottom: 30px;
+    position: relative;
+    transition: all 0.3s;
+    &:after {
+        content: "";
+        background: $primary;
+        height: 1px;
+        width: 0%;
+        position: absolute;
+        transition: all 0.5s;
+        left: 0;
+        bottom: 0;
+    }
+    .feature-icon {
+        font-size: 65px;
+        i {
+            text-shadow: 3px 3px 3px rgba($primary, 0.25);
+        }
+    }
+    &:hover {
+        box-shadow: 0 8px 30px rgba($dark, 0.08);
+        &:after {
+            width: 100%;
+        }
+    }
+}

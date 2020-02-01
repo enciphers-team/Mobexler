@@ -1,0 +1,42 @@
+/* Template Name: Neloz - Responsive Bootstrap 4 Landing Page Template
+   Author: Themesdesign
+   Version: 1.0.0
+   Created: Jan 2019
+   File Description: Main Css file of the template
+*/
+
+/**********************
+01.General
+02.Menu
+03.Components
+04.Helper
+05.Loader
+06.Hero
+07.Client-logo
+08.Services
+09.About
+10.Features
+11.Counter
+12.Pricing
+13.Testimonial
+14.Contact
+15.Footer
+***********************/
+
+
+@import "variables";
+@import "general";
+@import "menu";
+@import "components";
+@import "helper";
+@import "loader";
+@import "hero";
+@import "client-logo";
+@import "services";
+@import "about";
+@import "features";
+@import "counter";
+@import "pricing";
+@import "testimonial";
+@import "contact";
+@import "footer";

@@ -1,0 +1,51 @@
+/* 
+// variables.scss
+*/
+
+
+@import url('https://fonts.googleapis.com/css?family=DM+Sans:400,500,700|Nunito:400,600,700&display=swap');
+
+// Color variables
+$white:                     #ffffff;
+$black:                     #000000;
+
+
+$primary:                   #5e62ff;
+$secondary:                 #6c757d;
+$success:                   #2dd6b7;
+$info:                      #56c6e6;
+$warning:                   #ffbb13;
+$danger:                    #f43958;
+$dark:                      #343a40;
+$muted:                     #9b9bae;
+$light:                     #fbfbfb;
+$body-bg:                   #ffffff;
+
+$bg-counter:                #5e62ff;
+$footer-bg:                 #343a40;
+
+
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "dark": $dark,
+    "muted": $muted,
+    "light": $light,
+    "body-bg": $body-bg,
+    "black": $black,
+    "white": $white
+);
+
+$display-light: block;
+
+$display-dark: none;
+
+
+// Font
+$font-primary:            'Nunito', sans-serif;
+$font-secondary:          'DM Sans', sans-serif;

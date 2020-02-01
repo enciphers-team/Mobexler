@@ -1,0 +1,43 @@
+/* 
+// 15.Footer
+*/
+
+.footer {
+    padding: 60px 0 0;
+    background-color: $footer-bg;
+    .logo-light {
+        display: $display-light;
+    }
+    .logo-dark {
+        display: $display-dark;
+    }
+    .footer-desc,
+    .footer-alt {
+        color: rgba($light, 0.5);
+    }
+    .footer-list-title {
+        color: $light;
+    }
+    .footer-icons {
+        color: rgba($light, 0.5);
+        transition: all 0.3s;
+        a {
+            color: rgba($light, 0.5);
+            &:hover {
+                color: $light;
+            }
+        }
+    }
+    .company-sub-menu {
+        li {
+            padding: 8px 0;
+            a {
+                transition: all 0.5s;
+                color: rgba($light, 0.5);
+                &:hover {
+                    color: $light !important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+/* 
+// 13.Testimonial
+*/
+
+.owl-carousel {
+    &.owl-theme .owl-dots .owl-dot span {
+        width: 14px;
+        height: 4px;
+        background-color: rgba($primary, 0.4);
+    }
+    &.owl-theme .owl-dots .owl-dot.active span,
+    &.owl-theme .owl-dots .owl-dot:hover span {
+        width: 20px;
+        height: 4px;
+        background-color: $primary;
+    }
+    .testi-content {
+        background: rgba($white, 0.01);
+        box-shadow: 0 4px 12px rgba($black, 0.08);
+        .user-img {
+            max-width: 72px;
+        }
+        .testi-icon {
+            i {
+                position: absolute;
+                left: 10px;
+                font-size: 85px;
+                top: -28px;
+                opacity: .6;
+                color: rgba($primary, 0.1);
+            }
+        }
+    }
+    .owl-nav {
+        display: none;
+    }
+    .owl-dot {
+        margin-top: 20px;
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.testi-content-1 {
+    overflow: hidden;
+    border-radius: 6px;
+    .user-img {
+        transition: all 0.5s;
+    }
+    &:after {
+        content: "";
+        background: $primary;
+        height: 1px;
+        width: 0%;
+        position: absolute;
+        transition: all 0.5s;
+        left: 0;
+        bottom: 0;
+    }
+    &:hover {
+        
+        .user-img {
+            box-shadow: 0 6px 6px rgba($primary, 0.25);
+            transform: translateY(-4px);
+        }
+        .user-name {
+            color: $primary !important;
+        }
+        &:after{
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+/* 
+// 08.Services
+*/
+
+.service-box {
+    transition: all 0.3s;
+    margin-bottom: 30px;
+    .service-icon {
+        background: rgba($primary, 0.08);
+        display: inline-block;
+        border-radius: 7% 50% 50% 50% / 7% 50% 50% 50%;
+        height: 74px;
+        width: 74px;
+        line-height: 74px;
+        text-align: center;
+        color: $primary;
+        font-size: 30px;
+        transition: all 0.3s;
+    }
+    &:hover {
+        background: rgba($light, 0.01);
+        box-shadow: 0 4px 12px rgba($dark, 0.08);
+        border-radius: 5px;
+        .service-icon {
+            border-radius: 50% 50% 7% 50% / 50% 50% 7% 50%;
+        }
+    }
+    .service-title {
+        font-size: 1.4rem;
+        color: $dark;
+    }
+}
+
+.service-box-1 {
+    box-shadow: 0 4px 12px rgba($dark, 0.05);
+    .service-icon {
+        border-radius: 35% 7% 35% 7% / 35% 7% 35% 7%;
+    }
+}
+
+.service-img {
+    img {
+        border-radius: 20px;
+        box-shadow: -10px 20px 20px rgba($dark, 0.06);
+    }
+}

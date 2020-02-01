@@ -1,278 +1,851 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
-        
-        
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Mobexler Usage Guide</title>
-        <link href="css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-forest-light.min.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
 
-        <script src="js/jquery-1.10.2.min.js" defer></script>
-        <script src="js/bootstrap-3.0.3.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script> 
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <title>Mobexler - Mobile Application Penetration Testing Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Bootstrap 4 Landing Page Template" />
+    <meta name="keywords" content="bootstrap 4, premium, marketing, multipurpose" />
+    <meta content="Themesdesign" name="author" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/mobexler-test/favicon.ico">
 
-    <body class="homepage">
+    <!-- Pixeden Icon -->
+    <link rel="stylesheet" type="text/css" href="css/pe-icon-7.css" />
 
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
+    <!--Slider-->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
 
-                <!-- Collapsed navigation -->
-                <div class="navbar-header">
-                    <!-- Expander button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href=".">Mobexler Usage Guide</a>
-                </div>
+    <!-- css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.min.css" rel="stylesheet" type="text/css" />
+<style>
+.site-footer {
+  background-color: #26272b;
+  padding: 45px 0 20px;
+  font-size: 15px;
+  line-height: 24px;
+  color: #737373;
+}
+.site-footer hr {
+  border-top-color: #bbb;
+  opacity: 0.5;
+}
+.site-footer hr.small {
+  margin: 20px 0;
+}
+.site-footer h6 {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  letter-spacing: 2px;
+}
+.site-footer a {
+  color: #737373;
+}
+.site-footer a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+.footer-links {
+  padding-left: 0;
+  list-style: none;
+}
+.footer-links li {
+  display: block;
+}
+.footer-links a {
+  color: #737373;
+}
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+.footer-links.inline li {
+  display: inline-block;
+}
+.site-footer .social-icons {
+  text-align: right;
+}
+.site-footer .social-icons a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 6px;
+  margin-right: 0;
+  border-radius: 100%;
+  background-color: #33353d;
+}
+.copyright-text {
+  margin: 0;
+}
+@media (max-width: 991px) {
+  .site-footer [class^="col-"] {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .site-footer {
+    padding-bottom: 0;
+  }
+  .site-footer .copyright-text,
+  .site-footer .social-icons {
+    text-align: center;
+  }
+}
+.social-icons {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.social-icons li {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+.social-icons li.title {
+  margin-right: 15px;
+  text-transform: uppercase;
+  color: #96a2b2;
+  font-weight: 700;
+  font-size: 13px;
+}
+.social-icons a {
+  background-color: #eceeef;
+  color: #818a91;
+  font-size: 16px;
+  display: inline-block;
+  line-height: 44px;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  margin-right: 8px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.social-icons a:active,
+.social-icons a:focus,
+.social-icons a:hover {
+  color: #fff;
+  background-color: #29aafe;
+}
+.social-icons.size-sm a {
+  line-height: 34px;
+  height: 34px;
+  width: 34px;
+  font-size: 14px;
+}
+.social-icons a.facebook:hover {
+  background-color: #3b5998;
+}
+.social-icons a.twitter:hover {
+  background-color: #00aced;
+}
+.social-icons a.linkedin:hover {
+  background-color: #007bb6;
+}
+.social-icons a.dribbble:hover {
+  background-color: #ea4c89;
+}
+@media (max-width: 767px) {
+  .social-icons li.title {
+    display: block;
+    margin-right: 0;
+    font-weight: 600;
+  }
 
-                <!-- Expanded navigation -->
-                <div class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a href=".">Home</a>
-                            </li>
-                            <li >
-                                <a href="download/">Download</a>
-                            </li>
-                            <li >
-                                <a href="setup/">Setup</a>
-                            </li>
-                            <li >
-                                <a href="Awesome_tools/">Tools</a>
-                            </li>
-                            <li >
-                                <a href="release/">Releases</a>
-                            </li>
-                            <li >
-                                <a href="license/">License</a>
-                            </li>
-                            <li >
-                                <a href="credits/">Credits</a>
-                            </li>
-                            <li >
-                                <a href="training/">Resources</a>
-                            </li>
-                        </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                            <li class="disabled">
-                                <a rel="next" >
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li >
-                                <a rel="prev" href="download/">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                    </ul>
-                </div>
+}
+
+
+</style>
+
+<script> 
+    function mouseover() { 
+        document.getElementById("teammember").style.color = "blue"; 
+    } 
+      
+    function mouseout() { 
+        document.getElementById("teammember").style.color = "#343a40"; 
+    } 
+
+    function mouseover2() { 
+        document.getElementById("teammember2").style.color = "blue"; 
+    } 
+      
+    function mouseout2() { 
+        document.getElementById("teammember2").style.color = "#343a40"; 
+    } 
+    function mouseover3() { 
+        document.getElementById("teammember3").style.color = "blue"; 
+    } 
+      
+    function mouseout3() { 
+        document.getElementById("teammember3").style.color = "#343a40"; 
+    } 
+    function mouseover4() { 
+        document.getElementById("teammember4").style.color = "blue"; 
+    } 
+    function mouseout4() { 
+        document.getElementById("teammember4").style.color = "#343a40"; 
+    } 
+    
+</script> 
+</head>
+
+<body>
+
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="sk-chase">
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
+                <div class="sk-chase-dot"></div>
             </div>
         </div>
+    </div>
 
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
         <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#mobexler-a-mobile-application-penetration-testing-platform">MOBEXLER - A Mobile Application Penetration Testing Platform</a></li>
-            <li><a href="#default-configuration">Default Configuration</a></li>
-            <li><a href="#list-of-tools">List of tools</a></li>
-            <li><a href="#some-screenshots">Some Screenshots:</a></li>
-    </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+            <!-- LOGO -->
+            <a class="navbar-brand logo" href="/mobexler-test/">
+                <img src="images/logo-dark.png" alt="" class="logo-dark" height="60">
+                <img src="images/logo-light.png" alt="" class="logo-light" height="120">
+              </a>            <button class="navbar-toggler" style="float: right !important;" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="mdi mdi-menu"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
+                    <li class="nav-item active">
+                           <a href="/mobexler-test/" class="nav-link">Home</a>
+                    </li>
 
-<h1 id="mobexler-a-mobile-application-penetration-testing-platform">MOBEXLER - A Mobile Application Penetration Testing Platform</h1>
-<p>Mobexler is a customised virtual machine, based on Elementary OS ,
-designed to help in penetration testing of Android &amp; iOS applications.
-Mobexler comes preinstalled with various open source tools, scripts,
-prerequisites etc. which are needed for security testing Android &amp; iOS application.</p>
-<p><img alt="Mobexler" src="img/main.png" /></p>
-<p>Mobexler is <strong>unique</strong> for several reasons:</p>
-<ol>
-<li>
-<p>One platform capable of managing Android Device/emulator and iOS devices, both
-at the same time.</p>
-</li>
-<li>
-<p>Comes preinstalled with various updated tools which are needed for security testing.</p>
-</li>
-<li>
-<p>Tools like MobSF are run inside a docker container,
-which ensures that it is easier to download the newer versions.</p>
-</li>
-<li>
-<p>Running MobSF in container also gives capability to perform static analysis
-on IPA, which otherwise requires Xcode tools.</p>
-</li>
-<li>
-<p>iOS devices can easily be connected through USB and various tools can be used
-to perform the testing, like Frida, Objection, Hopper etc.</p>
-</li>
-<li>
-<p>Free for everyone to use.</p>
-</li>
-</ol>
-<h2 id="default-configuration">Default Configuration</h2>
-<ul>
-<li>OVA file size: ~16GB</li>
-<li>RAM: 4GB</li>
-<li>Disk Space: ~35GB</li>
-</ul>
-<h2 id="list-of-tools">List of tools</h2>
-<h3 id="android-zone">Android Zone</h3>
-<ul>
-<li>Android Studio</li>
-<li>Burp Suite Proxy (Community Edition)</li>
-<li>Bytecode Viewer</li>
-<li>DB Browser for SQLite</li>
-<li>Frida</li>
-<li>JADX-GUI</li>
-<li>JDGUI</li>
-<li>Logcat - Pidcat</li>
-<li>MobSF</li>
-<li>AVD - Emulator</li>
-<li>Androbugs</li>
-<li>Dex2Jar</li>
-<li>Pidcat</li>
-<li>SUPER-Analyzer</li>
-<li>Wireshark</li>
-<li>Smali &amp; baksmali</li>
-<li>Mara Framework</li>
-<li>SIGN</li>
-<li>Android Backup Extractor</li>
-<li>Tcpdump</li>
-<li>Objection</li>
-<li>Drozer</li>
-<li>radare2</li>
-<li>Ghidra</li>
-</ul>
-<h3 id="ios-zone">iOS Zone</h3>
-<ul>
-<li>Frida</li>
-<li>Cydia Impactor</li>
-<li>Filezilla</li>
-<li>Putty</li>
-<li>Objection</li>
-<li>Hopper Disassembler</li>
-<li>MobSF</li>
-</ul>
-<h3 id="general-penetration-testing-tools">General Penetration Testing Tools</h3>
-<ul>
-<li>Metasploit</li>
-<li>Sqlmap</li>
-<li>Nmap</li>
-<li>Sslscan</li>
-<li>Ghidra</li>
-</ul>
-<h2 id="some-screenshots">Some Screenshots:</h2>
-<p><img alt="Mobexler" src="img/014.png" /></p>
-<p><img alt="Mobexler" src="img/abc.jpeg" /></p>
-<p><img alt="Mobexler" src="img/def.jpeg" /></p>
-<hr /></div>
-        </div>
+                    <li class="nav-item">
+                        <a href="/mobexler-test/download.htm" class="nav-link">Download</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/mobexler-test/setup.htm" class="nav-link">Setup</a>
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>
-            var base_url = ".",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="js/base.js" defer></script>
-        <script src="search/main.js" defer></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/mobexler-test/tools.htm" class="nav-link">Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/mobexler-test/release.htm" class="nav-link">Release</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/mobexler-test/license.htm" class="nav-link">License</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/mobexler-test/Credits.htm" class="nav-link">Credits</a>   
+                    </li>    
+                    <li class="nav-item">
+<a href="/mobexler-test/resources.htm" class="nav-link">Resources</a>
+                    </li>    
+             
+                </ul>
             </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <section class="hero-2-bg position-relative d-flex align-items-center" style="background: url(images/hero-2-bg.png) center center" id="home">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 col-md-10">
+                    <div class="hero-title text-center">
+                        <div class="mb-4">
+                            <i class="mdi mdi-google-circles-extended mdi-spin text-light h2"></i>
+                        </div>
+                        <h1 class="text-light mb-4">MOBEXLER - A Mobile Application Penetration Testing Platform
+                        </h1>
+                        <p class="text-light-70  pb-2"> Mobexler is a customised virtual machine, based on Elementary OS , designed to help in penetration testing of Android & iOS applications.
+                        </p>
+                        <a href="/mobexler-test/download.htm" class="btn btn-light">Download<span class="ml-2 right-icon">&#8594;</span></a>
                     </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
+                </div>
             </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="hero-2-img mt-4">
+                        <img src="images/home.png" alt="" class="img-fluid mx-auto d-block" height="200em">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+    <!-- Hero End -->
 
-    </body>
+    <!-- Service Start -->
+    <section class="section mt-5" id="services">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="text-center mb-5">
+                        <h4 class="text-uppercase mb-0">Awesome tools</h4>
+                        <div class="my-3">
+                            <img src="images/title-border.png" alt="" class="img-fluid mx-auto d-block">
+                        </div>
+                        <p class="text-muted f-14">Mobexler comes preinstalled with various open source tools, scripts, prerequisites etc. which are needed for security testing Android & iOS application.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="service-img mr-lg-5 mb-5 mb-lg-0">
+                        <img src="images/search.png" alt="" class="img-fluid mx-auto d-block">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="service-box service-box-1 p-4">
+                                <div class="service-icon icon-primary mb-4 mt-3">
+                                    <i class="mdi mdi-layers-triple"></i>
+                                </div>
+                                <h4 class="mb-3 service-title">Android Zone </h4>
+                                <p class="text-muted f-15">Contains various tools & scripts for Android Application Security Testing 
+ </p>
+                            </div>
+                            <div class="service-box service-box-1 p-4">
+                                <div class="service-icon icon-danger mb-4 mt-3">
+                                    <i class="mdi mdi-security"></i>
+                                </div>
+                                <h4 class="mb-3 service-title">IOS Zone</h4>
+                                <p class="text-muted f-15">Contains various tools & scripts for iOS Application Security Testing 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-box service-box-1 p-4 mt-md-5">
+                                <div class="service-icon icon-success mb-4 mt-3">
+                                    <i class="mdi mdi-shield-lock-outline"></i>
+                                </div>
+                                <h4 class="mb-3 service-title">Penetration Testing Zone</h4>
+                                <p class="text-muted f-15">Contains various tools & scripts for PenetrationTesting 
+
+                                </p>
+                            </div>
+                            <!-- <div class="service-box service-box-1 p-4">
+                                <div class="service-icon icon-info mb-4 mt-3">
+                                    <i class="mdi mdi-account-group"></i>
+                                </div>
+                                <h4 class="mb-3 service-title">User Friendly</h4>
+                                <p class="text-muted f-15">Itaque earum rerum hic at tenetur that sapiente delectus ut aut reiciendis voluptatibus alias.</p>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Service End -->
+
+    <!-- About us Start -->
+    <section class="section bg-light" id="about">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="text-center mb-5">
+                        <h4 class="text-uppercase mb-0">Team Mobexler</h4>
+                        <div class="my-3">
+                            <img src="images/title-border.png" alt="" class="img-fluid mx-auto d-block">
+                        </div>
+                        <p class="text-muted f-14">A team of highly motivated and passionate security professionals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-icon">
+                        <i class="pe-7s-phone display-4 text-primary mb-4"></i>
+                    </div>
+                    <h1 class="title font-weight-normal line-height-1_4 mb-4">Mobile Application Penetration Testing Platform
+                    </h1>
+                    <div class="about-border my-4"></div>
+                    <p class="text-muted mb-4 f-15">One platform capable of managing Android and IOS devices at the same time, for penetration testing.
+
+
+                    </p>
+                    <a href="/mobexler-test/credit.htm" class="more-info">See More Credits Information <span class="ml-2 right-icon">&#8594;</span></a>
+                </div>
+
+                <div class="col-lg-5 offset-lg-1 mt-5 mt-lg-0">
+                    <div class="about-info-box mb-4 p-3">
+                        <div class="media align-items-center">
+                            <img src="images/users/1.jpg" class="mr-3 rounded-circle" alt="" height="60">
+                            <div class="media-body">
+                                <h5 class="mb-2 title">Abhinav <a  id="teammember" onmouseover="mouseover()" 
+                                    onmouseout="mouseout()" href="https://twitter.com/0ctac0der" style="color:#343a40;">(0ctac0der)</a></h5>
+                                <p class="text-muted line-height-1_6 mb-0 f-15">Project Lead
+                                </p>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <div class="about-info-box mb-4 ml-lg-5 p-3">
+                        <div class="media align-items-center">
+                            <img src="images/users/2.jpg" class="mr-3 rounded-circle" alt="" height="60">
+                            <div class="media-body">
+                                <h5 class="mb-2 title">Narendra <a  id="teammember2" onmouseover="mouseover2()" 
+                                    onmouseout="mouseout2()" href="https://twitter.com/0ddhawk" style="color:#343a40;">(0ddhawk)</a></h5>
+                                <p class="text-muted line-height-1_6 mb-0 f-15">Team Member / Contributor </p>
+                            </div>
+           
+                        </div>
+                    </div>
+                    <div class="about-info-box mb-4 p-3">
+                        <div class="media align-items-center">
+                            <img src="images/users/3.jpg" class="mr-3 rounded-circle" alt="" height="60">
+                            <div class="media-body">
+                                <h5 class="mb-2 title">Abhishek <a  id="teammember3" onmouseover="mouseover3()" 
+                                    onmouseout="mouseout3()" href="https://twitter.com/Pwnchief" style="color:#343a40;">(Pwnchief)</a></h5>
+                                <p class="text-muted line-height-1_6 mb-0 f-15">Team Member / Contributor</p>
+                            </div>
+                   
+                        </div>
+                    </div>
+
+                    <div class="about-info-box mb-4 ml-lg-5 p-3">
+                        <div class="media align-items-center">
+                            <img src="images/users/4.jpg" class="mr-3 rounded-circle" alt="" height="60">
+                            <div class="media-body">
+                                <h5 class="mb-2 title">Sheeraz <a  id="teammember4" onmouseover="mouseover4()" 
+                                    onmouseout="mouseout4()" href="https://twitter.com/Beingsheerazali" style="color:#343a40;">(Beingsheerazali)</a></h5>
+                                <p class="text-muted line-height-1_6 mb-0 f-15">Team Member / Contributor</p>
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About us End -->
+
+    <!-- Fetures Start -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="text-center mb-5">
+                        <h4 class="text-uppercase mb-0">Unique Features</h4>
+                        <div class="my-3">
+                            <img src="images/title-border.png" alt="" class="img-fluid mx-auto d-block">
+                        </div>
+                        <p class="text-muted f-14">Mobexler is unique for several reasons</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box text-center px-4 py-5">
+                        <div class="text-primary feature-icon mb-3">
+                            <i class="pe-7s-world"></i>
+                        </div>
+                        <h6 class="text-uppercase mb-1 title f-18">Better managed</h6>
+                        <p class="mb-0 text-muted">One platform capable of managing Android & IOS devices at the same time.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box text-center px-4 py-5">
+                        <div class="text-primary feature-icon mb-3">
+                            <i class=" pe-7s-refresh-2"></i>
+                        </div>
+                        <h6 class="text-uppercase mb-1 title f-18">Free & Opensource</h6>
+                        <p class="text-muted mb-0">It is free for everyone to use and opensource based on Elementary OS</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box text-center px-4 py-5">
+                        <div class="text-primary feature-icon mb-3">
+                            <i class="pe-7s-tools"></i>
+                        </div>
+                        <h6 class="text-uppercase mb-1 title f-18">Various tools                        </h6>
+                        <p class="text-muted mb-0">Comes preinstalled with several Penetration testing tools
+                        </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box text-center px-4 py-5">
+                        <div class="text-primary feature-icon mb-3">
+                            <i class="pe-7s-cash"></i>
+                        </div>
+                        <h6 class="text-uppercase mb-1 title f-18">Smooth & Fast</h6>
+                        <p class="text-muted mb-0">Mobexler is very resource full and optimized to get best experience possible for given resources</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box text-center px-4 py-5">
+                        <div class="text-primary feature-icon mb-3">
+                            <i class="pe-7s-shield"></i>
+                        </div>
+                        <h6 class="text-uppercase mb-1 title f-18">Static Analysis on IPA  </h6>
+                        <p class="text-muted mb-0">MobSF in container also gives capability to perform Static analysis on IPA,without Xcode tools</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-box text-center px-4 py-5">
+                        <div class="text-primary feature-icon mb-3">
+                            <i class="pe-7s-airplay"></i>
+                        </div>
+                        <h6 class="text-uppercase mb-1 title f-18">Easy To Connect</h6>
+                        <p class="text-muted mb-0">Android/iOS devices can easily be connected through USB and various tools can be used to perform testing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center mt-5">
+                        <a href="/mobexler-test/tools.htm" class="btn btn-primary">View More <span class="ml-2 right-icon">&#8594;</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fetures End -->
+
+    <!-- Counter Start -->
+    <Section class="section counter-bg">
+        <div class="counter-bg-overlay"></div>
+        <div class="container">
+            <div class="row align-items-center" id="counter">
+                <div class="col-lg-3 col-md-6">
+                    <div class="mb-4 mb-lg-0">
+                        <h2 class="text-white mb-4">Some Cool Facts</h2>
+                        <p class="f-15 text-white-70 mb-4">Reasons why you should checkout mobexler even more</p>
+                        <a href="/mobexler-test/tools.htm" class="btn btn-light">Read More <span class="ml-2 right-icon">&#8594;</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="counter-box-1 text-center px-4 py-5 mb-4 mb-lg-0">
+                        <div class="text-white">
+                            <img src="images/icon/icon-1.png" alt="" class="img-fluid mx-auto d-blok">
+                            <h1 class="mb-2 mt-3"><span class="counter-value mt-4" data-count="29">0</span>+</h1>
+                            <p class="mb-0 text-white-70">Android Tools</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="counter-box-1 text-center px-4 py-5 mb-4 mb-lg-0">
+                        <div class="text-white">
+                            <img src="images/icon/icon-2.png" alt="" class="img-fluid mx-auto d-blok">
+                            <h1 class="mb-2 mt-3"><span class="counter-value mt-4" data-count="13">0</span></h1>
+                            <p class="mb-0 text-white-70">IOS Tools</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="counter-box-1 text-center px-4 py-5 mb-4 mb-lg-0">
+                        <div class="text-white">
+                            <img src="images/icon/icon-3.png" alt="" class="img-fluid mx-auto d-blok">
+                            <h1 class="mb-2 mt-3"><span class="counter-value mt-4" data-count="3">0</span></h1>
+                            <p class="mb-0 text-white-70">Presented at Conferences</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Section>
+    <!-- Counter End -->
+      <!-- Pricing Start -->
+      <!-- <section class="section" id="pricing">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="text-center mb-5">
+                        <h4 class="text-uppercase mb-0">Our Services</h4>
+                        <div class="my-3">
+                            <img src="images/title-border.png" alt="" class="img-fluid mx-auto d-block">
+                        </div>
+                        <p class="text-muted f-14">We provide these services</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="pricing-box rounded text-center position-relative px-4 py-5 mb-4">
+                        <img src="images/mobilesecurity.png"  width="50%"  alt="" class=" mx-auto d-block">
+                        <h3 class="pricing-title title text-uppercase mt-5 mb-4">Need Your Mobile App To Be Tested For Security Issues?
+                        </h3>
+                        <div class="text-muted py-3">
+                            <p class=""><b class="highlight">We are here and to  know more about our services visit </b></p>
+                        </div>
+                        <a href="https://enciphers.com/mobile-application-penetration-testing/" class="btn btn-outline-primary">More Details <span class="ml-2 right-icon">&#8594;</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="pricing-box rounded text-center position-relative active px-4 py-5 mb-4">
+                   
+                        <img src="images/seminar.png" width="50%"   alt="" class=" mx-auto d-block">
+                        <h3 class="pricing-title title text-uppercase mt-5 mb-4">Looking for a high-end mobile security training?
+                        </h3>
+                        <div class="text-muted py-3">
+                            <p class=""> <b class="highlight">We provide high-end training focused on teaching Android & iOS application vulnerabilities and their exploitation, as done during a penetration test.
+                            </b></p>
+                           
+                        </div>
+                        <a href="https://enciphers.com/trainings/" class="btn btn-primary">More Details<span class="ml-2 right-icon">&#8594;</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="pricing-box rounded text-center position-relative px-4 py-5 mb-4">
+                        <img src="images/support.png"  width="50%"  alt="" class=" mx-auto d-block">
+                        <h3 class="pricing-title title text-uppercase mt-5 mb-4">Our Services</h3>
+                        <div class="text-muted py-3">
+                            <p class="">  <b class="highlight">PENETRATION TESTING</b></p>
+                            <p class=""><b class="highlight">VULNERABILITY ASSESSMENTS</b></p>
+                            <p class=""><b class="highlight">RESPONSIBLE DISCLOSURE CONSULTANCY</b> </p>
+                            <p class=""><b class="highlight">HIGH-END TRAINING FOR WEB, MOBILE & SECURE CODING</b></p>
+                        </div>
+                        <a href="https://enciphers.com/vulnerability-assessments/" class="btn btn-outline-primary">More Details<span class="ml-2 right-icon">&#8594;</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  Pricing End -->
+
+
+    <!-- Clients Start -->
+    <section class="section bg-light" id="clients">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="text-center mb-5">
+                        <h4 class="text-uppercase mb-0">About ENCIPHERS</h4>
+                        <div class="my-3">
+                            <img src="images/title-border.png" alt="" class="img-fluid mx-auto d-block">
+                        </div>
+                        <p class="text-muted f-14"> We are an Information Security Consulting and Training Company.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="testi-content testi-content-1 text-center m-3 p-4 position-relative">
+                            <p class="text-muted mb-4 position-relative f-15" style="text-transform:capitalize;">Need Your Mobile App To Be Tested For Security Issues?</p>
+                            <img src="images/mobilesecurity.png" alt="" class="img-fluid mx-auto img-thumbnail d-block rounded-circle user-img">
+                            <h5 class="title mb-0 user-name mt-4 f-18">We are here and to  know more about our services visit</h5>
+                            <p class="text-muted mb-2 f-15"><a href="https://enciphers.com/mobile-application-penetration-testing/" class="btn mt-2 btn-outline-primary">More Details <span class="ml-2 right-icon">&#8594;</span></a>
+                            </p>
+                            <ul class="list-unstyled text-warning mb-0">
+                                <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                <li class="list-inline-item h3 mb-0 mr-1"><i class="mdi mdi-star"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- owl item and -->
+
+                    <div class="item">
+                        <div class="testi-content testi-content-1 text-center m-3 p-4 position-relative">
+                            <p class="text-muted mb-4 position-relative f-15" style="text-transform:capitalize;">Looking For a High-End Mobile Security Training?</p>
+                            <img src="images/seminar.png" alt="" class="img-fluid mx-auto img-thumbnail d-block rounded-circle user-img">
+                            <h5 class="title mb-0 user-name mt-4 f-18" style="text-transform:capitalize;">High-end trainings on mobile application security. 
+
+                            </h5>
+                            <p class="text-muted mb-2 f-15"><a href="https://www.enciphers-trainings.com/" class="btn mt-2 btn-primary">Trainings<span class="ml-2 right-icon">&#8594;</span></a>
+                            </p>
+                            <ul class="list-unstyled text-warning mb-0">
+                                <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                <li class="list-inline-item h3 mb-0 mr-1"><i class="mdi mdi-star"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- owl item and -->
+
+
+                    <div class="item">
+                        <div class="testi-content testi-content-1 text-center m-3 p-4 position-relative">
+                            <p class="text-muted mb-4 position-relative f-15" style="text-transform:capitalize;">Want to make sure your infrastructure is safe ?</p>
+
+                            <img src="images/support.png" alt="" class="img-fluid mx-auto img-thumbnail d-block rounded-circle user-img">
+                            <h5 class="title mb-0 user-name mt-4 f-18" style="text-transform:capitalize;">penetration testing & security Consultancy</h5>
+                            <a href="https://enciphers.com/vulnerability-assessments/" class="btn mt-2 btn-outline-primary">More Details<span class="ml-2 right-icon">&#8594;</span></a>
+                            <ul class="list-unstyled text-warning mb-0">
+                                <li class="list-inline-item mr-1"><i class="mdi mdi-star"></i></li>
+                                <li class="list-inline-item h3 mb-0 mr-1"><i class="mdi mdi-star"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- owl item and -->
+
+                    
+                 </div>
+            </div>
+        </div>
+    </section>
+    <!-- Clients End -->
+
+    <!-- contact Us Start -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="text-center mb-5">
+                        <h4 class="text-uppercase mb-0">Get In Touch</h4>
+                        <div class="my-3">
+                            <img src="images/title-border.png" alt="" class="img-fluid mx-auto d-block">
+                        </div>
+                        <p class="text-muted f-14">Want to share something which might help us in improving Mobexler? Want to contribute? Send us an email</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="contact-address">
+                        <h4 class="title mb-4">Contact Info</h4>
+                        <p class="text-muted f-15">Want to share something which might help us in improving Mobexler? Want to contribute? Send us an email at </p>                        
+                        <p class="text-muted f-15 mb-4">hello[at]enciphers[dot]com</p>
+                    </div>
+           
+                </div>
+
+                <div class="col-lg-7 offset-lg-1">
+                    <div class="custom-form mt-4 mt-lg-0">
+                        <div id="message"></div>
+                        <form method="post" action="https://formsubmit.co/hello@enciphers.com" name="contact-form" id="contact-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label for="name">Name</label>
+                                        <input name="name" id="name" type="text" class="form-control" placeholder="Enter your name..">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group app-label">
+                                        <label for="email">Email address</label>
+                                        <input name="email" id="email" type="email" class="form-control" placeholder="Enter your email..">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group app-label">
+                                        <label for="subject">Subject</label>
+                                        <input type="text" class="form-control" id="subject" placeholder="Enter Subject.." />
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group app-label">
+                                        <label for="comments">Message</label>
+                                        <textarea name="comments" id="comments" rows="3" class="form-control" placeholder="Enter message.."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button type="submit" id="submit" name="send" class="btn btn-primary">Send Message <i class="mdi mdi-telegram ml-2"></i></button>
+                                    <div id="simple-msg"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- contact Us End -->
+
+
+        <!-- Site footer -->
+        <footer class="site-footer ">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-12 col-md-4">
+                  <h6>About</h6>
+                  <a href="/mobexler-test/"><img src="images/logo-light.png" alt="" class="logo-dark" height="122" /></a>
+    
+                  <p class="text-justify">One of the most hassle free mobile penetration testing platform by team enciphers..</p>
+                </div>
+      
+                <div class="col-xs-6 col-md-4">
+                  <h6>Mobexler Links</h6>
+                  <ul class="footer-links">
+                    <li><a href="/mobexler-test/">Home</a></li>
+                    <li><a href="/mobexler-test/download.htm">Download</a></li>
+                    <li><a href="/mobexler-test/setup.htm">Setup</a></li>
+                    <li><a href="/mobexler-test/tools.htm">Tools</a></li>
+                    <li><a href="/mobexler-test/release.htm">Release</a></li>
+                    <li><a href="/mobexler-test/license.htm">License</a></li>
+                    <li><a href="/mobexler-test/credits.htm">Credits</a></li>
+                    <li><a href="/mobexler-test/resources.htm">Resources</a></li>
+                  </ul>
+
+                </div>
+      
+                <div class="col-xs-6 col-md-4">
+                  <h6>Enciphers Links</h6>
+                  <ul class="footer-links">
+                    <li><a href="https://enciphers.com/">Enciphers</a></li>
+                    <li><a href="https://enciphers.com/about-us/">About Us</a></li>
+                    <li><a href="https://enciphers.com/services/">Services</a></li>
+                    <li><a href="https://enciphers.com/trainings/">Trainings</a></li>
+                    <li><a href="https://enciphers.com/contact/">Contact</a></li>
+                    <li><a href="https://enciphers.com/blog/">Blog</a></li>
+    
+                  </ul>
+                  <a href="https://www.enciphers-trainings.com/" class="btn mt-2 btn-primary" target="_blank">Online Training<span class="ml-2 right-icon">&#8594;</span></a>
+
+                </div>
+              </div>
+              <hr>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                  <p class="copyright-text">2020 © Enciphers. Design by 
+               <a href="https://enciphers.com">Enciphers</a>.
+                  </p>
+                </div>
+      
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <ul class="social-icons">
+                    <li><a class="facebook" href="https://twitter.com/mobexler"><i class="mdi mdi-twitter"></i></a></li>
+                  
+                  </ul>
+                </div>
+              </div>
+            </div>
+      </footer>
+
+
+
+
+      
+    <!-- javascript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/scrollspy.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- COUNTER -->
+    <script src="js/counter.int.js"></script>
+    <!-- carousel -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="js/app.js"></script>
+
+</body>
 </html>
-
-<!--
-MkDocs version : 1.0.4
-Build Date UTC : 2020-01-28 13:06:06
--->

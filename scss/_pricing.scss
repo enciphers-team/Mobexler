@@ -1,0 +1,28 @@
+/* 
+// 12.Pricing
+*/
+
+.pricing-box {
+    box-shadow: 0 4px 12px rgba($black, 0.03);
+    background: rgba($white, 0.01);
+    transition: all 0.3s;
+    &.active,
+    &:hover {
+        box-shadow: 0 4px 16px rgba($black, 0.07);
+        .pricing-title {
+            color: $primary;
+        }
+    }
+    .ribbon {
+        position: absolute;
+        left: 20px;
+        top: 0px;
+        background: $primary;
+        padding: 8px 4px 16px 4px;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+    }
+    .highlight {
+        color: $dark;
+    }
+}

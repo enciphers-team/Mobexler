@@ -1,0 +1,26 @@
+/* 
+// 11.Counter
+*/
+
+.counter-bg {
+    background: $bg-counter;
+    .counter-bg-overlay {
+        background-image: url("../images/counter-bg.png");
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+    .counter-box {
+        background: rgba($white, 0.01);
+        border-radius: 26px;
+        border: 1px solid rgba($white, 0.085);
+    }
+    .counter-box-1 {
+        background: rgba($light, 0.025);
+        border-radius: 8% 30% 8% 30% / 8% 30% 8% 30%;
+        box-shadow: 0 0 16px rgba($dark, 0.04);
+    }
+}

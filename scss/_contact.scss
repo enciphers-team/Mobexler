@@ -1,0 +1,48 @@
+/* 
+// 14.Contact
+*/
+
+.form-control:focus {
+    box-shadow: none;
+    background-color: $light;
+    border-color: $primary;
+}
+
+.form-control {
+    padding: 8px 10px;
+    font-size: 14px;
+    background-color: rgba($dark, 0.01);
+    border: 1px solid rgba($muted, 0.3);
+    &::placeholder {
+        color: lighten($muted, 6%);
+        font-size: 14px;
+    }
+}
+
+.error {
+    margin: 8px 0px;
+    display: none;
+    color: $danger;
+}
+
+#ajaxsuccess {
+    font-size: 16px;
+    width: 100%;
+    display: none;
+    clear: both;
+    margin: 8px 0px;
+}
+
+.error_message {
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 2px solid $danger;
+    color: $danger;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.contact-loader {
+    display: none;
+}
