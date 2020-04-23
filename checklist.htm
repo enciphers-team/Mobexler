@@ -1402,6 +1402,7 @@ body .markdown-body
 <th>Category</th>
 <th>Description</th>
 <th>Tools</th>
+    <th>Jailbreak Required?</th>
 </tr>
 </thead>
 <tbody>
@@ -1409,66 +1410,79 @@ body .markdown-body
 <td><strong>Information Gathering</strong></td>
 <td>—</td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>1.Getting the APK/IPA file</td>
 <td>- Get the IPA from the client or download the IPA from the app store.<br> - The IPA from the app store is encrypted so it needs to be decrypted by dumping the binary from memory.<br> - Use Frida-ipa-dump if downloading the IPA from the App Store.</td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>2.Installing on the device</td>
 <td>- Sign the IPA using iOS-app-signer and install the IPA using iOS-deploy<br> - If using a free developer account then the provisioning profile needs to be trusted and the app needs to be verified from “General &gt; Profile and Device Management”.<br> - Currently Cydia-impactor does not work reliably and you’ll need a mac in order to install the app on the device.</td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td></td>
 <td>—</td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>3.Filesystem analysis</td>
 <td>- Each app is given a unique 36 char UUID which represents its App directory sandbox location<br> - Each app is also given a unique 36 char Data-UUID which contains all the application data.<br> - The app IPA package can be found at the following location.<code>/private/var/containers/Bundle/Application/UUID/App.app</code>This contains all the resources that are shipped with the IPA and hence should always be checked for Sensitive Credentials.<br>- The Info.plist file is located at the following location.<code>/private/var/containers/Bundle/Application/UUID/App.app/Info.plist</code>The file contains all the details about the application and so much also be checked for hard coded secrets/credentials.<br>- All the application data  is located at the following location.<code>/private/var/mobile/Containers/Data/Application/Data-UUID</code>This data location should be checked for local storage issues like storage of sensitive data in encrypted format and storing it in Plist files.<br>- Data Protection API is an additional protection mechanism which can be used to provide additional protection to important files like financial records and personal data.There are mainly four main Data Protection Classes.<br>1. No Protection (NSFileProtectionNone): No protection applied on file.<br>2. Protected Until First User Authentication (NSFileProtectionCompleteUntilFirstUserAuthentication):File will remain accessible while the phone is unlocked and will remain unlocked until reboot.<br>3. Protected Unless Open (NSFileProtectionCompleteUnlessOpen): The file will be unlocked when accessed and will be unlocked till reboot.<br>4. Complete Protection (NSFileProtectionComplete): The file is unlocked when opened and then shorts after the device is locked the file is made inaccessible.<br> 5. Use this frida codeshare script* to list Data protection classes of files in the app/data directory.<br>- When looking for insecure storage of sensitive data on the file system focus on the following key areas.<br>1. Sensitive data stored in plist files instead of the keychain as they can be easily read in the itunes backup.<br>2. Sensitive data stored in bad encoding schemes like base64.<br>3. Sensitive data stored in unencrypted SQLite, Core Data or RealmDB databases.<br>4. Sensitive data leaked in caches in the Data Directory of the app.<br></td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>—</td>
 <td>—</td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>4.Network analysis</td>
 <td>- Check if the application does SSL pinning by adding burp CA and trusting it as a root CA.<br>1. Setup burp proxy and goto <code>http://burp</code><br>2. Download the certificate and goto General &gt; Profile to install the certificate<br>3. Goto General &gt; About &gt; Certificate trust Settings to trust the certificate as a Root CA by toggling the Portswigger CA option<br>- To do API testing and traffic capture you’ll need to bypass the SSL pinning if implemented.<br>1. Download SSL Kill Switch -2 deb file from github.<br>- Transfer deb file to the device using SSH<br>- Install via: dpkg -i <package>.deb<br>- Restart SpringBoard:   killall -HUP SpringBoard<br>OR<br>2.  Use ios ssl-pinning disable from objection to bypass SSL ssl-pinning implementations during the run time of the application.<br></package></td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>5.Application issues</td>
 <td>—</td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>Check if UI screens with sensitive details are protected against screenshots.</td>
 <td>-  This data is located at.<code>/var/mobile/Containers/Data/Application/UUID/Library/Caches/Snapshots/</code>Sensitive details should not get captured in the screenshot<br>- Sensitive data in iOS is recommended to be stored in the keychain, however there is no platform API to clear keychain data on app uninstall. This is called keychain persistence.<br>1. The application should clear keychain items on logout like authentication token etc.<br>2. To test install and use the app to populate the keychain and then uninstall the app.<br>3. Reinstall the app to check if you can still access the app with the user login details.<br> - Text input is cached for UITextFields inputs and stored in the following location for language prediction which can cause leakage of sensitive data like credit card info.<code>/private/var/mobile/Library/Keyboard/dynamic-text.dat</code>Input data into the application at multiple places and see if it appears in the keyboard cache.<br>- URL schemes are a very good attack vector to your application and cause much damage.<br>1. URL schemes are defined in the CFBundleURLTypes key of the Info.plist file of the app.<br>2.Trace the usage of <code>*[* *openURL*]</code> selecter in the disassembly to understand the query parameters and the URL handling.<br>3. Ensure URL parameters are properly validated and malformed URLs are discarded<br>4. Ensure to only open URLs from trusted domains.<br>5. Check if domain validation is properly implemented.<br>6. Check for potential app crashes using the following Frida Script.<a href="https://codeshare.frida.re/@dki/ios-url-scheme-fuzzing/">iOS-url-Fuzzing</a><br></td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>WebViews should be properly protected against XSS and phishing attacks.</td>
 <td>1. UIWebVIew is deprecated since iOS 12 and is not recommended because JavaScript cannot be disable for it.<br>2. WXWebView features much richer JavaScript support and also comes with JS enabled by default which can be disabled<br>3. SFSafariViewController is another common choice, JS is enabled by default and cannot be disabled and shared cookies and site data with Apple Safari.<br>4. Verify if the app is allowing local files read via loaded WebView content by checking the value/s of loadFileURL:allowingReadAccessToURL:. in the disassembly of the app binary.<br></td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>Check if LocalAuthentication mechanisms like TouchID/FaceID are properly implemented.</td>
 <td>1. Find any sensitive data which is protected by Biometric lock using the LocaAuthentication framework.<br>2. Use the ios ui biometric_bypass from objection to check if we are able to bypass the biometric authentication.<br></td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>Always check for hard coded credentials in the application binary</td>
 <td>1. Many developers hard coded credentials in the app, search for secret, crypt, private, token etc.<br>2. Many apps use third party backend systems, analyse and .json and .xml files for credentials.<br>3. Many apps contain hidden features, search for develop, debug, fake, test in the app binary.</td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>Check if app logs contain any sensitive data which the developer might have left during the development process and forgot to remove the logging</td>
 <td>1. To check logs connect the device to mac.<br>2. Goto Xcode -&gt; Devices and Simulators -&gt; View device logs to see the logs&nbsp;<br>3. Grep the logs for sensitive data files<br></td>
 <td>—</td>
+    <td>—</td>
 </tr>
 </tbody>
 </table>
