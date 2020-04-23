@@ -1480,7 +1480,7 @@ body .markdown-body
 <th>Category</th>
 <th>Description</th>
 <th>Tools</th>
-<th>Root Needed?</th>
+<th>Root Required?</th>
 </tr>
 </thead>
 <tbody>
@@ -1488,61 +1488,73 @@ body .markdown-body
 <td>1.Getting ApK files<br> and <br>gathering info</td>
 <td>- Get the Application directly from the client<br>- Download the app from the play store and pull it using ADB(rooted android device/non-rooted devices).<br>Search for the app on play store and download it<br> <code>adb shell pm list packages -f | grep app_name</code><br><code>It will show the com.package_name</code><br> or <br><code>Look manually from the list of packages</code><br><code>adb shell pm path com.package_name.</code><br><code>adb pull /data/app/com.package_name..apk</code> <br> - Download it from <br> <a href="https://apkpure.com/">APKpure</a><br><a href="https://apps.evozi.com/apk-downloader/">apk-downloader</a><br><a href="https://www.apkmirror.com/">apkmirror</a><br><a href="https://apk-dl.com/">apk-dl</a><br><a href="https://androidappsapk.co/">androidappsapk</a><br>- A tool to download apk directly from play store <a href="https://github.com/ClaudiuGeorgiu/PlaystoreDownloader">PlaystoreDownloader</a><br></td>
 <td>adb tools <br></td>
+<td>—</td>
 </tr>
 <tr>
 <td>2.Installing on the device</td>
 <td>- Simple to install it from the play store.<br>- If have apk on host system use <br><code>“adb install application.apk”</code><p>Note: Make sure and keep an eye on the Mobile device for the permission pop up while installing it.</p></td>
 <td>adb tools/android emulator or device</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>3.APk file analysis by reverse engineering</td>
 <td>- APK package file contains the code of the application. (it is similar to zip file).it contains assets, res, lib, META-INF, AndroidManifest.xml, classes.dex(Dalvik binary bytecode)<br> -To see all these contents Convert .apk file to .zip file and extract(unzip) it. <br>- To read AndroidManifest.xml use Apktool<p><code>Apktool d application.apk</code></p><p><code>cd application</code></p><p><code>Open AndroidManifest.XML in any text editor and analyze it.</code></p><br>- Reverse engineering DEX bytecode : <br> 1. Rename <code>application.apk to application.zip</code> and extract it.You will get classes.dex file<br>2. Use <code>d2j-dex2jar -f classes.dex</code> file to get the java classes files.<br><p>JD-GUI (java decompiler ) to read the java source code from the java classes files.</p></td>
 <td>apktool<br>dex2jar<br>JDGUI<br>zip extractor<br></td>
+    <td>—</td>
 </tr>
 <tr>
 <td>Static Analysis <br> (manually and automated)</td>
 <td>- After getting the java source code, Analyze it and look for the sensitive information hardcoded into code like password, API keys<br> Use MobSF for Static Analysis to speed up the process<br>- Use MobSF for Static Analysis to speed up the process</td>
 <td>MobSF<br>apktool<br>dex2jar<br>JDGUI<br>zip extractor<br></td>
+    <td>—</td>
 </tr>
 <tr>
 <td>5.Network Analysis</td>
 <td>—</td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>Check for SSL pinning &amp; its bypass</td>
 <td>- Setup burp proxy(or another similar proxy) go to <code>Http://burp</code> <br> - Go to <code>Settings &gt; additional settings &gt; privacy &gt; certificates &gt;install certificates from sd card</code> (select the downloaded location) to install as a root CA certificate <br>- Capture the traffic of app<br> <p>or</p><br> - If SSL certificate pinning is enabled you need to bypass it to capture and analyze the app traffic.<br><br>- Use Frida and objection to bypass<br>1.Install Frida client on the host and run Frida server on a Mobile device(place the Frida server on a mobile device using:<br><code>&gt;adb push Frida-server /data/local/tmp/</code><br> <code>&gt; adb shell</code><br><code>&gt; cd /data/local/tmp/</code><br> <code>&gt; chmod +x frida-server (make it executable )</code><br> <code>&gt; ./frida-server &amp;</code><br><p>or</p><br> <code>&gt; adb shell "chmod 755 /data/local/tmp/frida-server"</code><br> <code>&gt; adb shell "/data/local/tmp/frida-server &amp;"</code><br>Test if Frida server is running properly using :<br><code>&gt; Frida-ps -Ua</code><br>- Using objection to bypass sslpinning <br> <code>&gt; objection -g com.package_name explore</code><br> <code>&gt; android sslpinning disable</code> <br></td>
 <td>burp proxy, <br> Mobile-device/emulator<br>Xposed<br>frida<br>Objection<br></td>
+    <td>—</td>
 </tr>
 <tr>
 <td>5.Dynamic Analysis</td>
 <td>—</td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>Analyzing App logs using <a href="https://github.com/JakeWharton/pidcat/blob/master/README.md">pidcat</a> tool</td>
 <td>- shows log entries for processes from a specific application package</td>
 <td><a href="https://github.com/JakeWharton/pidcat/blob/master/README.md">pidcat</a>/logcat</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>Check app UI is protected against a screenshot of sensitive information.</td>
 <td>- <code>adb shell /system/bin/screencap /sdcard/img.png</code><br><p>Here screen cap is the command-line utility to take screenshots of a device.<br>- Download it using <code>adb pull /sdcard/img.png</code><br>- Read it using display img.png (on linux)<br><code>Note (Sensitive info should not be captured in the screenshot)</code></p></td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>Check root detection mechanism is implemented</td>
 <td>- Install the app on the rooted device if it is not showing any alert regarding the rooted device or not blocking the app to run. Then it is not protected with root detection.</td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>Check shared preferences for persistent login</td>
 <td>- For the first time for the login, the app asks for the user name and password and later it does not ask for the username and password.it stores the login key in login_account.xml at the shared preferences.it can be stolen by other app and attacker can use it</td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>Checking for Keyboard cache</td>
 <td>- Location <code>/data/data/com.android.providers.userdictionary/databases/user_dict.db</code> <br> - Use SQLite to read it(user_dict.db)</td>
 <td>SQLite</td>
+    <td>—</td>
 </tr>
 </tbody>
 </table></article>
