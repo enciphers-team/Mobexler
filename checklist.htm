@@ -1570,6 +1570,72 @@ body .markdown-body
 <td>SQLite</td>
     <td>—</td>
 </tr>
+ <td>6.Insecure data storage</td>
+<td>Identify Sensitive data on shared storage,SD card storage encryption, Shared preferences MODE_WORLD_READABLE</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Check Shared preferences (shared_pref)</td>
+<td>Check from the AppUse dashboard or through adb shell, if there is any critical data being saved inside the shared_pref which might be accessible by other applications.(data should not store in clear text)</td>
+<td>adb</td>
+</tr>
+<tr>
+<td>Test for un-encrypted local databases</td>
+<td>Use adb Shell to copy the files from <code>“/data/data/packagename/database/ “</code>to local machine and open the database file in sqlitebrowser.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Check for internal/external storage for sensitive data</td>
+<td>use the adb shell to browse the files created by the application in internal storage and check if any sensitive info is being saved there un-encrypted.</td>
+<td>adb, sqlitebrowser</td>
+</tr>
+<tr>
+<td>7.static analysis for hardcoded sensitive information</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>check Source code</td>
+<td>Check for password, API keys , links of s3buckets for interesting information</td>
+<td>—</td>
+    <td>—</td>
+</tr>
+<tr>
+<td>Test for permissions in AndroidManifest file</td>
+<td>- Decompile apk with apktool,use:<br><code>Apktool d appname.apk</code><br>- There should not be any unnecessary permissions in the application.</td>
+<td>apktool</td>
+    <td>—</td>
+</tr>
+<tr>
+<td>Test for debuggable application</td>
+<td>Inspect android manifest file for the following:<br><code>android:debuggable=”true”</code></td>
+<td>—</td>
+    <td>—</td>
+</tr>
+<tr>
+<td>- Test for exported activity/broadcat/provider component:</td>
+<td>Connect the emulator with drozer console and run below commands:<br><code>run app.package.attacksurface packagename</code><br>- Check the output if the critical activities which require authentication are getting exported or not.<br></td>
+<td>drozer</td>
+    <td>—</td>
+</tr>
+<tr>
+<td>8 Test for authentication and Authorization issues:</td>
+<td>—</td>
+<td>—</td>
+    <td>—</td>
+</tr>
+<tr>
+<td>Test for the password policy</td>
+<td>—</td>
+<td>—</td>
+    <td>—</td>
+</tr>
+<tr>
+<td>Test for used authentication method</td>
+<td>- Basic authentication(use username and password)<br>- Session-based authentication<br><code>1.Test for the randomness of the Session ID</code><br><code>Check if the session ID is guessable</code><br><code>Check session ID is terminated after the logout. etc</code><br> - Token-based authentication<br> - JWT token-based authentication<br>- Shared secret based Hash authentication<br>1.Check secret is stored in DB is encrypted for its safety.<br>2.Check if the secret is changing after a new login<br>3.Check if the secret is shared over the non-HTTP connection. (these request can be intercepted )<br>4.Test for login throttling:<br><code>a. Check for the Multiple fails of OTP (it should not allow a user to try generating unlimited times.)</code><br>5.Check the OTP expiration<br>6.Test for the weak hashing algorithm etc.<br>- Test for the second-factor authentication method(if implemented)<br>1.Test for OTP bypass</td>
+<td>Burp , Emulator/root Mobile device</td>
+    <td>—</td>
+</tr>
 </tbody>
 </table></article>
     </div>
