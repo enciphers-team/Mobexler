@@ -1573,26 +1573,31 @@ body .markdown-body
  <td>6.Insecure data storage</td>
 <td>Identify Sensitive data on shared storage,SD card storage encryption, Shared preferences MODE_WORLD_READABLE</td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>Check Shared preferences (shared_pref)</td>
 <td>Check from the AppUse dashboard or through adb shell, if there is any critical data being saved inside the shared_pref which might be accessible by other applications.(data should not store in clear text)</td>
 <td>adb</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>Test for un-encrypted local databases</td>
 <td>Use adb Shell to copy the files from <code>“/data/data/packagename/database/ “</code>to local machine and open the database file in sqlitebrowser.</td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>Check for internal/external storage for sensitive data</td>
 <td>use the adb shell to browse the files created by the application in internal storage and check if any sensitive info is being saved there un-encrypted.</td>
 <td>adb, sqlitebrowser</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>7.static analysis for hardcoded sensitive information</td>
 <td>—</td>
 <td>—</td>
+    <td>—</td>
 </tr>
 <tr>
 <td>check Source code</td>
