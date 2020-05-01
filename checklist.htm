@@ -1405,84 +1405,83 @@ body .markdown-body
     <th>Jailbreak Required?</th>
 </tr>
 </thead>
-<tbody>
 <tr>
 <td><strong>Information Gathering</strong></td>
 <td>—</td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>1.Getting the APK/IPA file</td>
-<td>- Get the IPA from the client or download the IPA from the app store.<br> - The IPA from the app store is encrypted so it needs to be decrypted by dumping the binary from memory.<br> - Use Frida-ipa-dump if downloading the IPA from the App Store.</td>
+<td><p style="text-align:justify">1.Getting the APK/IPA file </p></td>
+<td><ul><li>Get the IPA from the client or download the IPA from the app store.</li><br><li>The IPA from the app store is encrypted so it needs to be decrypted by dumping the binary from memory.</li><br> <li> Use Frida-ipa-dump if downloading the IPA from the App Store.</li><ul></ul></ul></td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>2.Installing on the device</td>
-<td>- Sign the IPA using iOS-app-signer and install the IPA using iOS-deploy<br> - If using a free developer account then the provisioning profile needs to be trusted and the app needs to be verified from “General &gt; Profile and Device Management”.<br> - Currently Cydia-impactor does not work reliably and you’ll need a mac in order to install the app on the device.</td>
+<td><p style="text-align:justify">2.Installing on the device</p></td>
+<td><ul><li>Sign the IPA using iOS-app-signer and install the IPA using iOS-deploy</li><br><li>If using a free developer account then the provisioning profile needs to be trusted and the app needs to be verified from “General &gt; Profile and Device Management”.</li><br><li>Currently Cydia-impactor does not work reliably and you’ll need a mac in order to install the app on the device.</li></ul></td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
 <td></td>
 <td>—</td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>3.Filesystem analysis</td>
-<td>- Each app is given a unique 36 char UUID which represents its App directory sandbox location<br> - Each app is also given a unique 36 char Data-UUID which contains all the application data.<br> - The app IPA package can be found at the following location.<code>/private/var/containers/Bundle/Application/UUID/App.app</code>This contains all the resources that are shipped with the IPA and hence should always be checked for Sensitive Credentials.<br>- The Info.plist file is located at the following location.<code>/private/var/containers/Bundle/Application/UUID/App.app/Info.plist</code>The file contains all the details about the application and so much also be checked for hard coded secrets/credentials.<br>- All the application data  is located at the following location.<code>/private/var/mobile/Containers/Data/Application/Data-UUID</code>This data location should be checked for local storage issues like storage of sensitive data in encrypted format and storing it in Plist files.<br>- Data Protection API is an additional protection mechanism which can be used to provide additional protection to important files like financial records and personal data.There are mainly four main Data Protection Classes.<br>1. No Protection (NSFileProtectionNone): No protection applied on file.<br>2. Protected Until First User Authentication (NSFileProtectionCompleteUntilFirstUserAuthentication):File will remain accessible while the phone is unlocked and will remain unlocked until reboot.<br>3. Protected Unless Open (NSFileProtectionCompleteUnlessOpen): The file will be unlocked when accessed and will be unlocked till reboot.<br>4. Complete Protection (NSFileProtectionComplete): The file is unlocked when opened and then shorts after the device is locked the file is made inaccessible.<br> 5. Use this frida codeshare script* to list Data protection classes of files in the app/data directory.<br>- When looking for insecure storage of sensitive data on the file system focus on the following key areas.<br>1. Sensitive data stored in plist files instead of the keychain as they can be easily read in the itunes backup.<br>2. Sensitive data stored in bad encoding schemes like base64.<br>3. Sensitive data stored in unencrypted SQLite, Core Data or RealmDB databases.<br>4. Sensitive data leaked in caches in the Data Directory of the app.<br></td>
+<td><p style="text-align:justify">3.Filesystem analysis</p></td>
+<td><ul><li> Each app is given a unique 36 char UUID which represents its App directory sandbox location</li><br><li>Each app is also given a unique 36 char Data-UUID which contains all the application data.</li><br><li>The app IPA package can be found at the following location.<code>/private/var/containers/Bundle/Application/UUID/App.app</code>This contains all the resources that are shipped with the IPA and hence should always be checked for Sensitive Credentials.</li><br><li>The Info.plist file is located at the following location.<code>/private/var/containers/Bundle/Application/UUID/App.app/Info.plist</code>The file contains all the details about the application and so much also be checked for hard coded secrets/credentials.</li><br><li>All the application data  is located at the following location.<code>/private/var/mobile/Containers/Data/Application/Data-UUID</code>This data location should be checked for local storage issues like storage of sensitive data in encrypted format and storing it in Plist files.</li></ul><ol><li>Data Protection API is an additional protection mechanism which can be used to provide additional protection to important files like financial records and personal data.There are mainly four main Data Protection Classes.</li><br><li>No Protection (NSFileProtectionNone): No protection applied on file.</li><br><li>Protected Until First User Authentication (NSFileProtectionCompleteUntilFirstUserAuthentication):File will remain accessible while the phone is unlocked and will remain unlocked until reboot.</li><br><li>Protected Unless Open (NSFileProtectionCompleteUnlessOpen): The file will be unlocked when accessed and will be unlocked till reboot.</li><br><li>Complete Protection (NSFileProtectionComplete): The file is unlocked when opened and then shorts after the device is locked the file is made inaccessible.</li><br><li>Use this frida codeshare script* to list Data protection classes of files in the app/data directory.</li><br><ol><li> When looking for insecure storage of sensitive data on the file system focus on the following key areas.</li><br><li>Sensitive data stored in plist files instead of the keychain as they can be easily read in the itunes backup.</li><br><li>Sensitive data stored in bad encoding schemes like base64.</li><br><li>Sensitive data stored in unencrypted SQLite, Core Data or RealmDB databases.</li><br><li>Sensitive data leaked in caches in the Data Directory of the app.</li></ol><br></ol></td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
 <td>—</td>
 <td>—</td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>4.Network analysis</td>
-<td>- Check if the application does SSL pinning by adding burp CA and trusting it as a root CA.<br>1. Setup burp proxy and goto <code>http://burp</code><br>2. Download the certificate and goto General &gt; Profile to install the certificate<br>3. Goto General &gt; About &gt; Certificate trust Settings to trust the certificate as a Root CA by toggling the Portswigger CA option<br>- To do API testing and traffic capture you’ll need to bypass the SSL pinning if implemented.<br>1. Download SSL Kill Switch -2 deb file from github.<br>- Transfer deb file to the device using SSH<br>- Install via: dpkg -i <package>.deb<br>- Restart SpringBoard:   killall -HUP SpringBoard<br>OR<br>2.  Use ios ssl-pinning disable from objection to bypass SSL ssl-pinning implementations during the run time of the application.<br></package></td>
+<td><p style="text-align:justify">4.Network analysis</p></td>
+<td><ol> Check if the application does SSL pinning by adding burp CA and trusting it as a root CA.<li>Setup burp proxy and goto <code>http://burp</code></li><li>Download the certificate and goto General &gt; Profile to install the certificate</li><li>Goto General &gt; About &gt; Certificate trust Settings to trust the certificate as a Root CA by toggling the Portswigger CA option</li></ol><br><ol>To do API testing and traffic capture you’ll need to bypass the SSL pinning if implemented.<br><li>Download SSL Kill Switch -2 deb file from github.</li><br><ol><li>- Transfer deb file to the device using SSH</li><br><li>- Install via: <code>dpkg -i &lt;package&gt;.deb</code></li><br><li> Restart SpringBoard:   killall -HUP SpringBoard</li></ol><br>OR<br><li>Use ios ssl-pinning disable from objection to bypass SSL ssl-pinning implementations during the run time of the application.</li><ol><br></ol></ol></td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>5.Application issues</td>
+<td><p style="text-align:justify">5.Application issues</p></td>
 <td>—</td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>Check if UI screens with sensitive details are protected against screenshots.</td>
-<td>-  This data is located at.<code>/var/mobile/Containers/Data/Application/UUID/Library/Caches/Snapshots/</code>Sensitive details should not get captured in the screenshot<br>- Sensitive data in iOS is recommended to be stored in the keychain, however there is no platform API to clear keychain data on app uninstall. This is called keychain persistence.<br>1. The application should clear keychain items on logout like authentication token etc.<br>2. To test install and use the app to populate the keychain and then uninstall the app.<br>3. Reinstall the app to check if you can still access the app with the user login details.<br> - Text input is cached for UITextFields inputs and stored in the following location for language prediction which can cause leakage of sensitive data like credit card info.<code>/private/var/mobile/Library/Keyboard/dynamic-text.dat</code>Input data into the application at multiple places and see if it appears in the keyboard cache.<br>- URL schemes are a very good attack vector to your application and cause much damage.<br>1. URL schemes are defined in the CFBundleURLTypes key of the Info.plist file of the app.<br>2.Trace the usage of <code>*[* *openURL*]</code> selecter in the disassembly to understand the query parameters and the URL handling.<br>3. Ensure URL parameters are properly validated and malformed URLs are discarded<br>4. Ensure to only open URLs from trusted domains.<br>5. Check if domain validation is properly implemented.<br>6. Check for potential app crashes using the following Frida Script.<a href="https://codeshare.frida.re/@dki/ios-url-scheme-fuzzing/">iOS-url-Fuzzing</a><br></td>
+<td><p style="text-align:justify">Check if UI screens with sensitive details are protected against screenshots</p></td>
+<td><ul><li>This data is located at <code>/var/mobile/Containers/Data/Application/UUID/Library/Caches/Snapshots/</code>Sensitive details should not get captured in the screenshot</li></ul><ul><li>Sensitive data in iOS is recommended to be stored in the keychain, however there is no platform API to clear keychain data on app uninstall. This is called keychain persistence.</li><br><ol><li>The application should clear keychain items on logout like authentication token etc.</li><li><br></li><li> To test install and use the app to populate the keychain and then uninstall the app.</li><br><li>Reinstall the app to check if you can still access the app with the user login details.</li></ol><br><li>Text input is cached for UITextFields inputs and stored in the following location for language prediction which can cause leakage of sensitive data like credit card info.<code>/private/var/mobile/Library/Keyboard/dynamic-text.dat</code>Input data into the application at multiple places and see if it appears in the keyboard cache.</li><br><li> URL schemes are a very good attack vector to your application and cause much damage.</li><br><ol><li> URL schemes are defined in the CFBundleURLTypes key of the Info.plist file of the app.</li><li>Trace the usage of <code>*[* *openURL*]</code> selecter in the disassembly to understand the query parameters and the URL handling.</li><li>Ensure URL parameters are properly validated and malformed URLs are discarded</li><li><br></li><li>Ensure to only open URLs from trusted domains.</li><li>Check if domain validation is properly implemented.</li><br><li>Check for potential app crashes using the following Frida Script.<a href="https://codeshare.frida.re/@dki/ios-url-scheme-fuzzing/">iOS-url-Fuzzing</a></li></ol></ul></td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>WebViews should be properly protected against XSS and phishing attacks.</td>
-<td>1. UIWebVIew is deprecated since iOS 12 and is not recommended because JavaScript cannot be disable for it.<br>2. WXWebView features much richer JavaScript support and also comes with JS enabled by default which can be disabled<br>3. SFSafariViewController is another common choice, JS is enabled by default and cannot be disabled and shared cookies and site data with Apple Safari.<br>4. Verify if the app is allowing local files read via loaded WebView content by checking the value/s of loadFileURL:allowingReadAccessToURL:. in the disassembly of the app binary.<br></td>
+<td><p style="text-align:justify">WebViews should be properly protected against XSS and phishing attacks.</p></td>
+<td><ol><li>UIWebVIew is deprecated since iOS 12 and is not recommended because JavaScript cannot be disable for it.</li><br><li>WXWebView features much richer JavaScript support and also comes with JS enabled by default which can be disabled</li><br><li> SFSafariViewController is another common choice, JS is enabled by default and cannot be disabled and shared cookies and site data with Apple Safari.</li><br><li>Verify if the app is allowing local files read via loaded WebView content by checking the value/s of loadFileURL:allowingReadAccessToURL:. in the disassembly of the app binary.</li></ol></td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>Check if LocalAuthentication mechanisms like TouchID/FaceID are properly implemented.</td>
-<td>1. Find any sensitive data which is protected by Biometric lock using the LocaAuthentication framework.<br>2. Use the ios ui biometric_bypass from objection to check if we are able to bypass the biometric authentication.<br></td>
+<td><p style="text-align:justify">Check if LocalAuthentication mechanisms like TouchID/FaceID are properly implemented.</p></td>
+<td><ol><li>Find any sensitive data which is protected by Biometric lock using the LocaAuthentication framework.</li><br><li> Use the ios ui biometric_bypass from objection to check if we are able to bypass the biometric authentication.</li></ol></td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>Always check for hard coded credentials in the application binary</td>
-<td>1. Many developers hard coded credentials in the app, search for secret, crypt, private, token etc.<br>2. Many apps use third party backend systems, analyse and .json and .xml files for credentials.<br>3. Many apps contain hidden features, search for develop, debug, fake, test in the app binary.</td>
+<td><p style="text-align:justify">Always check for hard coded credentials in the application binary</p></td>
+<td><ol><li>Many developers hard coded credentials in the app, search for secret, crypt, private, token etc.</li><li>Many apps use third party backend systems, analyse and .json and .xml files for credentials.</li><li>Many apps contain hidden features, search for develop, debug, fake, test in the app binary.</li></ol></td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>Check if app logs contain any sensitive data which the developer might have left during the development process and forgot to remove the logging</td>
-<td>1. To check logs connect the device to mac.<br>2. Goto Xcode -&gt; Devices and Simulators -&gt; View device logs to see the logs&nbsp;<br>3. Grep the logs for sensitive data files<br></td>
+<td><p style="text-align:justify">Check if app logs contain any sensitive data which the developer might have left during the development process and forgot to remove the logging</p></td>
+<td><ol><li>To check logs connect the device to mac.</li><li>Goto Xcode -&gt; Devices and Simulators -&gt; View device logs to see the logs&nbsp;</li><li> Grep the logs for sensitive data files</li></ol><br></td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 </tbody>
 </table>
@@ -1499,147 +1498,106 @@ body .markdown-body
 </thead>
 <tbody>
 <tr>
-<td>1.Getting ApK files<br> and <br>gathering info</td>
-<td>- Get the Application directly from the client<br>- Download the app from the play store and pull it using ADB(rooted android device/non-rooted devices).<br>Search for the app on play store and download it<br> <code>adb shell pm list packages -f | grep app_name</code><br><code>It will show the com.package_name</code><br> or <br><code>Look manually from the list of packages</code><br><code>adb shell pm path com.package_name.</code><br><code>adb pull /data/app/com.package_name..apk</code> <br> - Download it from <br> <a href="https://apkpure.com/">APKpure</a><br><a href="https://apps.evozi.com/apk-downloader/">apk-downloader</a><br><a href="https://www.apkmirror.com/">apkmirror</a><br><a href="https://apk-dl.com/">apk-dl</a><br><a href="https://androidappsapk.co/">androidappsapk</a><br>- A tool to download apk directly from play store <a href="https://github.com/ClaudiuGeorgiu/PlaystoreDownloader">PlaystoreDownloader</a><br></td>
+<td><p style="text-align:justify">1.Getting ApK files and gathering info</p></td>
+<td><ul><li>Get the Application directly from the client</li><li>Download the app from the play store and pull it using ADB(rooted android device/non-rooted devices).</li><li>Search for the app on play store and download it</li><ol><li> <code>adb shell pm list packages -f | grep app_name</code></li><li><code>It will show the com.package_name</code></li><br> or <br><li><code>Look manually from the list of packages</code></li><br><li><code>adb shell pm path com.package_name.</code></li><br><li><code>adb pull /data/app/com.package_name..apk</code> </li></ol><br><li>Download it from </li><ol><li><a href="https://apkpure.com/">APKpure</a></li><br><li><a href="https://apps.evozi.com/apk-downloader/">apk-downloader</a></li><br><li><a href="https://www.apkmirror.com/">apkmirror</a></li><br><li><a href="https://apk-dl.com/">apk-dl</a></li><br><li><a href="https://androidappsapk.co/">androidappsapk</a></li><br><li>- A tool to download apk directly from play store <a href="https://github.com/ClaudiuGeorgiu/PlaystoreDownloader">PlaystoreDownloader</a></li></ol></ul><br></td>
 <td>adb tools <br></td>
-<td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>2.Installing on the device</td>
-<td>- Simple to install it from the play store.<br>- If have apk on host system use <br><code>“adb install application.apk”</code><p>Note: Make sure and keep an eye on the Mobile device for the permission pop up while installing it.</p></td>
+<td><p style="text-align:justify">2.Installing on the device</p></td>
+<td><ul><li>Simple to install it from the play store.</li><br><li>If have apk on host system use <br><code>“adb install application.apk”</code></li><li><p>Note: Make sure and keep an eye on the Mobile device for the permission pop up while installing it.</p></li></ul></td>
 <td>adb tools/android emulator or device</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>3.APk file analysis by reverse engineering</td>
-<td>- APK package file contains the code of the application. (it is similar to zip file).it contains assets, res, lib, META-INF, AndroidManifest.xml, classes.dex(Dalvik binary bytecode)<br> -To see all these contents Convert .apk file to .zip file and extract(unzip) it. <br>- To read AndroidManifest.xml use Apktool<p><code>Apktool d application.apk</code></p><p><code>cd application</code></p><p><code>Open AndroidManifest.XML in any text editor and analyze it.</code></p><br>- Reverse engineering DEX bytecode : <br> 1. Rename <code>application.apk to application.zip</code> and extract it.You will get classes.dex file<br>2. Use <code>d2j-dex2jar -f classes.dex</code> file to get the java classes files.<br><p>JD-GUI (java decompiler ) to read the java source code from the java classes files.</p></td>
+<td><p style="text-align:justify">3.APk file analysis by reverse engineering</p></td>
+<td><ul><li>APK package file contains the code of the application. (it is similar to zip file).it contains assets, res, lib, META-INF, AndroidManifest.xml, classes.dex(Dalvik binary bytecode)</li><br><li>To see all these contents Convert .apk file to .zip file and extract(unzip) it. </li><br><li>To read AndroidManifest.xml use Apktool<p><code>Apktool d application.apk</code></p><p><code>cd application</code></p><p><code>Open AndroidManifest.XML in any text editor and analyze it.</code></p></li><br><li> Reverse engineering DEX bytecode : </li><br> <ol><li>Rename <code>application.apk to application.zip</code> and extract it.You will get classes.dex file</li><br><li>Use <code>d2j-dex2jar -f classes.dex</code> file to get the java classes files.</li><br><p>JD-GUI (java decompiler ) to read the java source code from the java classes files.</p></ol></ul></td>
 <td>apktool<br>dex2jar<br>JDGUI<br>zip extractor<br></td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>Static Analysis <br> (manually and automated)</td>
-<td>- After getting the java source code, Analyze it and look for the sensitive information hardcoded into code like password, API keys<br> Use MobSF for Static Analysis to speed up the process<br>- Use MobSF for Static Analysis to speed up the process</td>
+<td><p style="text-align:justify">Static Analysis (manually and automated)</p></td>
+<td><ul><li>After getting the java source code, Analyze it and look for the sensitive information hardcoded into code like password, API keys</li><br> <li>Use MobSF for Static Analysis to speed up the process</li></ul></td>
 <td>MobSF<br>apktool<br>dex2jar<br>JDGUI<br>zip extractor<br></td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>5.Network Analysis</td>
+<td><p style="text-align:justify">5.Network Analysis</p></td>
 <td>—</td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>Check for SSL pinning &amp; its bypass</td>
-<td>- Setup burp proxy(or another similar proxy) go to <code>Http://burp</code> <br> - Go to <code>Settings &gt; additional settings &gt; privacy &gt; certificates &gt;install certificates from sd card</code> (select the downloaded location) to install as a root CA certificate <br>- Capture the traffic of app<br> <p>or</p><br> - If SSL certificate pinning is enabled you need to bypass it to capture and analyze the app traffic.<br><br>- Use Frida and objection to bypass<br>1.Install Frida client on the host and run Frida server on a Mobile device(place the Frida server on a mobile device using:<br><code>&gt;adb push Frida-server /data/local/tmp/</code><br> <code>&gt; adb shell</code><br><code>&gt; cd /data/local/tmp/</code><br> <code>&gt; chmod +x frida-server (make it executable )</code><br> <code>&gt; ./frida-server &amp;</code><br><p>or</p><br> <code>&gt; adb shell "chmod 755 /data/local/tmp/frida-server"</code><br> <code>&gt; adb shell "/data/local/tmp/frida-server &amp;"</code><br>Test if Frida server is running properly using :<br><code>&gt; Frida-ps -Ua</code><br>- Using objection to bypass sslpinning <br> <code>&gt; objection -g com.package_name explore</code><br> <code>&gt; android sslpinning disable</code> <br></td>
+<td><p style="text-align:justify">Check for SSL pinning &amp; its bypass</p></td>
+<td><ul><li>Setup burp proxy(or another similar proxy) go to <code>Http://burp</code></li> <li> Go to <code>Settings &gt; additional settings &gt; privacy &gt; certificates &gt;install certificates from sd card</code> (select the downloaded location) to install as a root CA certificate </li><li> Capture the traffic of app</li><br> <p>or</p><br><li>If SSL certificate pinning is enabled you need to bypass it to capture and analyze the app traffic.</li><ol>Use Frida and objection to bypass<br><li>Install Frida client on the host and run Frida server on a Mobile device(place the Frida server on a mobile device using:</li><br><code>&gt;adb push Frida-server /data/local/tmp/</code><br> <code>&gt; adb shell</code><br><code>&gt; cd /data/local/tmp/</code><br> <code>&gt; chmod +x frida-server (make it executable )</code><br> <code>&gt; ./frida-server &amp;</code><br><p>or</p><br> <code>&gt; adb shell "chmod 755 /data/local/tmp/frida-server"</code><br> <code>&gt; adb shell "/data/local/tmp/frida-server &amp;"</code><br><li>Test if Frida server is running properly using :</li><br><code>&gt; Frida-ps -Ua</code></ol><br><li> Using objection to bypass sslpinning </li><br> <code>&gt; objection -g com.package_name explore</code><br> <code>&gt; android sslpinning disable</code> <br></ul></td>
 <td>burp proxy, <br> Mobile-device/emulator<br>Xposed<br>frida<br>Objection<br></td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>5.Dynamic Analysis</td>
+<td><p style="text-align:justify"> 5.Dynamic Analysis </p></td>
 <td>—</td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>Analyzing App logs using <a href="https://github.com/JakeWharton/pidcat/blob/master/README.md">pidcat</a> tool</td>
-<td>- shows log entries for processes from a specific application package</td>
+<td><p style="text-align:justify">Analyzing App logs using pidcat tool</p></td>
+<td><ul><li>shows log entries for processes from a specific application package</li></ul></td>
 <td><a href="https://github.com/JakeWharton/pidcat/blob/master/README.md">pidcat</a>/logcat</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>Check app UI is protected against a screenshot of sensitive information.</td>
-<td>- <code>adb shell /system/bin/screencap /sdcard/img.png</code><br><p>Here screen cap is the command-line utility to take screenshots of a device.<br>- Download it using <code>adb pull /sdcard/img.png</code><br>- Read it using display img.png (on linux)<br><code>Note (Sensitive info should not be captured in the screenshot)</code></p></td>
+<td><p style="text-align:justify">Check app UI is protected against a screenshot of sensitive information</p></td>
+<td><ul><li> <code>adb shell /system/bin/screencap /sdcard/img.png</code><br><p>Here screen cap is the command-line utility to take screenshots of a device.</p></li><br><li> Download it using <code>adb pull /sdcard/img.png</code></li><br><li>Read it using display img.png (on linux)</li><br><code>Note (Sensitive info should not be captured in the screenshot)</code><p></p></ul></td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>Check root detection mechanism is implemented</td>
-<td>- Install the app on the rooted device if it is not showing any alert regarding the rooted device or not blocking the app to run. Then it is not protected with root detection.</td>
+<td><p style="text-align:justify">Check root detection mechanism is implemented</p></td>
+<td><ul><li>Install the app on the rooted device if it is not showing any alert regarding the rooted device or not blocking the app to run. Then it is not protected with root detection.</li></ul></td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>Check shared preferences for persistent login</td>
-<td>- For the first time for the login, the app asks for the user name and password and later it does not ask for the username and password.it stores the login key in login_account.xml at the shared preferences.it can be stolen by other app and attacker can use it</td>
+<td><p style="text-align:justify">Check shared preferences for persistent login</p></td>
+<td><ul><li> For the first time for the login, the app asks for the user name and password and later it does not ask for the username and password.it stores the login key in login_account.xml at the shared preferences.it can be stolen by other app and attacker can use it</li></ul></td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>Checking for Keyboard cache</td>
-<td>- Location <code>/data/data/com.android.providers.userdictionary/databases/user_dict.db</code> <br> - Use SQLite to read it(user_dict.db)</td>
+<td><p style="text-align:justify">Checking for Keyboard cache</p></td>
+<td><ul><li> Location <code>/data/data/com.android.providers.userdictionary/databases/user_dict.db</code> </li><br> <li>- Use SQLite to read it(user_dict.db)</li></ul></td>
 <td>SQLite</td>
-    <td>—</td>
-</tr>
- <td>6.Insecure data storage</td>
-<td>Identify Sensitive data on shared storage,SD card storage encryption, Shared preferences MODE_WORLD_READABLE</td>
-<td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>Check Shared preferences (shared_pref)</td>
-<td>Check from the AppUse dashboard or through adb shell, if there is any critical data being saved inside the shared_pref which might be accessible by other applications.(data should not store in clear text)</td>
-<td>adb</td>
-    <td>—</td>
+<td><p style="text-align:justify">Test for vulnerable Broadcast receivers</p></td>
+<td><ul><li>Check for the intent which send by the broadcast (it can be a user input)<br>and Check AndroidManifest file for broadcast receiver which has android exported=”true”(insecure way)</li><li> - And develop the exploit according to the app functionality</li></ul></td>
+<td>–-</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>Test for un-encrypted local databases</td>
-<td>Use adb Shell to copy the files from <code>“/data/data/packagename/database/ “</code>to local machine and open the database file in sqlitebrowser.</td>
-<td>—</td>
-    <td>—</td>
-</tr>
-<tr>
-<td>Check for internal/external storage for sensitive data</td>
-<td>use the adb shell to browse the files created by the application in internal storage and check if any sensitive info is being saved there un-encrypted.</td>
-<td>adb, sqlitebrowser</td>
-    <td>—</td>
-</tr>
-<tr>
-<td>7.static analysis for hardcoded sensitive information</td>
+<td><p style="text-align:justify">Test for intent Sniffing</p></td>
 <td>—</td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>check Source code</td>
-<td>Check for password, API keys , links of s3buckets for interesting information</td>
+<td><p style="text-align:justify">Test for local encryption issues</p></td>
+<td><ul><li>Check for weak crypto alogs if used</li><br><ol><li>Vulnerable algo/outdated cipher: such as DES and 3DES,RC2,RC4, MD5 and SHA1,Dual_EC_DRBG and SHA1PRNG,BLOWFISH</li><br><li> Inspect the app code to check used crypto algo instances</li></ol><br><li>Common configuration issues</li><br><ol><li>Check if symmetric encryption is used with hardcoded crypto keys.</li><br><li>If app is using two way ssl ,check for the client SSL Certificate password locally (should not store it locally )</li></ol></ul></td>
 <td>—</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 <tr>
-<td>Test for permissions in AndroidManifest file</td>
-<td>- Decompile apk with apktool,use:<br><code>Apktool d appname.apk</code><br>- There should not be any unnecessary permissions in the application.</td>
-<td>apktool</td>
-    <td>—</td>
+<td><p style="text-align:justify">Finding Storage issues from android manifest file</p></td>
+<td>Check for external storage by looking <br><ol><li>uses-permission : <code>android:name="android.permission.WRITE_EXTERNAL_STORAGE"</code></li><br><li> Check code for used file permission keywords/API to store data like : MODE_WORLD_READABLE or MODE_WORLD_WRITABLE (these two allow any app to read the file and write to this file)</li></ol><br>Look for classes and functions:<br><ul><li><code>SharedPreferences class (it stores key-value pairs)</code></li><br><li><code>FileOutPutStream class (it uses internal or external storage),getExternal* function (use external storage)</code></li><li><code>getReadableDatabase function (returns a SQLiteDatabase for reading)</code></li><li><br><code>getCacheDir and getExternalCacheDirs(use cached files)</code></li><br> <li><code>Check for the bad practises used for encrypting the files</code></li><br><li><code>getWritableDatabase function (returns a SQLiteDatabase for writing)</code></li></ul></td>
+<td></td>
+  <td>—</td>
 </tr>
 <tr>
-<td>Test for debuggable application</td>
-<td>Inspect android manifest file for the following:<br><code>android:debuggable=”true”</code></td>
+<td>Check location for the secrets</td>
+<td>1.res/values/strings.xml<br>2:build configs like - local.properties, gradle.properties<br>3/data/misc/keystore/</td>
 <td>—</td>
-    <td>—</td>
-</tr>
-<tr>
-<td>- Test for exported activity/broadcat/provider component:</td>
-<td>Connect the emulator with drozer console and run below commands:<br><code>run app.package.attacksurface packagename</code><br>- Check the output if the critical activities which require authentication are getting exported or not.<br></td>
-<td>drozer</td>
-    <td>—</td>
-</tr>
-<tr>
-<td>8 Test for authentication and Authorization issues:</td>
-<td>—</td>
-<td>—</td>
-    <td>—</td>
-</tr>
-<tr>
-<td>Test for the password policy</td>
-<td>—</td>
-<td>—</td>
-    <td>—</td>
-</tr>
-<tr>
-<td>Test for used authentication method</td>
-<td>- Basic authentication(use username and password)<br>- Session-based authentication<br><code>1.Test for the randomness of the Session ID</code><br><code>Check if the session ID is guessable</code><br><code>Check session ID is terminated after the logout. etc</code><br> - Token-based authentication<br> - JWT token-based authentication<br>- Shared secret based Hash authentication<br>1.Check secret is stored in DB is encrypted for its safety.<br>2.Check if the secret is changing after a new login<br>3.Check if the secret is shared over the non-HTTP connection. (these request can be intercepted )<br>4.Test for login throttling:<br><code>a. Check for the Multiple fails of OTP (it should not allow a user to try generating unlimited times.)</code><br>5.Check the OTP expiration<br>6.Test for the weak hashing algorithm etc.<br>- Test for the second-factor authentication method(if implemented)<br>1.Test for OTP bypass</td>
-<td>Burp , Emulator/root Mobile device</td>
-    <td>—</td>
+  <td>—</td>
 </tr>
 </tbody>
 </table></article>
