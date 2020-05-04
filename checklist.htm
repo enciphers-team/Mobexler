@@ -1406,52 +1406,42 @@ body .markdown-body
 </tr>
 </thead>
 <tr>
-<td><strong>Information Gathering</strong></td>
-<td>—</td>
-<td>—</td>
-  <td>—</td>
+  <td colspan="4;"" style="text-align: center;"> <strong>Information Gathering</strong> </td>
 </tr>
 <tr>
-<td><p style="text-align:justify">1.Getting the APK/IPA file </p></td>
+<td><p style="text-align:justify"> Getting the IPA file </p></td>
 <td><ul><li>Get the IPA from the client or download the IPA from the app store.</li><br><li>The IPA from the app store is encrypted so it needs to be decrypted by dumping the binary from memory.</li><br> <li> Use Frida-ipa-dump if downloading the IPA from the App Store.</li><ul></ul></ul></td>
 <td>—</td>
   <td>—</td>
 </tr>
 <tr>
-<td><p style="text-align:justify">2.Installing on the device</p></td>
+<td><p style="text-align:justify">Installing on the device</p></td>
 <td><ul><li>Sign the IPA using iOS-app-signer and install the IPA using iOS-deploy</li><br><li>If using a free developer account then the provisioning profile needs to be trusted and the app needs to be verified from “General &gt; Profile and Device Management”.</li><br><li>Currently Cydia-impactor does not work reliably and you’ll need a mac in order to install the app on the device.</li></ul></td>
 <td>—</td>
   <td>—</td>
 </tr>
 <tr>
-<td></td>
-<td>—</td>
-<td>—</td>
-  <td>—</td>
+<td colspan=4; style="text-align: center;" ><strong>Filesystem analysis</strong></td>
+
 </tr>
 <tr>
-<td><p style="text-align:justify">3.Filesystem analysis</p></td>
+<td><p style="text-align:justify">Filesystem analysis</p></td>
 <td><ul><li> Each app is given a unique 36 char UUID which represents its App directory sandbox location</li><br><li>Each app is also given a unique 36 char Data-UUID which contains all the application data.</li><br><li>The app IPA package can be found at the following location.<code>/private/var/containers/Bundle/Application/UUID/App.app</code>This contains all the resources that are shipped with the IPA and hence should always be checked for Sensitive Credentials.</li><br><li>The Info.plist file is located at the following location.<code>/private/var/containers/Bundle/Application/UUID/App.app/Info.plist</code>The file contains all the details about the application and so much also be checked for hard coded secrets/credentials.</li><br><li>All the application data  is located at the following location.<code>/private/var/mobile/Containers/Data/Application/Data-UUID</code>This data location should be checked for local storage issues like storage of sensitive data in encrypted format and storing it in Plist files.</li></ul><ol><li>Data Protection API is an additional protection mechanism which can be used to provide additional protection to important files like financial records and personal data.There are mainly four main Data Protection Classes.</li><br><li>No Protection (NSFileProtectionNone): No protection applied on file.</li><br><li>Protected Until First User Authentication (NSFileProtectionCompleteUntilFirstUserAuthentication):File will remain accessible while the phone is unlocked and will remain unlocked until reboot.</li><br><li>Protected Unless Open (NSFileProtectionCompleteUnlessOpen): The file will be unlocked when accessed and will be unlocked till reboot.</li><br><li>Complete Protection (NSFileProtectionComplete): The file is unlocked when opened and then shorts after the device is locked the file is made inaccessible.</li><br><li>Use this frida codeshare script* to list Data protection classes of files in the app/data directory.</li><br><ol><li> When looking for insecure storage of sensitive data on the file system focus on the following key areas.</li><br><li>Sensitive data stored in plist files instead of the keychain as they can be easily read in the itunes backup.</li><br><li>Sensitive data stored in bad encoding schemes like base64.</li><br><li>Sensitive data stored in unencrypted SQLite, Core Data or RealmDB databases.</li><br><li>Sensitive data leaked in caches in the Data Directory of the app.</li></ol><br></ol></td>
 <td>—</td>
   <td>—</td>
 </tr>
 <tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-  <td>—</td>
+<td colspan=4; style="text-align: center;" ><strong>Network analysis</strong></td>
+
 </tr>
 <tr>
-<td><p style="text-align:justify">4.Network analysis</p></td>
+<td><p style="text-align:justify">Network analysis</p></td>
 <td><ol> Check if the application does SSL pinning by adding burp CA and trusting it as a root CA.<li>Setup burp proxy and goto <code>http://burp</code></li><li>Download the certificate and goto General &gt; Profile to install the certificate</li><li>Goto General &gt; About &gt; Certificate trust Settings to trust the certificate as a Root CA by toggling the Portswigger CA option</li></ol><br><ol>To do API testing and traffic capture you’ll need to bypass the SSL pinning if implemented.<br><li>Download SSL Kill Switch -2 deb file from github.</li><br><ol><li>- Transfer deb file to the device using SSH</li><br><li>- Install via: <code>dpkg -i &lt;package&gt;.deb</code></li><br><li> Restart SpringBoard:   killall -HUP SpringBoard</li></ol><br>OR<br><li>Use ios ssl-pinning disable from objection to bypass SSL ssl-pinning implementations during the run time of the application.</li><ol><br></ol></ol></td>
 <td>—</td>
   <td>—</td>
 </tr>
 <tr>
-<td><p style="text-align:justify">5.Application issues</p></td>
-<td>—</td>
-<td>—</td>
-  <td>—</td>
+<td colspan=4; style="text-align: center;" ><strong>Application issues</strong></td>>
 </tr>
 <tr>
 <td><p style="text-align:justify">Check if UI screens with sensitive details are protected against screenshots</p></td>
@@ -1498,51 +1488,51 @@ body .markdown-body
 </thead>
 <tbody>
 <tr>
-<td><p style="text-align:justify">1.Getting ApK files and gathering info</p></td>
-<td><ul><li>Get the Application directly from the client</li><li>Download the app from the play store and pull it using ADB(rooted android device/non-rooted devices).</li><li>Search for the app on play store and download it</li><ol><li> <code>adb shell pm list packages -f | grep app_name</code></li><li><code>It will show the com.package_name</code></li><br> or <br><li><code>Look manually from the list of packages</code></li><br><li><code>adb shell pm path com.package_name.</code></li><br><li><code>adb pull /data/app/com.package_name..apk</code> </li></ol><br><li>Download it from </li><ol><li><a href="https://apkpure.com/">APKpure</a></li><br><li><a href="https://apps.evozi.com/apk-downloader/">apk-downloader</a></li><br><li><a href="https://www.apkmirror.com/">apkmirror</a></li><br><li><a href="https://apk-dl.com/">apk-dl</a></li><br><li><a href="https://androidappsapk.co/">androidappsapk</a></li><br><li>- A tool to download apk directly from play store <a href="https://github.com/ClaudiuGeorgiu/PlaystoreDownloader">PlaystoreDownloader</a></li></ol></ul><br></td>
-<td>adb tools <br></td>
+<td colspan=4; style="text-align: center;" ><strong>Apk files and Information Gathering</strong></td>>
+</tr>
+<tr>
+<td><p style="text-align:justify">Getting ApK files and gathering info</p></td>
+<td><ul><li>Get the Application directly from the client</li><li>Download the app from the play store and pull it using ADB(rooted android device/non-rooted devices).</li><li>Search for the app on play store and download it</li><ol><li> <code>adb shell pm list packages -f | grep app_name</code></li><li><code>It will show the com.package_name</code></li><br> or <br><li><code>Look manually from the list of packages</code></li><br><li><code>adb shell pm path com.package_name.</code></li><br><li><code>adb pull /data/app/com.package_name..apk</code> </li></ol><br><li>Download it from </li><ol><li><a href="https://apkpure.com/" target="_blank">APKpure</a></li><br><li><a href="https://apps.evozi.com/apk-downloader/" target="_blank">apk-downloader</a></li><br><li><a href="https://www.apkmirror.com/" target="_blank">apkmirror</a></li><br><li><a href="https://apk-dl.com/" target="_blank">apk-dl</a></li><br><li><a href="https://androidappsapk.co/" target="_blank">androidappsapk</a></li><br><li>- A tool to download apk directly from play store <a href="https://github.com/ClaudiuGeorgiu/PlaystoreDownloader" target="_blank">PlaystoreDownloader</a></li></ol></ul><br></td>
+<td><ul><li> <a href="https://developer.android.com/studio/command-line/adb">adb tools</a></li></ul>  <br></td>
   <td>—</td>
 </tr>
 <tr>
-<td><p style="text-align:justify">2.Installing on the device</p></td>
+<td><p style="text-align:justify">Installing on the device</p></td>
 <td><ul><li>Simple to install it from the play store.</li><br><li>If have apk on host system use <br><code>“adb install application.apk”</code></li><li><p>Note: Make sure and keep an eye on the Mobile device for the permission pop up while installing it.</p></li></ul></td>
 <td>adb tools/android emulator or device</td>
   <td>—</td>
 </tr>
 <tr>
+<td colspan=4; style="text-align: center;" ><strong>Reverse engineering and Analysis </strong></td>>
+</tr>
+<tr>
 <td><p style="text-align:justify">3.APk file analysis by reverse engineering</p></td>
 <td><ul><li>APK package file contains the code of the application. (it is similar to zip file).it contains assets, res, lib, META-INF, AndroidManifest.xml, classes.dex(Dalvik binary bytecode)</li><br><li>To see all these contents Convert .apk file to .zip file and extract(unzip) it. </li><br><li>To read AndroidManifest.xml use Apktool<p><code>Apktool d application.apk</code></p><p><code>cd application</code></p><p><code>Open AndroidManifest.XML in any text editor and analyze it.</code></p></li><br><li> Reverse engineering DEX bytecode : </li><br> <ol><li>Rename <code>application.apk to application.zip</code> and extract it.You will get classes.dex file</li><br><li>Use <code>d2j-dex2jar -f classes.dex</code> file to get the java classes files.</li><br><p>JD-GUI (java decompiler ) to read the java source code from the java classes files.</p></ol></ul></td>
-<td>apktool<br>dex2jar<br>JDGUI<br>zip extractor<br></td>
+<td><ul><li> <a href="https://developer.android.com/studio/command-line/adb" target="_blank">adb tools</a></li><li><a href="" target="_blank">dex2jar</a></li></li><li><a href="" target="_blank">JDGUI</a></li></li></ul></td>
   <td>—</td>
 </tr>
 <tr>
 <td><p style="text-align:justify">Static Analysis (manually and automated)</p></td>
 <td><ul><li>After getting the java source code, Analyze it and look for the sensitive information hardcoded into code like password, API keys</li><br> <li>Use MobSF for Static Analysis to speed up the process</li></ul></td>
-<td>MobSF<br>apktool<br>dex2jar<br>JDGUI<br>zip extractor<br></td>
+<td><ul> <li><a href="https://github.com/MobSF/Mobile-Security-Framework-MobSF" target="_blank">MobSF</a></li><li><a href="https://developer.android.com/studio/command-line/adb" target="_blank">adb tools</a></li><li><a href="https://ibotpeaches.github.io/Apktool/" target="_blank">apktool</a></li><li><a href=" https://github.com/pxb1988/dex2jar" target="_blank">dex2jar</a> </li><li> <a href="http://java-decompiler.github.io/" target="_blank">JDGUI</a></li></ul></td>
   <td>—</td>
 </tr>
 <tr>
-<td><p style="text-align:justify">5.Network Analysis</p></td>
-<td>—</td>
-<td>—</td>
-  <td>—</td>
+<td colspan=4; style="text-align: center;" ><strong>Network Analysis</strong></td>>
+</tr>
 </tr>
 <tr>
 <td><p style="text-align:justify">Check for SSL pinning &amp; its bypass</p></td>
-<td><ul><li>Setup burp proxy(or another similar proxy) go to <code>Http://burp</code></li> <li> Go to <code>Settings &gt; additional settings &gt; privacy &gt; certificates &gt;install certificates from sd card</code> (select the downloaded location) to install as a root CA certificate </li><li> Capture the traffic of app</li><br> <p>or</p><br><li>If SSL certificate pinning is enabled you need to bypass it to capture and analyze the app traffic.</li><ol>Use Frida and objection to bypass<br><li>Install Frida client on the host and run Frida server on a Mobile device(place the Frida server on a mobile device using:</li><br><code>&gt;adb push Frida-server /data/local/tmp/</code><br> <code>&gt; adb shell</code><br><code>&gt; cd /data/local/tmp/</code><br> <code>&gt; chmod +x frida-server (make it executable )</code><br> <code>&gt; ./frida-server &amp;</code><br><p>or</p><br> <code>&gt; adb shell "chmod 755 /data/local/tmp/frida-server"</code><br> <code>&gt; adb shell "/data/local/tmp/frida-server &amp;"</code><br><li>Test if Frida server is running properly using :</li><br><code>&gt; Frida-ps -Ua</code></ol><br><li> Using objection to bypass sslpinning </li><br> <code>&gt; objection -g com.package_name explore</code><br> <code>&gt; android sslpinning disable</code> <br></ul></td>
-<td>burp proxy, <br> Mobile-device/emulator<br>Xposed<br>frida<br>Objection<br></td>
+<td><ul><li>Setup burp proxy(or another similar proxy) go to <code>Http://burp</code></li> <li> Go to <code>Settings &gt; additional settings &gt; privacy &gt; certificates &gt;install certificates from sd card</code> (select the downloaded location) to install as a root CA certificate </li><li> Capture the traffic of app</li><br> <p>or</p><br><li>If SSL certificate pinning is enabled you need to bypass it to capture and analyze the app traffic.</li><ol>Use Frida and objection to bypass<br><li>Install Frida client on the host and run Frida server on a Mobile device(place the Frida server on a mobile device using:</li><br><code>&gt;adb push Frida-server /data/local/tmp/</code><br> <code>&gt; adb shell</code><br><code>&gt; cd /data/local/tmp/</code><br> <code>&gt; chmod +x frida-server (make it executable )</code><br> <code>&gt; ./frida-server &amp;</code><br><p>or</p><br> <code>&gt; adb shell "chmod 755 /data/local/tmp/frida-server"</code><br> <code>&gt; adb shell "/data/local/tmp/frida-server &amp;"</code><br><li>Test if Frida server is running properly using :</li><br><code>&gt; Frida-ps -Ua</code></ol><br><li> Using objection to bypass sslpinning </li><br> <code>&gt; objection -g com.package_name explore</code><br> <code>&gt; android sslpinning disable</code> <br></ul></td><td><ul><li><a href="https://portswigger.net/burp/communitydownload" target="_blank" > Burp Proxy</a></li><li><a href="" target="_blank" >Device/Emulator</a></li><li><a href="" target="_blank" >Xposed</a></li><li><a href="" target="_blank" >frida</a></li><li><a href="" target="_blank" >Objection</a></li></ul></td>
   <td>—</td>
 </tr>
 <tr>
-<td><p style="text-align:justify"> 5.Dynamic Analysis </p></td>
-<td>—</td>
-<td>—</td>
-  <td>—</td>
+<td colspan=4; style="text-align: center;" ><strong>Dynamic Analysis</strong></td>>
 </tr>
 <tr>
 <td><p style="text-align:justify">Analyzing App logs using pidcat tool</p></td>
 <td><ul><li>shows log entries for processes from a specific application package</li></ul></td>
-<td><a href="https://github.com/JakeWharton/pidcat/blob/master/README.md">pidcat</a>/logcat</td>
+<td><a href="https://github.com/JakeWharton/pidcat/blob/master/README.md" target="_blank">pidcat</a>/logcat</td>
   <td>—</td>
 </tr>
 <tr>
@@ -1566,7 +1556,7 @@ body .markdown-body
 <tr>
 <td><p style="text-align:justify">Checking for Keyboard cache</p></td>
 <td><ul><li> Location <code>/data/data/com.android.providers.userdictionary/databases/user_dict.db</code> </li><br> <li>- Use SQLite to read it(user_dict.db)</li></ul></td>
-<td>SQLite</td>
+<td><ul><li><a href="https://sqlitebrowser.org/" target="_blank">SQLite browser </a></li></ul></td>
   <td>—</td>
 </tr>
 <tr>
