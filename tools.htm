@@ -1,1533 +1,1215 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <title>Mobexler - Mobile Application Penetration Testing Platform</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content=" Mobexler is a customised virtual machine, based on Elementary OS , designed to help in penetration testing of Android & iOS applications." />
-    <meta name="keywords" content=" Mobexler is a customised virtual machine, based on Elementary OS , designed to help in penetration testing of Android & iOS applications." />
-    <!-- favicon -->
-    <!-- favicon -->
-    <link rel="shortcut icon" href="/favicon.ico">
-    <!-- Pixeden Icon -->
-    <link rel="stylesheet" type="text/css" href="css/pe-icon-7.css" />
-
-    <!--Slider-->
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-
-    <!-- css -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/style.min.css" rel="stylesheet" type="text/css" />
-
-    <style>
-.highlight-blue {
-  color: #fff;
-  background-color: #1e6add;
-  padding: 50px 0;
-}
-
-.highlight-blue p {
-  color: #c4d5ef;
-  line-height: 1.5;
-}
-
-.highlight-blue h2 {
-  font-weight: normal;
-  margin-bottom: 25px;
-  line-height: 1.5;
-  padding-top: 0;
-  margin-top: 0;
-  color: inherit;
-}
-
-.highlight-blue .intro {
-  font-size: 16px;
-  max-width: 500px;
-  margin: 0 auto 25px;
-}
-
-.highlight-blue .buttons {
-  text-align: center;
-}
-
-.highlight-blue .buttons .btn {
-  padding: 16px 32px;
-  margin: 6px;
-  border: none;
-  background: none;
-  box-shadow: none;
-  text-shadow: none;
-  opacity: 0.9;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 13px;
-  letter-spacing: 0.4px;
-  line-height: 1;
-}
-
-.highlight-blue .buttons .btn:hover {
-  opacity: 1;
-}
-
-.highlight-blue .buttons .btn:active {
-  transform: translateY(1px);
-}
-
-.highlight-blue .buttons .btn-primary, .highlight-blue .buttons .btn-primary:active {
-  border: 2px solid rgba(255,255,255,0.7);
-  border-radius: 6px;
-  color: #ebeff1;
-  box-shadow: none;
-  text-shadow: none;
-  padding: 14px 24px;
-  background: transparent;
-  transition: background-color 0.25s;
-}
-
-
-
-    </style>
-
-<style>
-  .site-footer {
-    background-color: #26272b;
-    padding: 45px 0 20px;
-    font-size: 15px;
-    line-height: 24px;
-    color: #737373;
-  }
-  .site-footer hr {
-    border-top-color: #bbb;
-    opacity: 0.5;
-  }
-  .site-footer hr.small {
-    margin: 20px 0;
-  }
-  .site-footer h6 {
-    color: #fff;
-    font-size: 16px;
-    text-transform: uppercase;
-    margin-top: 5px;
-    letter-spacing: 2px;
-  }
-  .site-footer a {
-    color: #737373;
-  }
-  .site-footer a:hover {
-    color: #3366cc;
-    text-decoration: none;
-  }
-  .footer-links {
-    padding-left: 0;
-    list-style: none;
-  }
-  .footer-links li {
-    display: block;
-  }
-  .footer-links a {
-    color: #737373;
-  }
-  .footer-links a:active,
-  .footer-links a:focus,
-  .footer-links a:hover {
-    color: #3366cc;
-    text-decoration: none;
-  }
-  .footer-links.inline li {
-    display: inline-block;
-  }
-  .site-footer .social-icons {
-    text-align: right;
-  }
-  .site-footer .social-icons a {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    margin-left: 6px;
-    margin-right: 0;
-    border-radius: 100%;
-    background-color: #33353d;
-  }
-  .copyright-text {
-    margin: 0;
-  }
-  @media (max-width: 991px) {
-    .site-footer [class^="col-"] {
-      margin-bottom: 30px;
-    }
-  }
-  @media (max-width: 767px) {
-    .site-footer {
-      padding-bottom: 0;
-    }
-    .site-footer .copyright-text,
-    .site-footer .social-icons {
-      text-align: center;
-    }
-  }
-  .social-icons {
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-  }
-  .social-icons li {
-    display: inline-block;
-    margin-bottom: 4px;
-  }
-  .social-icons li.title {
-    margin-right: 15px;
-    text-transform: uppercase;
-    color: #96a2b2;
-    font-weight: 700;
-    font-size: 13px;
-  }
-  .social-icons a {
-    background-color: #eceeef;
-    color: #818a91;
-    font-size: 16px;
-    display: inline-block;
-    line-height: 44px;
-    width: 44px;
-    height: 44px;
-    text-align: center;
-    margin-right: 8px;
-    border-radius: 100%;
-    -webkit-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-    transition: all 0.2s linear;
-  }
-  .social-icons a:active,
-  .social-icons a:focus,
-  .social-icons a:hover {
-    color: #fff;
-    background-color: #29aafe;
-  }
-  .social-icons.size-sm a {
-    line-height: 34px;
-    height: 34px;
-    width: 34px;
-    font-size: 14px;
-  }
-  .social-icons a.facebook:hover {
-    background-color: #3b5998;
-  }
-  .social-icons a.twitter:hover {
-    background-color: #00aced;
-  }
-  .social-icons a.linkedin:hover {
-    background-color: #007bb6;
-  }
-  .social-icons a.dribbble:hover {
-    background-color: #ea4c89;
-  }
-  @media (max-width: 767px) {
-    .social-icons li.title {
-      display: block;
-      margin-right: 0;
-      font-weight: 600;
-    }
-  
-  
-  }
-  
-  
-  </style>
-</head>
-
-<body>
-
-    <!-- Loader -->
-<div id="preloader" class="d-sm-none">        <div id="status">
+   <head>
+      <meta charset="utf-8" />
+      <title>Mobexler - Mobile Application Penetration Testing Platform</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content=" Mobexler is a customised virtual machine, based on Elementary OS , designed to help in penetration testing of Android & iOS applications." />
+      <meta name="keywords" content=" Mobexler is a customised virtual machine, based on Elementary OS , designed to help in penetration testing of Android & iOS applications." />
+      <!-- favicon -->
+      <!-- favicon -->
+      <link rel="shortcut icon" href="/favicon.ico">
+      <!-- Pixeden Icon -->
+      <link rel="stylesheet" type="text/css" href="css/pe-icon-7.css" />
+      <!--Slider-->
+      <link rel="stylesheet" href="css/owl.carousel.min.css" />
+      <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+      <!-- css -->
+      <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+      <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+      <link href="css/style.min.css" rel="stylesheet" type="text/css" />
+      <style>
+         .highlight-blue {
+         color: #fff;
+         background-color: #1e6add;
+         padding: 50px 0;
+         }
+         .highlight-blue p {
+         color: #c4d5ef;
+         line-height: 1.5;
+         }
+         .highlight-blue h2 {
+         font-weight: normal;
+         margin-bottom: 25px;
+         line-height: 1.5;
+         padding-top: 0;
+         margin-top: 0;
+         color: inherit;
+         }
+         .highlight-blue .intro {
+         font-size: 16px;
+         max-width: 500px;
+         margin: 0 auto 25px;
+         }
+         .highlight-blue .buttons {
+         text-align: center;
+         }
+         .highlight-blue .buttons .btn {
+         padding: 16px 32px;
+         margin: 6px;
+         border: none;
+         background: none;
+         box-shadow: none;
+         text-shadow: none;
+         opacity: 0.9;
+         text-transform: uppercase;
+         font-weight: bold;
+         font-size: 13px;
+         letter-spacing: 0.4px;
+         line-height: 1;
+         }
+         .highlight-blue .buttons .btn:hover {
+         opacity: 1;
+         }
+         .highlight-blue .buttons .btn:active {
+         transform: translateY(1px);
+         }
+         .highlight-blue .buttons .btn-primary, .highlight-blue .buttons .btn-primary:active {
+         border: 2px solid rgba(255,255,255,0.7);
+         border-radius: 6px;
+         color: #ebeff1;
+         box-shadow: none;
+         text-shadow: none;
+         padding: 14px 24px;
+         background: transparent;
+         transition: background-color 0.25s;
+         }
+      </style>
+      <style>
+         .site-footer {
+         background-color: #26272b;
+         padding: 45px 0 20px;
+         font-size: 15px;
+         line-height: 24px;
+         color: #737373;
+         }
+         .site-footer hr {
+         border-top-color: #bbb;
+         opacity: 0.5;
+         }
+         .site-footer hr.small {
+         margin: 20px 0;
+         }
+         .site-footer h6 {
+         color: #fff;
+         font-size: 16px;
+         text-transform: uppercase;
+         margin-top: 5px;
+         letter-spacing: 2px;
+         }
+         .site-footer a {
+         color: #737373;
+         }
+         .site-footer a:hover {
+         color: #3366cc;
+         text-decoration: none;
+         }
+         .footer-links {
+         padding-left: 0;
+         list-style: none;
+         }
+         .footer-links li {
+         display: block;
+         }
+         .footer-links a {
+         color: #737373;
+         }
+         .footer-links a:active,
+         .footer-links a:focus,
+         .footer-links a:hover {
+         color: #3366cc;
+         text-decoration: none;
+         }
+         .footer-links.inline li {
+         display: inline-block;
+         }
+         .site-footer .social-icons {
+         text-align: right;
+         }
+         .site-footer .social-icons a {
+         width: 40px;
+         height: 40px;
+         line-height: 40px;
+         margin-left: 6px;
+         margin-right: 0;
+         border-radius: 100%;
+         background-color: #33353d;
+         }
+         .copyright-text {
+         margin: 0;
+         }
+         @media (max-width: 991px) {
+         .site-footer [class^="col-"] {
+         margin-bottom: 30px;
+         }
+         }
+         @media (max-width: 767px) {
+         .site-footer {
+         padding-bottom: 0;
+         }
+         .site-footer .copyright-text,
+         .site-footer .social-icons {
+         text-align: center;
+         }
+         }
+         .social-icons {
+         padding-left: 0;
+         margin-bottom: 0;
+         list-style: none;
+         }
+         .social-icons li {
+         display: inline-block;
+         margin-bottom: 4px;
+         }
+         .social-icons li.title {
+         margin-right: 15px;
+         text-transform: uppercase;
+         color: #96a2b2;
+         font-weight: 700;
+         font-size: 13px;
+         }
+         .social-icons a {
+         background-color: #eceeef;
+         color: #818a91;
+         font-size: 16px;
+         display: inline-block;
+         line-height: 44px;
+         width: 44px;
+         height: 44px;
+         text-align: center;
+         margin-right: 8px;
+         border-radius: 100%;
+         -webkit-transition: all 0.2s linear;
+         -o-transition: all 0.2s linear;
+         transition: all 0.2s linear;
+         }
+         .social-icons a:active,
+         .social-icons a:focus,
+         .social-icons a:hover {
+         color: #fff;
+         background-color: #29aafe;
+         }
+         .social-icons.size-sm a {
+         line-height: 34px;
+         height: 34px;
+         width: 34px;
+         font-size: 14px;
+         }
+         .social-icons a.facebook:hover {
+         background-color: #3b5998;
+         }
+         .social-icons a.twitter:hover {
+         background-color: #00aced;
+         }
+         .social-icons a.linkedin:hover {
+         background-color: #007bb6;
+         }
+         .social-icons a.dribbble:hover {
+         background-color: #ea4c89;
+         }
+         @media (max-width: 767px) {
+         .social-icons li.title {
+         display: block;
+         margin-right: 0;
+         font-weight: 600;
+         }
+         }
+      </style>
+   </head>
+   <body>
+      <!-- Loader -->
+      <div id="preloader" class="d-sm-none">
+         <div id="status">
             <div class="sk-chase">
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
+               <div class="sk-chase-dot"></div>
+               <div class="sk-chase-dot"></div>
+               <div class="sk-chase-dot"></div>
+               <div class="sk-chase-dot"></div>
+               <div class="sk-chase-dot"></div>
+               <div class="sk-chase-dot"></div>
             </div>
-        </div>
-    </div>
-
-    <!--Navbar Start-->
-    <nav class="navbar navbar-expand-lg  navbar-custom sticky sticky-dark navbar-light">
-        <div class="container">
+         </div>
+      </div>
+      <!--Navbar Start-->
+      <nav class="navbar navbar-expand-lg  navbar-custom sticky sticky-dark navbar-light">
+         <div class="container">
             <!-- LOGO -->
             <a class="navbar-brand logo" href="/">
-                <img src="images/logo-dark.png" alt="" class="logo-dark" height="60">
-                <img src="images/logo-dark.png" alt="" class="logo-light" height="120">
+            <img src="images/logo-dark.png" alt="" class="logo-dark" height="60">
+            <img src="images/logo-dark.png" alt="" class="logo-light" height="120">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="mdi mdi-menu"></i>
+            <i class="mdi mdi-menu"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
-                    <li class="nav-item ">
-                           <a href="/" class="nav-link">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="/download.htm" class="nav-link">Download</a>
-                    </li>
-                    <li class="nav-item">
-                              <a href="/setup.htm" class="nav-link">Setup</a>
-
-                    </li>
-                    <li class="nav-item active">
-                        <a href="/tools.htm" class="nav-link">Tools</a>
-                    </li>
-                   
-                    <li class="nav-item">
-                        <a href="/license.htm" class="nav-link">License</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/credits.htm" class="nav-link">Credits</a>
-                    </li>    
-                    <li class="nav-item">
-<a href="/resources.htm" class="nav-link">Resources</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/checklist.htm" class="nav-link">Mobile App PenTesting Checklist</a>
-                    </li> 
-             
-                </ul>
+               <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
+                  <li class="nav-item ">
+                     <a href="/" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="/download.htm" class="nav-link">Download</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="/setup.htm" class="nav-link">Setup</a>
+                  </li>
+                  <li class="nav-item active">
+                     <a href="/tools.htm" class="nav-link">Tools</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="/license.htm" class="nav-link">License</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="/credits.htm" class="nav-link">Credits</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="/resources.htm" class="nav-link">Resources</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="/checklist.htm" class="nav-link">Mobile App PenTesting Checklist</a>
+                  </li>
+               </ul>
             </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
-
-
-    
-
-    <div class="highlight-blue" style="height:60vh;">
-        <div class="container">
+         </div>
+      </nav>
+      <!-- Navbar End -->
+      <div class="highlight-blue" style="height:60vh;">
+         <div class="container">
             <div class="intro">
-                <h2 class="text-center mt-5 pt-5"><strong>Awesome tools</strong><br></h2>
-                <p class="text-center">We Included all the awesome mobile related tools in mobexler for both IOS and Android applications<br></p>
+               <h2 class="text-center mt-5 pt-5"><strong>Awesome tools</strong><br></h2>
+               <p class="text-center">We Included all the awesome mobile related tools in mobexler for both IOS and Android applications<br></p>
             </div>
             <div class="buttons"><a class="btn btn-primary" role="button" href="/download.htm">Download</a></div>
-        </div>
-    </div>
-
-
-    <div class="container">
-        <div class="row">
-          <div class="col-md">
-            
-    <div class="highlight-light" >
-        <div class="container mb-4">
-            <div class="intro">
-                <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue"><strong>Android Studio</strong><br></h2>
-                <p class="">It is Integrated development Enviroment (IDE) and Used for Android App Development.<br></p>
-                
-                <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
-                    <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">It is a GUI based tool,so simply run and use it.</p></p>
-                </div>
-           
+         </div>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue"><strong>Android Studio</strong><br></h2>
+                        <p class="">It is Integrated development Enviroment (IDE) and Used for Android App Development.<br></p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
+                           <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                           <p class="text-center">It is a GUI based tool,so simply run and use it.</p>
+                           </p>
+                        </div>
+                     </div>
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://developer.android.com/studio/intro/">Read more</a></div>
+                  </div>
+               </div>
             </div>
-           <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://developer.android.com/studio/intro/">Read more</a></div>
-        </div>
-    </div>
-</div>
-        <div class="col-md">
-              <div class="highlight-light" >
-                <div class="container mb-4">
-                    <div class="intro">
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
                         <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue"><strong>Burp Suite</strong><br></h2>
                         <p class="">Burp community version includes few essential manual tools from the Burp platform, however some of the features are available only in paid version.<br></p>
-                        
                         <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
-                            <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">
-                                It is one of the good GUI based tool for pentesters to use for pentesting.
-                                It is simple to run and use:).</p></p>
+                           <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                           <p class="text-center">
+                              It is one of the good GUI based tool for pentesters to use for pentesting.
+                              It is simple to run and use:).
+                           </p>
+                           </p>
                         </div>
-                   
-                    </div>
-                   <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://portswigger.net/burp/">Read more</a></div>
-                </div>
-            </div>
-          </div>
-
-
-          
-        </div>
-      
-    
-
-
-
-
-        <div class="row">
-            <div class="col-md">
-              
-      <div class="highlight-light" >
-          <div class="container mb-4">
-              <div class="intro">
-                  <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue"><strong>Bytecode Viewer</strong><br></h2>
-                  <p class="">Free open source user friendly and advance java Reverse engineering suite with six diffrent java decompilers two byte code editors,a java compiler,plugins, jars and many more<br></p>
-                  
-                  <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
-                      <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
-                        <p class="text-center">drag and drop the file(APK,class,jar,dex,zip) and explore it.</p></p>
+                     </div>
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://portswigger.net/burp/">Read more</a></div>
                   </div>
-             
-              </div>
-             <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://bytecodeviewer.com/">Read more</a></div>
-          </div>
-      </div>
-  </div>
-          <div class="col-md">
-                <div class="highlight-light" >
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md">
+               <div class="highlight-light" >
                   <div class="container mb-4">
-                      <div class="intro">
-                          <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue"><strong>Frida</strong><br></h2>
-                          <p class="">It is a toolkit which allows run time hooking into application for developers, reverse-engineers and security researchers.<br></p>
-                          
-                          <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
-                              <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">
-                                adb push frida-server /data/local/tmp
-                                adb shell "chmod+x /data/local/tmp/frida-server"
-                                adb shell "/data/local/tmp/frida-server &"</p></p>
-                          </div>
-                     
-                      </div>
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue"><strong>Bytecode Viewer</strong><br></h2>
+                        <p class="">Free open source user friendly and advance java Reverse engineering suite with six diffrent java decompilers two byte code editors,a java compiler,plugins, jars and many more<br></p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
+                           <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                           <p class="text-center">drag and drop the file(APK,class,jar,dex,zip) and explore it.</p>
+                           </p>
+                        </div>
+                     </div>
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://bytecodeviewer.com/">Read more</a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue"><strong>Frida</strong><br></h2>
+                        <p class="">It is a toolkit which allows run time hooking into application for developers, reverse-engineers and security researchers.<br></p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
+                           <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                           <p class="text-center">
+                              adb push frida-server /data/local/tmp
+                              adb shell "chmod+x /data/local/tmp/frida-server"
+                              adb shell "/data/local/tmp/frida-server &"
+                           </p>
+                           </p>
+                        </div>
+                     </div>
                      <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/frida/frida">Read more</a></div>
                   </div>
-              </div>
+               </div>
             </div>
-  
-  
-            
-          </div>
-
-
-
-          <div class="row">
+         </div>
+         <div class="row">
             <div class="col-md">
-              
-      <div class="highlight-light" >
-          <div class="container mb-4">
-              <div class="intro">
-                  <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue"><strong>JADX-GUI</strong><br></h2>
-                  <p class="">JADX has Command line and GUI tools for produce Java source code from Android Dex and JADX-GUI is UI based.                    .<br></p>
-                  
-                  <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
-                      <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">It is gui based tool and support(APK,zip etc.)file formats to analyse in 
-                        java source code.</p></p>
-                  </div>
-             
-              </div>
-             <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/skylot/jadx">Read more</a></div>
-          </div>
-      </div>
-  </div>
-          <div class="col-md">
-                <div class="highlight-light" >
+               <div class="highlight-light" >
                   <div class="container mb-4">
-                      <div class="intro">
-                          <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue"><strong>JD-GUI</strong><br></h2>
-                          <p class="">It is a standalone graphical utility it helps in displays Java sources from CLASS files.                            <br></p>
-                          
-                          <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
-                              <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">
-                                It is GUI tool and just need to open class file to read it in java source code.
-                            </p></p>
-                          </div>
-                     
-                      </div>
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue"><strong>JADX-GUI</strong><br></h2>
+                        <p class="">JADX has Command line and GUI tools for produce Java source code from Android Dex and JADX-GUI is UI based.                    .<br></p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
+                           <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                           <p class="text-center">It is gui based tool and support(APK,zip etc.)file formats to analyse in 
+                              java source code.
+                           </p>
+                           </p>
+                        </div>
+                     </div>
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/skylot/jadx">Read more</a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue"><strong>JD-GUI</strong><br></h2>
+                        <p class="">It is a standalone graphical utility it helps in displays Java sources from CLASS files.                            <br></p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
+                           <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                           <p class="text-center">
+                              It is GUI tool and just need to open class file to read it in java source code.
+                           </p>
+                           </p>
+                        </div>
+                     </div>
                      <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/java-decompiler/jd-gui">Read more</a></div>
                   </div>
-              </div>
+               </div>
             </div>
-  
-  
-            
-          </div>
-
-
-
-          <div class="row">
+         </div>
+         <div class="row">
             <div class="col-md">
-              
-      <div class="highlight-light" >
-          <div class="container mb-4">
-              <div class="intro">
-                  <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue"><strong>Logcat - Pidcat</strong><br></h2>
-                  <p class="">It shows log entries for processes from a specific application package.
-
-                    <br></p>
-                  
-                  <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
-                      <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
-                        <p class="text-center">Run it and it will show you options to use :)                        </p></p>
-                  </div>
-             
-              </div>
-             <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/JakeWharton/pidcat">Read more</a></div>
-          </div>
-      </div>
-  </div>
-          <div class="col-md">
-                <div class="highlight-light" >
+               <div class="highlight-light" >
                   <div class="container mb-4">
-                      <div class="intro">
-                          <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue"><strong>MobSF</strong><br></h2>
-                          <p class="">Mobile Security Framework (MobSF) is an automated, all-in-one mobile application (Android/iOS/Windows) pen-testing framework capable of performing static, dynamic and malware analysis.<br></p>
-                          
-                          <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
-                              <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">
-                                Run it docker app of MobSF and it i ask you for the password of lab.
-                                once password is entered ,go and browse 127.0.0.1:8000 you will see MobSF interface.
-                                Drag and drop to analyse apk.</p></p>
-                          </div>
-                     
-                      </div>
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue"><strong>Logcat - Pidcat</strong><br></h2>
+                        <p class="">It shows log entries for processes from a specific application package.
+                           <br>
+                        </p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
+                           <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                           <p class="text-center">Run it and it will show you options to use :)                        </p>
+                           </p>
+                        </div>
+                     </div>
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/JakeWharton/pidcat">Read more</a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue"><strong>MobSF</strong><br></h2>
+                        <p class="">Mobile Security Framework (MobSF) is an automated, all-in-one mobile application (Android/iOS/Windows) pen-testing framework capable of performing static, dynamic and malware analysis.<br></p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
+                           <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                           <p class="text-center">
+                              Run it docker app of MobSF and it i ask you for the password of lab.
+                              once password is entered ,go and browse 127.0.0.1:8000 you will see MobSF interface.
+                              Drag and drop to analyse apk.
+                           </p>
+                           </p>
+                        </div>
+                     </div>
                      <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/MobSF/Mobile-Security-Framework-MobSF">Read more</a></div>
                   </div>
-              </div>
+               </div>
             </div>
-  
-  
-            
-          </div>
-
-
-
-
-
-
-
-
-
-
-          <div class="row">
+         </div>
+         <div class="row">
             <div class="col-md">
-              
-      <div class="highlight-light" >
-          <div class="container mb-4">
-              <div class="intro">
-                <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-                    <!-- ------------------------- NAME HERE -------------------------------------------------- -->
-                    <strong>SUPER-Analyzer</strong>
-                    <br>
-                </h2>
-                <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-                <p class="">It is a command-line application that can be used in Windows, MacOS X and Linux, that analyzes .apk files in search for vulnerabilities.<br></p>  
-                <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
-                      <p class="text-center" style="border-bottom: 1px dotted white;">
-                        <b>How to use ?</b>
-                    <br>
-            <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-                    <p class="text-center">Run it and give the absolute path of Apk                  </p></p>
-                </div>
-              </div>
-
-        <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-
-             <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://superanalyzer.rocks/">Read more</a></div>
-          </div>
-      </div>
-  </div>
-          <div class="col-md">
-                <div class="highlight-light" >
+               <div class="highlight-light" >
                   <div class="container mb-4">
-                      <div class="intro">
-                          <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-                            <strong>
-<!-- ------------------------- NAME HERE -------------------------------------------------- -->
-                                Wireshark 
-                            </strong><br></h2>
-                          <p class="">
-<!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-           
-                 Wireshark is a free and open-source packet analyzer. It is used for network troubleshooting, analysis, software and communications protocol development, and education.
-
-                        <br>
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                           <strong>SUPER-Analyzer</strong>
+                           <br>
+                        </h2>
+                        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                        <p class="">It is a command-line application that can be used in Windows, MacOS X and Linux, that analyzes .apk files in search for vulnerabilities.<br></p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
+                           <p class="text-center" style="border-bottom: 1px dotted white;">
+                              <b>How to use ?</b>
+                              <br>
+                              <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center">Run it and give the absolute path of Apk                  </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://superanalyzer.rocks/">Read more</a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <strong>
+                              <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                              Wireshark 
+                           </strong>
+                           <br>
+                        </h2>
+                        <p class="">
+                           <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                           Wireshark is a free and open-source packet analyzer. It is used for network troubleshooting, analysis, software and communications protocol development, and education.
+                           <br>
                         </p>
-                          
-                         <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
-                              
- <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-                            <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">
-                                It has UI interface and easy to use.</p></p>
-                          </div>
-                     
-                      </div>
-        <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
+                           <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                           <p class="text-center">
+                              It has UI interface and easy to use.
+                           </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
                      <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://www.wireshark.org/">Read more</a></div>
                   </div>
-              </div>
+               </div>
             </div>
-  </div>
-
-
-
-
-
-
-
-  <div class="row">
-    <div class="col-md">
-      
-<div class="highlight-light" >
-  <div class="container mb-4">
-      <div class="intro">
-        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-            <!-- ------------------------- NAME HERE -------------------------------------------------- -->
-            <strong>Smali & baksmali</strong>
-            <br>
-        </h2>
-        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-        <p class="">Smali/baksmali is an assembler/disassembler for the dex format used by dalvik, Android's Java VM implementation            .<br></p>  
-        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
-              <p class="text-center" style="border-bottom: 1px dotted white;">
-                <b>How to use ?</b>
-            <br>
-    <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-            <p class="text-center">java -jar smali-x.x.x.jar            </p></p>
-        </div>
-      </div>
-
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-
-     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/JesusFreke/smali">Read more</a></div>
-  </div>
-</div>
-</div>
-  <div class="col-md">
-        <div class="highlight-light" >
-          <div class="container mb-4">
-              <div class="intro">
-                  <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-                    <strong>
-<!-- ------------------------- NAME HERE -------------------------------------------------- -->
-Radare2  
-                    </strong><br></h2>
-                  <p class="">
-<!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-   
-Radare is a portable reversing framework that can Disassemble/assemble many different architectures.
-
-
-
-                <br>
-                </p>
-                  
-                 <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
-                      
-<!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-                    <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">
-                        Use r2 to run it.
-</p></p>
+         </div>
+         <div class="row">
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                           <strong>Smali & baksmali</strong>
+                           <br>
+                        </h2>
+                        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                        <p class="">Smali/baksmali is an assembler/disassembler for the dex format used by dalvik, Android's Java VM implementation            .<br></p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
+                           <p class="text-center" style="border-bottom: 1px dotted white;">
+                              <b>How to use ?</b>
+                              <br>
+                              <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center">java -jar smali-x.x.x.jar            </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/JesusFreke/smali">Read more</a></div>
                   </div>
-             
-              </div>
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-
-             <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://rada.re/r/">Read more</a></div>
-          </div>
-      </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md">
-      
-<div class="highlight-light" >
-  <div class="container mb-4">
-      <div class="intro">
-        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-            <!-- ------------------------- NAME HERE -------------------------------------------------- -->
-            <strong>Mara Framework</strong>
-            <br>
-        </h2>
-        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-        <p class="">MARA is a Mobile Application Reverse engineering and Analysis Framework. It is a toolkit that puts together commonly used mobile application reverse engineering and analysis tools.
-
-            <br></p>  
-        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
-              <p class="text-center" style="border-bottom: 1px dotted white;">
-                <b>How to use ?</b>
-            <br>
-    <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-            <p class="text-center">Goto mara folder and run ./mara.sh it will show the supported options with mara-framework.
-            </p></p>
-        </div>
-      </div>
-
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-
-     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/xtiankisutsa/MARA_Framework">Read more</a></div>
-  </div>
-</div>
-</div>
-  <div class="col-md">
-        <div class="highlight-light" >
-          <div class="container mb-4">
-              <div class="intro">
-                  <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-                    <strong>
-<!-- ------------------------- NAME HERE -------------------------------------------------- -->
-SIGN   
-                    </strong><br></h2>
-                  <p class="">
-<!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-   
-
-
-
-                <br>
-                </p>
-                  
-                 <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
-                      
-<!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-                    <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">
-                        java -jar sign.jar.
-</p></p>
-                  </div>
-             
-              </div>
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-
-             <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="#">Read more</a></div>
-          </div>
-      </div>
-    </div>
-</div>
-
-
-<div class="row">
-    <div class="col-md">
-      
-<div class="highlight-light" >
-  <div class="container mb-4">
-      <div class="intro">
-        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-            <!-- ------------------------- NAME HERE -------------------------------------------------- -->
-            <strong> TCPDUMP</strong>
-            <br>
-        </h2>
-        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-        <p class="">It is a powerful command-line packet analyzer; and libpcap for network traffic capture.
-
-
-
-            <br></p>  
-        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
-              <p class="text-center" style="border-bottom: 1px dotted white;">
-                <b>How to use ?</b>
-            <br>
-    <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-            <p class="text-center">tcpdump --help and it wil show the available options for this command line tool.
-
-            </p></p>
-        </div>
-      </div>
-
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-<div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/sensepost/objection">Read more</a></div>
-
-  </div>
-</div>
-</div>
-  <div class="col-md">
-        <div class="highlight-light" >
-          <div class="container mb-4">
-              <div class="intro">
-                  <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-                    <strong>
-<!-- ------------------------- NAME HERE -------------------------------------------------- -->
-Objection    
-                    </strong><br></h2>
-                  <p class="">
-<!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-   
-Objection is a runtime mobile exploration toolkit, powered by Frida It was built with the aim of helping assess mobile applications and their security posture without the need for a jailbroken or rooted mobile device.
-
-
-
-
-                <br>
-                </p>
-                  
-                 <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
-                      
-<!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-                    <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">
-                        Run objection --help and it will show all the available info/options for frida.
-
-</p></p>
-                  </div>
-             
-              </div>
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-
-             <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/sensepost/objection">Read more</a></div>
-          </div>
-      </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="row">
-    <div class="col-md">
-      
-<div class="highlight-light" >
-  <div class="container mb-4">
-      <div class="intro">
-        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-            <!-- ------------------------- NAME HERE -------------------------------------------------- -->
-            <strong> Drozer </strong>
-            <br>
-        </h2>
-        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-        <p class="">It is a security pentesting framework.Drozer allows pentesters to search for security vulnerabilities in apps and devices by assuming the role of an app and interacting with the Dalvik VM.
-
-
-
-
-
-            <br></p>  
-        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
-              <p class="text-center" style="border-bottom: 1px dotted white;">
-                <b>How to use ?</b>
-            <br>
-    <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-            <p class="text-center">
-                Run drozer command and also install the drozer client(adb install agent.apk) 
-                in Mobile device. 
-                port forword using : adb forword tcp:31415 tcp:31415
-                launch Drozer console using : drozer console connect
-
-            </p></p>
-        </div>
-      </div>
-
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-<div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/mwrlabs/drozer">Read more</a></div>
-
-  </div>
-</div>
-</div>
-  <div class="col-md">
-        <div class="highlight-light" >
-          <div class="container mb-4">
-              <div class="intro">
-                  <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-                    <strong>
-<!-- ------------------------- NAME HERE -------------------------------------------------- -->
-Ghidra     
-                    </strong><br></h2>
-                  <p class="">
-<!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-   
-A software reverse engineering (SRE) suite of tools developed by NSA's Research Directorate and this reverse engineering tool helps to dig up the source code of a proprietary program which further gives you the ability to detect virus threats or potential bugs
-
-
-
-
-
-
-                <br>
-                </p>
-                  
-                 <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
-                      
-<!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-                    <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">
-                        got to Ghidra folder and run ./ghidraRun. It will open the GUI interface
-and you can use it.
-
-
-</p></p>
-                  </div>
-             
-              </div>
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-
-             <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://ghidra-sre.org/">Read more</a></div>
-          </div>
-      </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md">
-      
-<div class="highlight-light" >
-  <div class="container mb-4">
-      <div class="intro">
-        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-            <!-- ------------------------- NAME HERE -------------------------------------------------- -->
-            <strong> Cydia Impactor </strong>
-            <br>
-        </h2>
-        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-        <p class="">You can use this tool to install IPA files on iOS and APK files on Android. It also can help you exploit the series of Android "Master Key" vulnerabilities.
-
-
-
-
-
-
-
-            <br></p>  
-        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
-              <p class="text-center" style="border-bottom: 1px dotted white;">
-                <b>How to use ?</b>
-            <br>
-    <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-            <p class="text-center">
-                
-Run Cydia and connect your IOS device to computer ,wait until it gets detected.
-Drag IPA to cydia impactor window and install.
-It will prompt for Apple ID and password and IPA file will be instlled 
-successfully.
-            </p></p>
-        </div>
-      </div>
-
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-<div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="http://www.cydiaimpactor.com/">Read more</a></div>
-
-  </div>
-</div>
-</div>
-  <div class="col-md">
-        <div class="highlight-light" >
-          <div class="container mb-4">
-              <div class="intro">
-                  <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-                    <strong>
-<!-- ------------------------- NAME HERE -------------------------------------------------- -->
-Filezilla      
-                    </strong><br></h2>
-                  <p class="">
-<!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-   
-It is used for transferring files over the Network.
-
-
-
-
-
-
-
-
-                <br>
-                </p>
-                  
-                 <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
-                      
-<!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-                    <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">
-                        Filezilla is GUI based so it is pretty easy to use :) just simply run !!!and you can use it.
-
-
-</p></p>
-                  </div>
-             
-              </div>
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-
-             <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://filezilla-project.org/">Read more</a></div>
-          </div>
-      </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="row">
-    <div class="col-md">
-      
-<div class="highlight-light" >
-  <div class="container mb-4">
-      <div class="intro">
-        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-            <!-- ------------------------- NAME HERE -------------------------------------------------- -->
-            <strong> Putty  </strong>
-            <br>
-        </h2>
-        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-        <p class="">it is an SSH and telnet client..
-
-
-
-
-
-
-
-
-
-            <br></p>  
-        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
-              <p class="text-center" style="border-bottom: 1px dotted white;">
-                <b>How to use ?</b>
-            <br>
-    <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-            <p class="text-center">
-                
-                It has Ui interface,Simply run and use it.
-
-            </p></p>
-        </div>
-      </div>
-
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-<div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://www.putty.org/">Read more</a></div>
-
-  </div>
-</div>
-</div>
-  <div class="col-md">
-        <div class="highlight-light" >
-          <div class="container mb-4">
-              <div class="intro">
-                  <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-                    <strong>
-<!-- ------------------------- NAME HERE -------------------------------------------------- -->
-Hopper Disassembler       
-                    </strong><br></h2>
-                  <p class="">
-<!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-   
-Hopper Disassembler, the reverse engineering tool that lets you disassemble, decompile and debug your applications.
-
-
-
-
-
-
-
-
-
-                <br>
-                </p>
-                  
-                 <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
-                      
-<!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-                    <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">
-                        Hopper Disassembler is UI based tool so simply run and use it.
-
-
-
-</p></p>
-                  </div>
-             
-              </div>
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-
-             <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://www.hopperapp.com/">Read more</a></div>
-          </div>
-      </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="row">
-    <div class="col-md">
-      
-<div class="highlight-light" >
-  <div class="container mb-4">
-      <div class="intro">
-        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-            <!-- ------------------------- NAME HERE -------------------------------------------------- -->
-            <strong> Metasploit   </strong>
-            <br>
-        </h2>
-        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-        <p class="">It is a penetration testing framework that enables pentesters to find, exploit, and validate vulnerabilities.
-
-
-
-
-
-
-
-
-
-
-
-            <br></p>  
-        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
-              <p class="text-center" style="border-bottom: 1px dotted white;">
-                <b>How to use ?</b>
-            <br>
-    <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-            <p class="text-center">
-                
-                To start metasploit use command "msfconsole".
-            </p></p>
-        </div>
-      </div>
-
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-<div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://www.offensive-security.com/metasploit-unleashed/requirements/">Read more</a></div>
-
-  </div>
-</div>
-</div>
-
-  <div class="col-md">
-        <div class="highlight-light" >
-          <div class="container mb-4">
-              <div class="intro">
-                  <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-                    <strong>
-<!-- ------------------------- NAME HERE -------------------------------------------------- -->
-Sqlmap       
-                    </strong><br></h2>
-                  <p class="">
-<!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-   
-sqlmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws
-
-
-
-
-
-
-
-
-
-
-
-                <br>
-                </p>
-                  
-                 <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
-                      
-<!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-                    <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">
-                        just run sqlmap -h and it will show available options to use with it.
-
-
-
-
-</p></p>
-                  </div>
-             
-              </div>
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-
-             <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/sqlmapproject/sqlmap">Read more</a></div>
-          </div>
-      </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-md">
-      
-<div class="highlight-light" >
-  <div class="container mb-4">
-      <div class="intro">
-        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-            <!-- ------------------------- NAME HERE -------------------------------------------------- -->
-            <strong> DB Browser for SQLite     </strong>
-            <br>
-        </h2>
-        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-        <p class="">DB Browser for SQLite (DB4S) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.
-            <br></p>  
-        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
-              <p class="text-center" style="border-bottom: 1px dotted white;">
-                <b>How to use ?</b>
-            <br>
-    <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-            <p class="text-center">
-                
-                Just run DB Browser for SQLite from the application menu.
-            </p></p>
-        </div>
-      </div>
-
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-<div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://sqlitebrowser.org/">Read more</a></div>
-
-  </div>
-</div>
-</div>
-
-<div class="row">
-    <div class="col-md">
-      
-<div class="highlight-light" >
-  <div class="container mb-4">
-      <div class="intro">
-        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-            <!-- ------------------------- NAME HERE -------------------------------------------------- -->
-            <strong> frida-ios-dump </strong>
-            <br>
-        </h2>
-        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-        <p class="">Pull a decrypted IPA from a jailbroken device.
-            <br></p>  
-        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
-              <p class="text-center" style="border-bottom: 1px dotted white;">
-                <b>How to use ?</b>
-            <br>
-    <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-            <p class="text-center">
-                
-                Go to frida-ios-dumo directory, run ./dump.py App_Name.
-            </p></p>
-        </div>
-      </div>
-
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-<div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/AloneMonkey/frida-ios-dump">Read more</a></div>
-
-  </div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-  <div class="col-md">
-        <div class="highlight-light" >
-          <div class="container mb-4">
-              <div class="intro">
-                  <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-                    <strong>
-<!-- ------------------------- NAME HERE -------------------------------------------------- -->
-Nmap       
-                    </strong><br></h2>
-                  <p class="">
-<!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-   
-Nmap Free Security Scanner, Port Scanner, & Network Exploration Tool.
-                <br>
-                </p>
-                  
-                 <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
-                      
-<!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-                    <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">
-                       nmap --help will show all the available options to use.
-</p></p>
-                  </div>
-             
-              </div>
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-
-             <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://nmap.org/">Read more</a></div>
-          </div>
-      </div>
-    </div>
-</div>
-
-
-
-
-<div class="row">
-    <div class="col-md">
-      
-<div class="highlight-light" >
-  <div class="container mb-4">
-      <div class="intro">
-        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-            <!-- ------------------------- NAME HERE -------------------------------------------------- -->
-            <strong> swift-frida </strong>
-            <br>
-        </h2>
-        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-        <p class="">Swift runtime interop from Frida -- interact with iOS apps written in Swift, using Frida.
-            <br></p>  
-        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
-              <p class="text-center" style="border-bottom: 1px dotted white;">
-                <b>How to use ?</b>
-            <br>
-    <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-            <p class="text-center">
-                
-                Go to swift-frida directory inside iOSZone and run.
-            </p></p>
-        </div>
-      </div>
-
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-<div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/maltek/swift-frida">Read more</a></div>
-
-  </div>
-</div>
-</div>
-
-  <div class="col-md">
-        <div class="highlight-light" >
-          <div class="container mb-4">
-              <div class="intro">
-                  <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-                    <strong>
-<!-- ------------------------- NAME HERE -------------------------------------------------- -->
-Runtime Mobile Security       
-                    </strong><br></h2>
-                  <p class="">
-<!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-   
-Runtime Mobile Security (RMS), powered by FRIDA, is a powerful web interface that helps you to manipulate Android Java Classes and Methods at Runtime.
-                <br>
-                </p>
-                  
-                 <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
-                      
-<!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-                    <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">
-                       Go to Application Menu --> AndroidZone --> RMS.
-</p></p>
-                  </div>
-             
-              </div>
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-
-             <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security">Read more</a></div>
-          </div>
-      </div>
-    </div>
-</div>
-
-
-
-<div class="col-md">
-        <div class="highlight-light" >
-          <div class="container mb-4">
-              <div class="intro">
-                  <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-                    <strong>
-<!-- ------------------------- NAME HERE -------------------------------------------------- -->
-PassionFruit      
-                    </strong><br></h2>
-                  <p class="">
-<!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-   
-Simple iOS app blackbox assessment tool. Powered by frida.re and vuejs.
-                      <br>
-                </p>
-                  
-                 <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
-                      
-<!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-                    <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">
-                       Go to Application Menu --> iZone --> Passionfruit.
-</p></p>
-                  </div>
-             
-              </div>
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-
-             <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/chaitin/passionfruit">Read more</a></div>
-          </div>
-      </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-<div class="col-md">
-        <div class="highlight-light" >
-          <div class="container mb-4">
-              <div class="intro">
-                  <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
-                    <strong>
-<!-- ------------------------- NAME HERE -------------------------------------------------- -->
-AndroBugs Framework       
-                    </strong><br></h2>
-                  <p class="">
-<!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
-   
-AndroBugs Framework is an Android vulnerability analysis system that helps developers or hackers find potential security vulnerabilities in Android applications. No splendid GUI interface, 
-                     but the most efficient (less than 2 minutes per scan in average) and more accurate.
-                <br>
-                </p>
-                  
-                 <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
-                      
-<!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
-
-                    <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br><p class="text-center">
-                       Run Androbug Analyzer by clicking the application icon from application menu.
-</p></p>
-                  </div>
-             
-              </div>
-<!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
-
-             <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/AndroBugs/AndroBugs_Framework">Read more</a></div>
-          </div>
-      </div>
-    </div>
-</div>
-
-          
-    </div>
-
-    <div class="py-5 c2a6">
-      <div class="container">
-        <!-- row  -->
-        <div class="row justify-content-center">
-          <div class="col-md-8 text-center">
-            <h3 class="mb-3">Have suggestions for us ?? Want your favorite tools added to mobexler ?</h3>
-            <a href="/index.html#contact"class="btn btn-danger btn-md mt-3">Contact us</a>
-          </div>
-        </div>
-        <!-- row  -->
-      </div>
-    </div>
-    <br>
-    <br>
-    <!-- Site footer -->
-    <footer class="site-footer ">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 col-md-4">
-              <h6>About</h6>
-              <a href="/"><img src="images/logo-light.png" alt="" class="logo-dark" height="122" /></a>
-
-              <p class="text-justify">One of the most hassle free mobile penetration testing platform by team enciphers..</p>
+               </div>
             </div>
-  
-            <div class="col-xs-6 col-md-4">
-              <h6>Mobexler Links</h6>
-              <ul class="footer-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/download.htm">Download</a></li>
-                <li><a href="/setup.htm">Setup</a></li>
-                <li><a href="/tools.htm">Tools</a></li>
-                <li><a href="/license.htm">License</a></li>
-                <li><a href="/Credits.htm">Credits</a></li>
-                <li><a href="/resources.htm">Resources</a></li>
-              </ul>
-
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <strong>
+                              <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                              Radare2  
+                           </strong>
+                           <br>
+                        </h2>
+                        <p class="">
+                           <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                           Radare is a portable reversing framework that can Disassemble/assemble many different architectures.
+                           <br>
+                        </p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
+                           <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                           <p class="text-center">
+                              Use r2 to run it.
+                           </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://rada.re/r/">Read more</a></div>
+                  </div>
+               </div>
             </div>
-  
-            <div class="col-xs-6 col-md-4">
-              <h6>Enciphers Links</h6>
-              <ul class="footer-links">
-                <li><a href="https://enciphers.com/">Enciphers</a></li>
-                <li><a href="https://enciphers.com/about-us/">About Us</a></li>
-                <li><a href="https://enciphers.com/services/">Services</a></li>
-                <li><a href="https://enciphers.com/trainings/">Trainings</a></li>
-                <li><a href="https://enciphers.com/contact/">Contact</a></li>
-                <li><a href="https://enciphers.com/blog/">Blog</a></li>
-
-              </ul>
-              <a href="https://www.enciphers-trainings.com/" class="btn mt-2 btn-primary" target="_blank">Online Training<span class="ml-2 right-icon">&#8594;</span></a>
+         </div>
+         <div class="row">
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                           <strong>Mara Framework</strong>
+                           <br>
+                        </h2>
+                        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                        <p class="">MARA is a Mobile Application Reverse engineering and Analysis Framework. It is a toolkit that puts together commonly used mobile application reverse engineering and analysis tools.
+                           <br>
+                        </p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
+                           <p class="text-center" style="border-bottom: 1px dotted white;">
+                              <b>How to use ?</b>
+                              <br>
+                              <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center">Goto mara folder and run ./mara.sh it will show the supported options with mara-framework.
+                           </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/xtiankisutsa/MARA_Framework">Read more</a></div>
+                  </div>
+               </div>
             </div>
-          </div>
-          <hr>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8 col-sm-6 col-xs-12">
-              <p class="copyright-text">2020 © Enciphers. Design by 
-           <a href="/index.html">Enciphers</a>.
-              </p>
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <strong>
+                              <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                              SIGN   
+                           </strong>
+                           <br>
+                        </h2>
+                        <p class="">
+                           <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                           <br>
+                        </p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
+                           <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                           <p class="text-center">
+                              java -jar sign.jar.
+                           </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="#">Read more</a></div>
+                  </div>
+               </div>
             </div>
-  
-            <div class="col-md-4 col-sm-6 col-xs-12">
-              <ul class="social-icons">
-                <li><a class="facebook" href="https://twitter.com/mobexler"><i class="mdi mdi-twitter"></i></a></li>
-              
-              </ul>
+         </div>
+         <div class="row">
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                           <strong> TCPDUMP</strong>
+                           <br>
+                        </h2>
+                        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                        <p class="">It is a powerful command-line packet analyzer; and libpcap for network traffic capture.
+                           <br>
+                        </p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
+                           <p class="text-center" style="border-bottom: 1px dotted white;">
+                              <b>How to use ?</b>
+                              <br>
+                              <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center">tcpdump --help and it wil show the available options for this command line tool.
+                           </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/sensepost/objection">Read more</a></div>
+                  </div>
+               </div>
             </div>
-          </div>
-        </div>
-  </footer>
-
-    <!-- javascript -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/scrollspy.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <!-- COUNTER -->
-    <script src="js/counter.int.js"></script>
-    <!-- carousel -->
-    <script src="js/owl.carousel.min.js"></script>
-    <!-- Main Js -->
-    <script src="js/app.js"></script>
-
-</body>
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <strong>
+                              <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                              Objection    
+                           </strong>
+                           <br>
+                        </h2>
+                        <p class="">
+                           <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                           Objection is a runtime mobile exploration toolkit, powered by Frida It was built with the aim of helping assess mobile applications and their security posture without the need for a jailbroken or rooted mobile device.
+                           <br>
+                        </p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
+                           <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                           <p class="text-center">
+                              Run objection --help and it will show all the available info/options for frida.
+                           </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/sensepost/objection">Read more</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                           <strong> Drozer </strong>
+                           <br>
+                        </h2>
+                        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                        <p class="">It is a security pentesting framework.Drozer allows pentesters to search for security vulnerabilities in apps and devices by assuming the role of an app and interacting with the Dalvik VM.
+                           <br>
+                        </p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
+                           <p class="text-center" style="border-bottom: 1px dotted white;">
+                              <b>How to use ?</b>
+                              <br>
+                              <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center">
+                              Run drozer command and also install the drozer client(adb install agent.apk) 
+                              in Mobile device. 
+                              port forword using : adb forword tcp:31415 tcp:31415
+                              launch Drozer console using : drozer console connect
+                           </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/mwrlabs/drozer">Read more</a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <strong>
+                              <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                              Ghidra     
+                           </strong>
+                           <br>
+                        </h2>
+                        <p class="">
+                           <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                           A software reverse engineering (SRE) suite of tools developed by NSA's Research Directorate and this reverse engineering tool helps to dig up the source code of a proprietary program which further gives you the ability to detect virus threats or potential bugs
+                           <br>
+                        </p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
+                           <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                           <p class="text-center">
+                              got to Ghidra folder and run ./ghidraRun. It will open the GUI interface
+                              and you can use it.
+                           </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://ghidra-sre.org/">Read more</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                           <strong> Cydia Impactor </strong>
+                           <br>
+                        </h2>
+                        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                        <p class="">You can use this tool to install IPA files on iOS and APK files on Android. It also can help you exploit the series of Android "Master Key" vulnerabilities.
+                           <br>
+                        </p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
+                           <p class="text-center" style="border-bottom: 1px dotted white;">
+                              <b>How to use ?</b>
+                              <br>
+                              <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center">
+                              Run Cydia and connect your IOS device to computer ,wait until it gets detected.
+                              Drag IPA to cydia impactor window and install.
+                              It will prompt for Apple ID and password and IPA file will be instlled 
+                              successfully.
+                           </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="http://www.cydiaimpactor.com/">Read more</a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <strong>
+                              <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                              Filezilla      
+                           </strong>
+                           <br>
+                        </h2>
+                        <p class="">
+                           <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                           It is used for transferring files over the Network.
+                           <br>
+                        </p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
+                           <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                           <p class="text-center">
+                              Filezilla is GUI based so it is pretty easy to use :) just simply run !!!and you can use it.
+                           </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://filezilla-project.org/">Read more</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                           <strong> Putty  </strong>
+                           <br>
+                        </h2>
+                        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                        <p class="">it is an SSH and telnet client..
+                           <br>
+                        </p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
+                           <p class="text-center" style="border-bottom: 1px dotted white;">
+                              <b>How to use ?</b>
+                              <br>
+                              <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center">
+                              It has Ui interface,Simply run and use it.
+                           </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://www.putty.org/">Read more</a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <strong>
+                              <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                              Hopper Disassembler       
+                           </strong>
+                           <br>
+                        </h2>
+                        <p class="">
+                           <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                           Hopper Disassembler, the reverse engineering tool that lets you disassemble, decompile and debug your applications.
+                           <br>
+                        </p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
+                           <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                           <p class="text-center">
+                              Hopper Disassembler is UI based tool so simply run and use it.
+                           </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://www.hopperapp.com/">Read more</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                           <strong> Metasploit   </strong>
+                           <br>
+                        </h2>
+                        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                        <p class="">It is a penetration testing framework that enables pentesters to find, exploit, and validate vulnerabilities.
+                           <br>
+                        </p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
+                           <p class="text-center" style="border-bottom: 1px dotted white;">
+                              <b>How to use ?</b>
+                              <br>
+                              <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center">
+                              To start metasploit use command "msfconsole".
+                           </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://www.offensive-security.com/metasploit-unleashed/requirements/">Read more</a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <strong>
+                              <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                              Sqlmap       
+                           </strong>
+                           <br>
+                        </h2>
+                        <p class="">
+                           <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                           sqlmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws
+                           <br>
+                        </p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
+                           <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                           <p class="text-center">
+                              just run sqlmap -h and it will show available options to use with it.
+                           </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/sqlmapproject/sqlmap">Read more</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                           <strong> DB Browser for SQLite     </strong>
+                           <br>
+                        </h2>
+                        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                        <p class="">DB Browser for SQLite (DB4S) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite.
+                           <br>
+                        </p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
+                           <p class="text-center" style="border-bottom: 1px dotted white;">
+                              <b>How to use ?</b>
+                              <br>
+                              <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center">
+                              Just run DB Browser for SQLite from the application menu.
+                           </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://sqlitebrowser.org/">Read more</a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md">
+                  <div class="highlight-light" >
+                     <div class="container mb-4">
+                        <div class="intro">
+                           <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                              <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                              <strong> frida-ios-dump </strong>
+                              <br>
+                           </h2>
+                           <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                           <p class="">Pull a decrypted IPA from a jailbroken device.
+                              <br>
+                           </p>
+                           <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
+                              <p class="text-center" style="border-bottom: 1px dotted white;">
+                                 <b>How to use ?</b>
+                                 <br>
+                                 <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                              <p class="text-center">
+                                 Go to frida-ios-dumo directory, run ./dump.py App_Name.
+                              </p>
+                              </p>
+                           </div>
+                        </div>
+                        <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                        <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/AloneMonkey/frida-ios-dump">Read more</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md">
+                  <div class="highlight-light" >
+                     <div class="container mb-4">
+                        <div class="intro">
+                           <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                              <strong>
+                                 <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                                 Nmap       
+                              </strong>
+                              <br>
+                           </h2>
+                           <p class="">
+                              <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                              Nmap Free Security Scanner, Port Scanner, & Network Exploration Tool.
+                              <br>
+                           </p>
+                           <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
+                              <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                              <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                              <p class="text-center">
+                                 nmap --help will show all the available options to use.
+                              </p>
+                              </p>
+                           </div>
+                        </div>
+                        <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                        <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://nmap.org/">Read more</a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md">
+                  <div class="highlight-light" >
+                     <div class="container mb-4">
+                        <div class="intro">
+                           <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                              <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                              <strong> swift-frida </strong>
+                              <br>
+                           </h2>
+                           <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                           <p class="">Swift runtime interop from Frida -- interact with iOS apps written in Swift, using Frida.
+                              <br>
+                           </p>
+                           <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px; background-color: black;color: rgb(0, 184, 0);">
+                              <p class="text-center" style="border-bottom: 1px dotted white;">
+                                 <b>How to use ?</b>
+                                 <br>
+                                 <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                              <p class="text-center">
+                                 Go to swift-frida directory inside iOSZone and run.
+                              </p>
+                              </p>
+                           </div>
+                        </div>
+                        <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                        <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/maltek/swift-frida">Read more</a></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md">
+                  <div class="highlight-light" >
+                     <div class="container mb-4">
+                        <div class="intro">
+                           <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                              <strong>
+                                 <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                                 Runtime Mobile Security       
+                              </strong>
+                              <br>
+                           </h2>
+                           <p class="">
+                              <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                              Runtime Mobile Security (RMS), powered by FRIDA, is a powerful web interface that helps you to manipulate Android Java Classes and Methods at Runtime.
+                              <br>
+                           </p>
+                           <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
+                              <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                              <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                              <p class="text-center">
+                                 Go to Application Menu --> AndroidZone --> RMS.
+                              </p>
+                              </p>
+                           </div>
+                        </div>
+                        <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                        <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security">Read more</a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md">
+               <div class="highlight-light" >
+                  <div class="container mb-4">
+                     <div class="intro">
+                        <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                           <strong>
+                              <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                              PassionFruit      
+                           </strong>
+                           <br>
+                        </h2>
+                        <p class="">
+                           <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                           Simple iOS app blackbox assessment tool. Powered by frida.re and vuejs.
+                           <br>
+                        </p>
+                        <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
+                           <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                           <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                           <p class="text-center">
+                              Go to Application Menu --> iOSZone --> Passionfruit.
+                           </p>
+                           </p>
+                        </div>
+                     </div>
+                     <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                     <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/chaitin/passionfruit">Read more</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md">
+            <div class="highlight-light" >
+               <div class="container mb-4">
+                  <div class="intro">
+                     <h2 class=" mt-5 pt-5" style="text-decoration: underline; text-decoration-color:blue">
+                        <strong>
+                           <!-- ------------------------- NAME HERE -------------------------------------------------- -->
+                           AndroBugs Framework       
+                        </strong>
+                        <br>
+                     </h2>
+                     <p class="">
+                        <!-- --------------------------------------------- TAG HERE --------------------------------------------- -->
+                        AndroBugs Framework is an Android vulnerability analysis system that helps developers or hackers find potential security vulnerabilities in Android applications. No splendid GUI interface, 
+                        but the most efficient (less than 2 minutes per scan in average) and more accurate.
+                        <br>
+                     </p>
+                     <div class=" mb-2" style="border: 1px solid rgb(73, 73, 73); border-radius: 3px;  background-color: black;color: rgb(0, 184, 0);" >
+                        <!-- --------------------------------------------- MORE HERE --------------------------------------------- -->
+                        <p class="text-center" style="border-bottom: 1px dotted white;"><b>How to use ?</b><br>
+                        <p class="text-center">
+                           Run Androbug Analyzer by clicking the application icon from application menu.
+                        </p>
+                        </p>
+                     </div>
+                  </div>
+                  <!-- --------------------------------------------- LINK HERE --------------------------------------------- -->
+                  <div class="buttons"><a class="btn btn-sm btn-primary" role="button" href="https://github.com/AndroBugs/AndroBugs_Framework">Read more</a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      <div class="py-5 c2a6">
+         <div class="container">
+            <!-- row  -->
+            <div class="row justify-content-center">
+               <div class="col-md-8 text-center">
+                  <h3 class="mb-3">Have suggestions for us ?? Want your favorite tools added to mobexler ?</h3>
+                  <a href="/index.html#contact"class="btn btn-danger btn-md mt-3">Contact us</a>
+               </div>
+            </div>
+            <!-- row  -->
+         </div>
+      </div>
+      <br>
+      <br>
+      <!-- Site footer -->
+      <footer class="site-footer ">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12 col-md-4">
+                  <h6>About</h6>
+                  <a href="/"><img src="images/logo-light.png" alt="" class="logo-dark" height="122" /></a>
+                  <p class="text-justify">One of the most hassle free mobile penetration testing platform by team enciphers..</p>
+               </div>
+               <div class="col-xs-6 col-md-4">
+                  <h6>Mobexler Links</h6>
+                  <ul class="footer-links">
+                     <li><a href="/">Home</a></li>
+                     <li><a href="/download.htm">Download</a></li>
+                     <li><a href="/setup.htm">Setup</a></li>
+                     <li><a href="/tools.htm">Tools</a></li>
+                     <li><a href="/license.htm">License</a></li>
+                     <li><a href="/Credits.htm">Credits</a></li>
+                     <li><a href="/resources.htm">Resources</a></li>
+                  </ul>
+               </div>
+               <div class="col-xs-6 col-md-4">
+                  <h6>Enciphers Links</h6>
+                  <ul class="footer-links">
+                     <li><a href="https://enciphers.com/">Enciphers</a></li>
+                     <li><a href="https://enciphers.com/about-us/">About Us</a></li>
+                     <li><a href="https://enciphers.com/services/">Services</a></li>
+                     <li><a href="https://enciphers.com/trainings/">Trainings</a></li>
+                     <li><a href="https://enciphers.com/contact/">Contact</a></li>
+                     <li><a href="https://enciphers.com/blog/">Blog</a></li>
+                  </ul>
+                  <a href="https://www.enciphers-trainings.com/" class="btn mt-2 btn-primary" target="_blank">Online Training<span class="ml-2 right-icon">&#8594;</span></a>
+               </div>
+            </div>
+            <hr>
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-md-8 col-sm-6 col-xs-12">
+                  <p class="copyright-text">2020 © Enciphers. Design by 
+                     <a href="/index.html">Enciphers</a>.
+                  </p>
+               </div>
+               <div class="col-md-4 col-sm-6 col-xs-12">
+                  <ul class="social-icons">
+                     <li><a class="facebook" href="https://twitter.com/mobexler"><i class="mdi mdi-twitter"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- javascript -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/scrollspy.min.js"></script>
+      <script src="js/jquery.easing.min.js"></script>
+      <!-- COUNTER -->
+      <script src="js/counter.int.js"></script>
+      <!-- carousel -->
+      <script src="js/owl.carousel.min.js"></script>
+      <!-- Main Js -->
+      <script src="js/app.js"></script>
+   </body>
 </html>
