@@ -1622,7 +1622,7 @@ body .markdown-body
 
 <tr>
 <td><p style="text-align:justify">Check for Access Control issues</p></td>
-<td><ul><li>Some of the componentes can be accessed by other apps if the are not properly protected.Components like activities,services,content providers</li><li>e.g. In a app one activity shows the API key and password (activity might handle some other sensitive info) inside the app.Try to get the same info from the outside of the app.<code>Note: Check if the Activity/Component is exported and app is allowing access of info outside the application.then it is an issue </code></li><li>check using<code>adb shell am start com.app_name/.Activity_name(activity which is exported and have sensitive information)</code>this will launch the activity<code>adb shell am start -n com.app_name/.Activity_name -a com.app_name.action.VIEW_Action_name</code>-a it specifies the intent action and above will launch the activity</li><li></li></ul></td>
+<td><ul><li>Some of the componentes can be accessed by other apps if the are not properly protected.Components like activities,services,content providers</li><li>e.g. In a app one activity shows the API key and password (activity might handle some other sensitive info) inside the app.Try to get the same info from the outside of the app.<code>Note: Check if the Activity/Component is exported and app is allowing access of info outside the application.then it is an issue </code></li><li>check using<code>adb shell am start com.app_name/.Activity_name(activity which is exported and have sensitive information)</code>this will launch the activity<code>adb shell am start -n com.app_name/.Activity_name -a com.app_name.action.VIEW_Action_name</code>-a it specifies the intent action and above will launch the activity</li></ul></td>
 <td>
   --
 </td>
@@ -1631,6 +1631,7 @@ body .markdown-body
                                  
 </tbody>
 </table></article>
+<p>Last Modified on 1 July 2020</p>
     </div>
 
 
