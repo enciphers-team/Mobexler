@@ -22,8 +22,12 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
     <link href="css/style.min.css" rel="stylesheet" type="text/css" />
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
     <style>
+              html{
+            scroll-behavior: smooth;
+        }
         .site-footer {
           background-color: #26272b;
           padding: 45px 0 20px;
@@ -1388,9 +1392,78 @@ body .markdown-body
 .codehilite .vi{color:teal}
 .codehilite .il{color:#009999}
 .codehilite .gc{color:#999;background-color:#EAF2F5}
+
+/*Image Container CSS */
+.icon-container{
+            display: flex;
+            width: 50%;
+            margin: 10px auto;
+        }
+.icon-container img {
+    width: 100%;
+    height: auto;
+}
+.icon-container div img {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+        }
+        .icon-container div:hover img {
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+        }
+        /* Back To Top button CSS*/
+        #button {
+  display: inline-block;
+  background-color: #1e6add;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 </style><title>Mobile_check_list_table_102</title></head><body>
+<!-- Back to Top Button -->
+<a id="button"></a>
+
+  <div class="icon-container">
+    <div class="android-logo">
+        <a href="#android"><img src="images/android_logo.png" alt="android_logo"></a>
+    </div>
+    <div class="ios-logo">
+        <a href="#ios"><img src="images/apple_logo.png" alt="ios_logo"></a>
+    </div>
+  </div>
     <article class="markdown-body">
-        <h2 class=" mt-5 pt-5 text-center mb-5" style="text-decoration: underline; text-decoration-color:blue"><strong>iOS Pentesting Checklist </strong><br></h2>
+        <h2 id="ios" class=" mt-5 pt-5 text-center mb-5" style="text-decoration: underline; text-decoration-color:blue"><strong>iOS Pentesting Checklist </strong><br></h2>
        
    <div class="container">
 <table>
@@ -1510,7 +1583,7 @@ body .markdown-body
 </tbody>
 </table>
 
-<h2 class=" mt-5 pt-5 text-center mb-5" style="text-decoration: underline; text-decoration-color:blue"><strong>Android Pentesting Checklist</strong><br></h2>
+<h2 id="android" class=" mt-5 pt-5 text-center mb-5" style="text-decoration: underline; text-decoration-color:blue"><strong>Android Pentesting Checklist</strong><br></h2>
 <table>
 <thead>
 <tr>
@@ -1733,11 +1806,28 @@ body .markdown-body
     <script src="js/scrollspy.min.js"></script>
     <script src="js/jquery.easing.min.js"></script>
     <!-- COUNTER -->
-    <script src="js/counter.int.js"></script>
+    <!-- <script src="js/counter.int.js"></script> -->
     <!-- carousel -->
     <script src="js/owl.carousel.min.js"></script>
     <!-- Main Js -->
     <script src="js/app.js"></script>
+    <script>
+    var btn = $('#button');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 1000) {
+
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:175}, '300');
+});
+</script>
 
 </body>
 </html>
