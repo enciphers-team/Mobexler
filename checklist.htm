@@ -1403,7 +1403,7 @@ body .markdown-body
     width: 100%;
     height: auto;
 }
-.icon-container div img {
+/* .icon-container div img {
             -webkit-transform: scale(1);
             transform: scale(1);
             -webkit-transition: .3s ease-in-out;
@@ -1412,7 +1412,7 @@ body .markdown-body
         .icon-container div:hover img {
             -webkit-transform: scale(1.3);
             transform: scale(1.3);
-        }
+        } */
         /* Back To Top button CSS*/
         #button {
   display: inline-block;
@@ -1449,17 +1449,59 @@ body .markdown-body
   opacity: 1;
   visibility: visible;
 }
+.container-logo{
+  position: relative;
+}
+.img__description_layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* background: rgba(36, 62, 206, 0.6); */
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.container-logo:hover .img__description_layer {
+  visibility: visible;
+  opacity: 1;
+}
+
+.img__description {
+  transition: .2s;
+  transform: translateY(1em);
+}
+
+.container-logo:hover .img__description {
+  transform: translateY(0);
+}
+.icon-container div:hover img {
+            opacity: 0.4;
+        }
 </style><title>Mobile_check_list_table_102</title></head><body>
 <!-- Back to Top Button -->
 <a id="button"></a>
 
   <div class="icon-container">
-    <div class="android-logo">
-        <a href="#android"><img src="images/android_logo.png" alt="android_logo"></a>
+    <div class="android-logo container-logo">
+        <img src="images/android_logo.png" alt="android_logo">
+        <div class="img__description_layer">
+          <a href="#android"><h3 class="img__description">Android Checklist</h3></a>
+        </div>
     </div>
-    <div class="ios-logo">
-        <a href="#ios"><img src="images/apple_logo.png" alt="ios_logo"></a>
+    <div class="ios-logo container-logo">
+        <img src="images/apple_logo.png" alt="ios_logo"></a>
+        <div class="img__description_layer">
+          <a href="#ios"><h3 class="img__description">iOS Checklist</h3></a>
+        </div>
     </div>
   </div>
     <article class="markdown-body">
