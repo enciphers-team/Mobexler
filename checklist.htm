@@ -2,1408 +2,1637 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <title>Mobexler - Mobile Application Penetration Testing Platform</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content=" Mobexler is a customised virtual machine, based on Elementary OS , designed to help in penetration testing of Android & iOS applications." />
-    <meta name="keywords" content=" Mobexler is a customised virtual machine, based on Elementary OS , designed to help in penetration testing of Android & iOS applications." />
+  <meta charset="utf-8" />
+  <title>Mobexler - Mobile Application Penetration Testing Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content=" Mobexler is a customised virtual machine, based on Elementary OS , designed to help in penetration testing of Android & iOS applications." />
+  <meta name="keywords"
+    content=" Mobexler is a customised virtual machine, based on Elementary OS , designed to help in penetration testing of Android & iOS applications." />
 
 
-        <!-- favicon -->
-        <link rel="shortcut icon" href="/favicon.ico">
-    <!-- Pixeden Icon -->
-    <link rel="stylesheet" type="text/css" href="css/pe-icon-7.css" />
+  <!-- favicon -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <!-- Pixeden Icon -->
+  <link rel="stylesheet" type="text/css" href="css/pe-icon-7.css" />
 
-    <!--Slider-->
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+  <!--Slider-->
+  <link rel="stylesheet" href="css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="css/owl.theme.default.min.css" />
 
-    <!-- css -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
-    <link href="css/style.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
-    <style>
-              html{
-            scroll-behavior: smooth;
-        }
-        .site-footer {
-          background-color: #26272b;
-          padding: 45px 0 20px;
-          font-size: 15px;
-          line-height: 24px;
-          color: #737373;
-        }
-        .site-footer hr {
-          border-top-color: #bbb;
-          opacity: 0.5;
-        }
-        .site-footer hr.small {
-          margin: 20px 0;
-        }
-        .site-footer h6 {
-          color: #fff;
-          font-size: 16px;
-          text-transform: uppercase;
-          margin-top: 5px;
-          letter-spacing: 2px;
-        }
-        .site-footer a {
-          color: #737373;
-        }
-        .site-footer a:hover {
-          color: #3366cc;
-          text-decoration: none;
-        }
-        .footer-links {
-          padding-left: 0;
-          list-style: none;
-        }
-        .footer-links li {
-          display: block;
-        }
-        .footer-links a {
-          color: #737373;
-        }
-        .footer-links a:active,
-        .footer-links a:focus,
-        .footer-links a:hover {
-          color: #3366cc;
-          text-decoration: none;
-        }
-        .footer-links.inline li {
-          display: inline-block;
-        }
-        .site-footer .social-icons {
-          text-align: right;
-        }
-        .site-footer .social-icons a {
-          width: 40px;
-          height: 40px;
-          line-height: 40px;
-          margin-left: 6px;
-          margin-right: 0;
-          border-radius: 100%;
-          background-color: #33353d;
-        }
-        .copyright-text {
-          margin: 0;
-        }
-        @media (max-width: 991px) {
-          .site-footer [class^="col-"] {
-            margin-bottom: 30px;
-          }
-        }
-        @media (max-width: 767px) {
-          .site-footer {
-            padding-bottom: 0;
-          }
-          .site-footer .copyright-text,
-          .site-footer .social-icons {
-            text-align: center;
-          }
-        }
-        .social-icons {
-          padding-left: 0;
-          margin-bottom: 0;
-          list-style: none;
-        }
-        .social-icons li {
-          display: inline-block;
-          margin-bottom: 4px;
-        }
-        .social-icons li.title {
-          margin-right: 15px;
-          text-transform: uppercase;
-          color: #96a2b2;
-          font-weight: 700;
-          font-size: 13px;
-        }
-        .social-icons a {
-          background-color: #eceeef;
-          color: #818a91;
-          font-size: 16px;
-          display: inline-block;
-          line-height: 44px;
-          width: 44px;
-          height: 44px;
-          text-align: center;
-          margin-right: 8px;
-          border-radius: 100%;
-          -webkit-transition: all 0.2s linear;
-          -o-transition: all 0.2s linear;
-          transition: all 0.2s linear;
-        }
-        .social-icons a:active,
-        .social-icons a:focus,
-        .social-icons a:hover {
-          color: #fff;
-          background-color: #29aafe;
-        }
-        .social-icons.size-sm a {
-          line-height: 34px;
-          height: 34px;
-          width: 34px;
-          font-size: 14px;
-        }
-        .social-icons a.facebook:hover {
-          background-color: #3b5998;
-        }
-        .social-icons a.twitter:hover {
-          background-color: #00aced;
-        }
-        .social-icons a.linkedin:hover {
-          background-color: #007bb6;
-        }
-        .social-icons a.dribbble:hover {
-          background-color: #ea4c89;
-        }
-        @media (max-width: 767px) {
-          .social-icons li.title {
-            display: block;
-            margin-right: 0;
-            font-weight: 600;
-          }
-        }
-        
-        
-        </style>
-    <style>
-.highlight-blue {
-  color: #fff;
-  background-color: #1e6add;
-  padding: 50px 0;
-}
+  <!-- css -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-.highlight-blue p {
-  color: #c4d5ef;
-  line-height: 1.5;
-}
+    .site-footer {
+      background-color: #26272b;
+      padding: 45px 0 20px;
+      font-size: 15px;
+      line-height: 24px;
+      color: #737373;
+    }
 
-.highlight-blue h2 {
-  font-weight: normal;
-  margin-bottom: 25px;
-  line-height: 1.5;
-  padding-top: 0;
-  margin-top: 0;
-  color: inherit;
-}
+    .site-footer hr {
+      border-top-color: #bbb;
+      opacity: 0.5;
+    }
 
-.highlight-blue .intro {
-  font-size: 16px;
-  max-width: 500px;
-  margin: 0 auto 25px;
-}
+    .site-footer hr.small {
+      margin: 20px 0;
+    }
 
-.highlight-blue .buttons {
-  text-align: center;
-}
+    .site-footer h6 {
+      color: #fff;
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-top: 5px;
+      letter-spacing: 2px;
+    }
 
-.highlight-blue .buttons .btn {
-  padding: 16px 32px;
-  margin: 6px;
-  border: none;
-  background: none;
-  box-shadow: none;
-  text-shadow: none;
-  opacity: 0.9;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 13px;
-  letter-spacing: 0.4px;
-  line-height: 1;
-}
+    .site-footer a {
+      color: #737373;
+    }
 
-.highlight-blue .buttons .btn:hover {
-  opacity: 1;
-}
+    .site-footer a:hover {
+      color: #3366cc;
+      text-decoration: none;
+    }
 
-.highlight-blue .buttons .btn:active {
-  transform: translateY(1px);
-}
+    .footer-links {
+      padding-left: 0;
+      list-style: none;
+    }
 
-.highlight-blue .buttons .btn-primary, .highlight-blue .buttons .btn-primary:active {
-  border: 2px solid rgba(255,255,255,0.7);
-  border-radius: 6px;
-  color: #ebeff1;
-  box-shadow: none;
-  text-shadow: none;
-  padding: 14px 24px;
-  background: transparent;
-  transition: background-color 0.25s;
-}
+    .footer-links li {
+      display: block;
+    }
+
+    .footer-links a {
+      color: #737373;
+    }
+
+    .footer-links a:active,
+    .footer-links a:focus,
+    .footer-links a:hover {
+      color: #3366cc;
+      text-decoration: none;
+    }
+
+    .footer-links.inline li {
+      display: inline-block;
+    }
+
+    .site-footer .social-icons {
+      text-align: right;
+    }
+
+    .site-footer .social-icons a {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      margin-left: 6px;
+      margin-right: 0;
+      border-radius: 100%;
+      background-color: #33353d;
+    }
+
+    .copyright-text {
+      margin: 0;
+    }
+
+    @media (max-width: 991px) {
+      .site-footer [class^="col-"] {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .site-footer {
+        padding-bottom: 0;
+      }
+
+      .site-footer .copyright-text,
+      .site-footer .social-icons {
+        text-align: center;
+      }
+    }
+
+    .social-icons {
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none;
+    }
+
+    .social-icons li {
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    .social-icons li.title {
+      margin-right: 15px;
+      text-transform: uppercase;
+      color: #96a2b2;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .social-icons a {
+      background-color: #eceeef;
+      color: #818a91;
+      font-size: 16px;
+      display: inline-block;
+      line-height: 44px;
+      width: 44px;
+      height: 44px;
+      text-align: center;
+      margin-right: 8px;
+      border-radius: 100%;
+      -webkit-transition: all 0.2s linear;
+      -o-transition: all 0.2s linear;
+      transition: all 0.2s linear;
+    }
+
+    .social-icons a:active,
+    .social-icons a:focus,
+    .social-icons a:hover {
+      color: #fff;
+      background-color: #29aafe;
+    }
+
+    .social-icons.size-sm a {
+      line-height: 34px;
+      height: 34px;
+      width: 34px;
+      font-size: 14px;
+    }
+
+    .social-icons a.facebook:hover {
+      background-color: #3b5998;
+    }
+
+    .social-icons a.twitter:hover {
+      background-color: #00aced;
+    }
+
+    .social-icons a.linkedin:hover {
+      background-color: #007bb6;
+    }
+
+    .social-icons a.dribbble:hover {
+      background-color: #ea4c89;
+    }
+
+    @media (max-width: 767px) {
+      .social-icons li.title {
+        display: block;
+        margin-right: 0;
+        font-weight: 600;
+      }
+    }
+  </style>
+  <style>
+    .highlight-blue {
+      color: #fff;
+      background-color: #1e6add;
+      padding: 50px 0;
+    }
+
+    .highlight-blue p {
+      color: #c4d5ef;
+      line-height: 1.5;
+    }
+
+    .highlight-blue h2 {
+      font-weight: normal;
+      margin-bottom: 25px;
+      line-height: 1.5;
+      padding-top: 0;
+      margin-top: 0;
+      color: inherit;
+    }
+
+    .highlight-blue .intro {
+      font-size: 16px;
+      max-width: 500px;
+      margin: 0 auto 25px;
+    }
+
+    .highlight-blue .buttons {
+      text-align: center;
+    }
+
+    .highlight-blue .buttons .btn {
+      padding: 16px 32px;
+      margin: 6px;
+      border: none;
+      background: none;
+      box-shadow: none;
+      text-shadow: none;
+      opacity: 0.9;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 13px;
+      letter-spacing: 0.4px;
+      line-height: 1;
+    }
+
+    .highlight-blue .buttons .btn:hover {
+      opacity: 1;
+    }
+
+    .highlight-blue .buttons .btn:active {
+      transform: translateY(1px);
+    }
+
+    .highlight-blue .buttons .btn-primary,
+    .highlight-blue .buttons .btn-primary:active {
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      border-radius: 6px;
+      color: #ebeff1;
+      box-shadow: none;
+      text-shadow: none;
+      padding: 14px 24px;
+      background: transparent;
+      transition: background-color 0.25s;
+    }
 
 
-@import url(//fonts.googleapis.com/css?family=Montserrat:400,500);
-.c2a6 {
-  font-family: "Montserrat", sans-serif;
-  color: #8d97ad;
-  font-weight: 300;
-}
+    @import url(//fonts.googleapis.com/css?family=Montserrat:400,500);
 
-.c2a6 h1,
-.c2a6 h2,
-.c2a6 h3,
-.c2a6 h4,
-.c2a6 h5,
-.c2a6 h6 {
-  color: #3e4555;
-}
+    .c2a6 {
+      font-family: "Montserrat", sans-serif;
+      color: #8d97ad;
+      font-weight: 300;
+    }
 
-.c2a6 .btn-danger {
-  background: #ff4d7e;
-  border: 1px solid #ff4d7e;
-}
+    .c2a6 h1,
+    .c2a6 h2,
+    .c2a6 h3,
+    .c2a6 h4,
+    .c2a6 h5,
+    .c2a6 h6 {
+      color: #3e4555;
+    }
 
-.c2a6 .subtitle {
-  color: #8d97ad;
-  line-height: 24px;
-}
+    .c2a6 .btn-danger {
+      background: #ff4d7e;
+      border: 1px solid #ff4d7e;
+    }
 
-.c2a6 .btn-md {
-    padding: 15px 45px;
-    font-size: 16px;
-}
-    </style>
+    .c2a6 .subtitle {
+      color: #8d97ad;
+      line-height: 24px;
+    }
+
+    .c2a6 .btn-md {
+      padding: 15px 45px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- Loader -->
-<div id="preloader" class="d-sm-none">         <div id="status">
-            <div class="sk-chase">
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-                <div class="sk-chase-dot"></div>
-            </div>
-        </div>
+  <!-- Loader -->
+  <div id="preloader" class="d-sm-none">
+    <div id="status">
+      <div class="sk-chase">
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+        <div class="sk-chase-dot"></div>
+      </div>
     </div>
+  </div>
 
-    <!--Navbar Start-->
-    <nav class="navbar navbar-expand-lg  navbar-custom sticky sticky-dark navbar-light">
-        <div class="container">
-            <!-- LOGO -->
-            <a class="navbar-brand logo" href="/">
-                <img src="images/logo-dark.png" alt="" class="logo-dark" height="60">
-                <img src="images/logo-dark.png" alt="" class="logo-light" height="120">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="mdi mdi-menu"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
-                    <li class="nav-item ">
-                           <a href="/" class="nav-link">Home</a>
-                    </li>
+  <!--Navbar Start-->
+  <nav class="navbar navbar-expand-lg  navbar-custom sticky sticky-dark navbar-light">
+    <div class="container">
+      <!-- LOGO -->
+      <a class="navbar-brand logo" href="/">
+        <img src="images/logo-dark.png" alt="" class="logo-dark" height="60">
+        <img src="images/logo-dark.png" alt="" class="logo-light" height="120">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="mdi mdi-menu"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto navbar-center" id="mySidenav">
+          <li class="nav-item ">
+            <a href="/" class="nav-link">Home</a>
+          </li>
 
-                    <li class="nav-item">
-                        <a href="/download.htm" class="nav-link">Download</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/setup.htm" class="nav-link">Setup</a>
-
-
-                    </li>
-                    <li class="nav-item">
-                        <a href="/tools.htm" class="nav-link">Tools</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/license.htm" class="nav-link">License</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/credits.htm" class="nav-link">Credits</a>
-                    </li>    
-                    <li class="nav-item">
-                    <a href="/resources.htm" class="nav-link">Resources</a>
-                    </li>  
-                    <li class="nav-item active">
-                    <a href="/checklist.htm" class="nav-link">Mobile App PenTesting Checklist</a>
-                    </li> 
-             
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
+          <li class="nav-item">
+            <a href="/download.htm" class="nav-link">Download</a>
+          </li>
+          <li class="nav-item">
+            <a href="/setup.htm" class="nav-link">Setup</a>
 
 
-    
+          </li>
+          <li class="nav-item">
+            <a href="/tools.htm" class="nav-link">Tools</a>
+          </li>
+          <li class="nav-item">
+            <a href="/license.htm" class="nav-link">License</a>
+          </li>
+          <li class="nav-item">
+            <a href="/credits.htm" class="nav-link">Credits</a>
+          </li>
+          <li class="nav-item">
+            <a href="/resources.htm" class="nav-link">Resources</a>
+          </li>
+          <li class="nav-item active">
+            <a href="/checklist.htm" class="nav-link">Mobile App PenTesting Checklist</a>
+          </li>
 
-    <div class="highlight-blue" style="height:60vh;">
-        <div class="container">
-            <div class="intro">
-                <h2 class="text-center mt-5 pt-5"><strong>Mobile Application Penetration Testing Checklist</strong><br></h2>
-                <p><b class="text-center">A checklist for security testing of Android & iOS applications.  
-                </b></p>
-            </div>
-        </div>
+        </ul>
+      </div>
     </div>
+  </nav>
+  <!-- Navbar End -->
+
+
+
+
+  <div class="highlight-blue" style="height:60vh;">
+    <div class="container">
+      <div class="intro">
+        <h2 class="text-center mt-5 pt-5"><strong>Mobile Application Penetration Testing Checklist</strong><br></h2>
+        <p><b class="text-center">A checklist for security testing of Android & iOS applications.
+          </b></p>
+      </div>
     </div>
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-   <style>
-
-body .markdown-body
-{
-  padding: 45px;
-}
-
-.markdown-body {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  color: #333333;
-  overflow: hidden;
-  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  word-wrap: break-word;
-}
-
-.markdown-body a {
-  background: transparent;
-}
-
-.markdown-body a:active,
-.markdown-body a:hover {
-  outline: 0;
-}
-
-.markdown-body b,
-.markdown-body strong {
-  font-weight: bold;
-}
-
-.markdown-body mark {
-  background: #ff0;
-  color: #000;
-  font-style: italic;
-  font-weight: bold;
-}
-
-.markdown-body sub,
-.markdown-body sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-.markdown-body sup {
-  top: -0.5em;
-}
-.markdown-body sub {
-  bottom: -0.25em;
-}
-
-.markdown-body h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-.markdown-body img {
-  border: 0;
-}
-
-.markdown-body hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
-}
-
-.markdown-body pre {
-  overflow: auto;
-}
-
-.markdown-body code,
-.markdown-body kbd,
-.markdown-body pre,
-.markdown-body samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-.markdown-body input {
-  color: inherit;
-  font: inherit;
-  margin: 0;
-}
-
-.markdown-body html input[disabled] {
-  cursor: default;
-}
-
-.markdown-body input {
-  line-height: normal;
-}
-
-.markdown-body input[type="checkbox"] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
-.markdown-body table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-.markdown-body td,
-.markdown-body th {
-  padding: 0;
-}
-
-.markdown-body .codehilitetable {
-  border: 0;
-  border-spacing: 0;
-}
-
-.markdown-body .codehilitetable tr {
-  border: 0;
-}
-
-.markdown-body .codehilitetable pre,
-.markdown-body .codehilitetable div.codehilite {
-  margin: 0;
-}
-
-.markdown-body .linenos,
-.markdown-body .code,
-.markdown-body .codehilitetable td {
-  border: 0;
-  padding: 0;
-}
-
-.markdown-body td:not(.linenos) .linenodiv {
-  padding: 0 !important;
-}
-
-.markdown-body .code {
-  width: 100%;
-}
-
-.markdown-body .linenos div pre,
-.markdown-body .linenodiv pre,
-.markdown-body .linenodiv {
-  border: 0;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  -webkit-border-top-left-radius: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-
-.markdown-body .code div pre,
-.markdown-body .code div {
-  border: 0;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  -webkit-border-top-right-radius: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-  -moz-border-radius-topright: 3px;
-  -moz-border-radius-bottomright: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-}
-
-.markdown-body * {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.markdown-body input {
-  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
-  line-height: 1.4;
-}
-
-.markdown-body a {
-  color: #4183c4;
-  text-decoration: none;
-}
-
-.markdown-body a:hover,
-.markdown-body a:focus,
-.markdown-body a:active {
-  text-decoration: underline;
-}
-
-.markdown-body hr {
-  height: 0;
-  margin: 15px 0;
-  overflow: hidden;
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid #ddd;
-}
-
-.markdown-body hr:before,
-.markdown-body hr:after {
-  display: table;
-  content: " ";
-}
-
-.markdown-body hr:after {
-  clear: both;
-}
-
-.markdown-body h1,
-.markdown-body h2,
-.markdown-body h3,
-.markdown-body h4,
-.markdown-body h5,
-.markdown-body h6 {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  line-height: 1.1;
-}
-
-.markdown-body h1 {
-  font-size: 30px;
-}
-
-.markdown-body h2 {
-  font-size: 21px;
-}
-
-.markdown-body h3 {
-  font-size: 16px;
-}
-
-.markdown-body h4 {
-  font-size: 14px;
-}
-
-.markdown-body h5 {
-  font-size: 12px;
-}
-
-.markdown-body h6 {
-  font-size: 11px;
-}
-
-.markdown-body blockquote {
-  margin: 0;
-}
-
-.markdown-body ul,
-.markdown-body ol {
-  padding: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.markdown-body ol ol,
-.markdown-body ul ol {
-  list-style-type: lower-roman;
-}
-
-.markdown-body ul ul ol,
-.markdown-body ul ol ol,
-.markdown-body ol ul ol,
-.markdown-body ol ol ol {
-  list-style-type: lower-alpha;
-}
-
-.markdown-body dd {
-  margin-left: 0;
-}
-
-.markdown-body code,
-.markdown-body pre,
-.markdown-body samp {
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 12px;
-}
-
-.markdown-body pre {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.markdown-body kbd {
-  background-color: #e7e7e7;
-  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
-  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
-  background-image: linear-gradient(#fefefe, #e7e7e7);
-  background-repeat: repeat-x;
-  border-radius: 2px;
-  border: 1px solid #cfcfcf;
-  color: #000;
-  padding: 3px 5px;
-  line-height: 10px;
-  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  display: inline-block;
-}
-
-.markdown-body>*:first-child {
-  margin-top: 0 !important;
-}
-
-.markdown-body>*:last-child {
-  margin-bottom: 0 !important;
-}
-
-.markdown-body .headerlink {
-  font: normal 400 16px fontawesome-mini;
-  vertical-align: middle;
-  margin-left: -16px;
-  float: left;
-  display: inline-block;
-  text-decoration: none;
-  opacity: 0;
-  color: #333;
-}
-
-.markdown-body .headerlink:focus {
-  outline: none;
-}
-
-.markdown-body h1 .headerlink {
-  margin-top: 0.8rem;
-}
-
-.markdown-body h2 .headerlink,
-.markdown-body h3 .headerlink {
-  margin-top: 0.6rem;
-}
-
-.markdown-body h4 .headerlink {
-  margin-top: 0.2rem;
-}
-
-.markdown-body h5 .headerlink,
-.markdown-body h6 .headerlink {
-  margin-top: 0;
-}
-
-.markdown-body .headerlink:hover,
-.markdown-body h1:hover .headerlink,
-.markdown-body h2:hover .headerlink,
-.markdown-body h3:hover .headerlink,
-.markdown-body h4:hover .headerlink,
-.markdown-body h5:hover .headerlink,
-.markdown-body h6:hover .headerlink {
-  opacity: 1;
-  text-decoration: none;
-}
-
-.markdown-body h1 {
-  padding-bottom: 0.3em;
-  font-size: 2.25em;
-  line-height: 1.2;
-  border-bottom: 1px solid #eee;
-}
-
-.markdown-body h2 {
-  padding-bottom: 0.3em;
-  font-size: 1.75em;
-  line-height: 1.225;
-  border-bottom: 1px solid #eee;
-}
-
-.markdown-body h3 {
-  font-size: 1.5em;
-  line-height: 1.43;
-}
-
-.markdown-body h4 {
-  font-size: 1.25em;
-}
-
-.markdown-body h5 {
-  font-size: 1em;
-}
-
-.markdown-body h6 {
-  font-size: 1em;
-  color: #777;
-}
-
-.markdown-body p,
-.markdown-body blockquote,
-.markdown-body ul,
-.markdown-body ol,
-.markdown-body dl,
-.markdown-body table,
-.markdown-body pre,
-.markdown-body .admonition {
-  margin-top: 0;
-  margin-bottom: 16px;
-}
-
-.markdown-body hr {
-  height: 4px;
-  padding: 0;
-  margin: 16px 0;
-  background-color: #e7e7e7;
-  border: 0 none;
-}
-
-.markdown-body ul,
-.markdown-body ol {
-  padding-left: 2em;
-}
-
-.markdown-body ul ul,
-.markdown-body ul ol,
-.markdown-body ol ol,
-.markdown-body ol ul {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.markdown-body li>p {
-  margin-top: 16px;
-}
-
-.markdown-body dl {
-  padding: 0;
-}
-
-.markdown-body dl dt {
-  padding: 0;
-  margin-top: 16px;
-  font-size: 1em;
-  font-style: italic;
-  font-weight: bold;
-}
-
-.markdown-body dl dd {
-  padding: 0 16px;
-  margin-bottom: 16px;
-}
-
-.markdown-body blockquote {
-  padding: 0 15px;
-  color: #777;
-  border-left: 4px solid #ddd;
-}
-
-.markdown-body blockquote>:first-child {
-  margin-top: 0;
-}
-
-.markdown-body blockquote>:last-child {
-  margin-bottom: 0;
-}
-
-.markdown-body table {
-  display: block;
-  width: 100%;
-  overflow: auto;
-  word-break: normal;
-  word-break: keep-all;
-}
-
-.markdown-body table th {
-  font-weight: bold;
-}
-
-.markdown-body table th,
-.markdown-body table td {
-  padding: 6px 13px;
-  border: 1px solid #ddd;
-}
-
-.markdown-body table tr {
-  background-color: #fff;
-  border-top: 1px solid #ccc;
-}
-
-.markdown-body table tr:nth-child(2n) {
-  background-color: #f8f8f8;
-}
-
-.markdown-body img {
-  max-width: 100%;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.markdown-body code,
-.markdown-body samp {
-  padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-  margin: 0;
-  font-size: 85%;
-  background-color: rgba(0,0,0,0.04);
-  border-radius: 3px;
-}
-
-.markdown-body code:before,
-.markdown-body code:after {
-  letter-spacing: -0.2em;
-  content: "\00a0";
-}
-
-.markdown-body pre>code {
-  padding: 0;
-  margin: 0;
-  font-size: 100%;
-  word-break: normal;
-  white-space: pre;
-  background: transparent;
-  border: 0;
-}
-
-.markdown-body .codehilite {
-  margin-bottom: 16px;
-}
-
-.markdown-body .codehilite pre,
-.markdown-body pre {
-  padding: 16px;
-  overflow: auto;
-  font-size: 85%;
-  line-height: 1.45;
-  background-color: #f7f7f7;
-  border-radius: 3px;
-}
-
-.markdown-body .codehilite pre {
-  margin-bottom: 0;
-  word-break: normal;
-}
-
-.markdown-body pre {
-  word-wrap: normal;
-}
-
-.markdown-body pre code {
-  display: inline;
-  max-width: initial;
-  padding: 0;
-  margin: 0;
-  overflow: initial;
-  line-height: inherit;
-  word-wrap: normal;
-  background-color: transparent;
-  border: 0;
-}
-
-.markdown-body pre code:before,
-.markdown-body pre code:after {
-  content: normal;
-}
-
-/* Admonition */
-.markdown-body .admonition {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  position: relative;
-  border-radius: 3px;
-  border: 1px solid #e0e0e0;
-  border-left: 6px solid #333;
-  padding: 10px 10px 10px 30px;
-}
-
-.markdown-body .admonition table {
-  color: #333;
-}
-
-.markdown-body .admonition p {
-  padding: 0;
-}
-
-.markdown-body .admonition-title {
-  font-weight: bold;
-  margin: 0;
-}
-
-.markdown-body .admonition>.admonition-title {
-  color: #333;
-}
-
-.markdown-body .attention>.admonition-title {
-  color: #a6d796;
-}
-
-.markdown-body .caution>.admonition-title {
-  color: #d7a796;
-}
-
-.markdown-body .hint>.admonition-title {
-  color: #96c6d7;
-}
-
-.markdown-body .danger>.admonition-title {
-  color: #c25f77;
-}
-
-.markdown-body .question>.admonition-title {
-  color: #96a6d7;
-}
-
-.markdown-body .note>.admonition-title {
-  color: #d7c896;
-}
-
-.markdown-body .admonition:before,
-.markdown-body .attention:before,
-.markdown-body .caution:before,
-.markdown-body .hint:before,
-.markdown-body .danger:before,
-.markdown-body .question:before,
-.markdown-body .note:before {
-  font: normal normal 16px fontawesome-mini;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  line-height: 1.5;
-  color: #333;
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding-top: 10px;
-  padding-left: 10px;
-}
-
-.markdown-body .admonition:before {
-  content: "\f056\00a0";
-  color: 333;
-}
-
-.markdown-body .attention:before {
-  content: "\f058\00a0";
-  color: #a6d796;
-}
-
-.markdown-body .caution:before {
-  content: "\f06a\00a0";
-  color: #d7a796;
-}
-
-.markdown-body .hint:before {
-  content: "\f05a\00a0";
-  color: #96c6d7;
-}
-
-.markdown-body .danger:before {
-  content: "\f057\00a0";
-  color: #c25f77;
-}
-
-.markdown-body .question:before {
-  content: "\f059\00a0";
-  color: #96a6d7;
-}
-
-.markdown-body .note:before {
-  content: "\f040\00a0";
-  color: #d7c896;
-}
-
-.markdown-body .admonition::after {
-  content: normal;
-}
-
-.markdown-body .attention {
-  border-left: 6px solid #a6d796;
-}
-
-.markdown-body .caution {
-  border-left: 6px solid #d7a796;
-}
-
-.markdown-body .hint {
-  border-left: 6px solid #96c6d7;
-}
-
-.markdown-body .danger {
-  border-left: 6px solid #c25f77;
-}
-
-.markdown-body .question {
-  border-left: 6px solid #96a6d7;
-}
-
-.markdown-body .note {
-  border-left: 6px solid #d7c896;
-}
-
-.markdown-body .admonition>*:first-child {
-  margin-top: 0 !important;
-}
-
-.markdown-body .admonition>*:last-child {
-  margin-bottom: 0 !important;
-}
-
-/* progress bar*/
-.markdown-body .progress {
-  display: block;
-  width: 300px;
-  margin: 10px 0;
-  height: 24px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  background-color: #ededed;
-  position: relative;
-  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
-}
-
-.markdown-body .progress-label {
-  position: absolute;
-  text-align: center;
-  font-weight: bold;
-  width: 100%; margin: 0;
-  line-height: 24px;
-  color: #333;
-  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
-  -webkit-font-smoothing: antialiased !important;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.markdown-body .progress-bar {
-  height: 24px;
-  float: left;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  background-color: #96c6d7;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
-  background-size: 30px 30px;
-  background-image: -webkit-linear-gradient(
-    135deg, rgba(255, 255, 255, .4) 27%,
-    transparent 27%,
-    transparent 52%, rgba(255, 255, 255, .4) 52%,
-    rgba(255, 255, 255, .4) 77%,
-    transparent 77%, transparent
-  );
-  background-image: -moz-linear-gradient(
-    135deg,
-    rgba(255, 255, 255, .4) 27%, transparent 27%,
-    transparent 52%, rgba(255, 255, 255, .4) 52%,
-    rgba(255, 255, 255, .4) 77%, transparent 77%,
-    transparent
-  );
-  background-image: -ms-linear-gradient(
-    135deg,
-    rgba(255, 255, 255, .4) 27%, transparent 27%,
-    transparent 52%, rgba(255, 255, 255, .4) 52%,
-    rgba(255, 255, 255, .4) 77%, transparent 77%,
-    transparent
-  );
-  background-image: -o-linear-gradient(
-    135deg,
-    rgba(255, 255, 255, .4) 27%, transparent 27%,
-    transparent 52%, rgba(255, 255, 255, .4) 52%,
-    rgba(255, 255, 255, .4) 77%, transparent 77%,
-    transparent
-  );
-  background-image: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, .4) 27%, transparent 27%,
-    transparent 52%, rgba(255, 255, 255, .4) 52%,
-    rgba(255, 255, 255, .4) 77%, transparent 77%,
-    transparent
-  );
-}
-
-.markdown-body .progress-100plus .progress-bar {
-  background-color: #a6d796;
-}
-
-.markdown-body .progress-80plus .progress-bar {
-  background-color: #c6d796;
-}
-
-.markdown-body .progress-60plus .progress-bar {
-  background-color: #d7c896;
-}
-
-.markdown-body .progress-40plus .progress-bar {
-  background-color: #d7a796;
-}
-
-.markdown-body .progress-20plus .progress-bar {
-  background-color: #d796a6;
-}
-
-.markdown-body .progress-0plus .progress-bar {
-  background-color: #c25f77;
-}
-
-.markdown-body .candystripe-animate .progress-bar{
-  -webkit-animation: animate-stripes 3s linear infinite;
-  -moz-animation: animate-stripes 3s linear infinite;
-  animation: animate-stripes 3s linear infinite;
-}
-
-@-webkit-keyframes animate-stripes {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 60px 0;
-  }
-}
-
-@-moz-keyframes animate-stripes {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 60px 0;
-  }
-}
-
-@keyframes animate-stripes {
-  0% {
-    background-position: 0 0;
-  }
-
-  100% {
-    background-position: 60px 0;
-  }
-}
-
-.markdown-body .gloss .progress-bar {
-  box-shadow:
-    inset 0 4px 12px rgba(255, 255, 255, .7),
-    inset 0 -12px 0 rgba(0, 0, 0, .05);
-}
-
-/* MultiMarkdown Critic Blocks */
-.markdown-body .critic_mark {
-  background: #ff0;
-}
-
-.markdown-body .critic_delete {
-  color: #c82829;
-  text-decoration: line-through;
-}
-
-.markdown-body .critic_insert {
-  color: #718c00 ;
-  text-decoration: underline;
-}
-
-.markdown-body .critic_comment {
-  color: #8e908c;
-  font-style: italic;
-}
-
-.markdown-body .headeranchor {
-  font: normal normal 16px fontawesome-mini;
-  line-height: 1;
-  display: inline-block;
-  text-decoration: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.headeranchor:before {
-  content: '\e157';
-}
-
-.markdown-body .task-list-item {
-  list-style-type: none;
-}
-
-.markdown-body .task-list-item+.task-list-item {
-  margin-top: 3px;
-}
-
-.markdown-body .task-list-item input {
-  margin: 0 4px 0.25em -20px;
-  vertical-align: middle;
-}
-
-/* Media */
-@media only screen and (min-width: 480px) {
-  .markdown-body {
-    font-size:14px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .markdown-body {
-    font-size:16px;
-  }
-}
-
-@media print {
-  .markdown-body * {
-    background: transparent !important;
-    color: black !important;
-    filter:none !important;
-    -ms-filter: none !important;
-  }
-
-  .markdown-body {
-    font-size:12pt;
-    max-width:100%;
-    outline:none;
-    border: 0;
-  }
-
-  .markdown-body a,
-  .markdown-body a:visited {
-    text-decoration: underline;
-  }
-
-  .markdown-body .headeranchor-link {
-    display: none;
-  }
-
-  .markdown-body a[href]:after {
-    content: " (" attr(href) ")";
-  }
-
-  .markdown-body abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-
-  .markdown-body .ir a:after,
-  .markdown-body a[href^="javascript:"]:after,
-  .markdown-body a[href^="#"]:after {
-    content: "";
-  }
-
-  .markdown-body pre {
-    white-space: pre;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
-
-  .markdown-body pre,
-  .markdown-body blockquote {
-    border: 1px solid #999;
-    padding-right: 1em;
-    page-break-inside: avoid;
-  }
-
-  .markdown-body .progress,
-  .markdown-body .progress-bar {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-
-  .markdown-body .progress {
-    border: 1px solid #ddd;
-  }
-
-  .markdown-body .progress-bar {
-    height: 22px;
-    border-right: 1px solid #ddd;
-  }
-
-  .markdown-body tr,
-  .markdown-body img {
-    page-break-inside: avoid;
-  }
-
-  .markdown-body img {
-    max-width: 100% !important;
-  }
-
-  .markdown-body p,
-  .markdown-body h2,
-  .markdown-body h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  .markdown-body h2,
-  .markdown-body h3 {
-    page-break-after: avoid;
-  }
-}
-</style><style>/*GitHub*/
-.codehilite {background-color:#fff;color:#333333;}
-.codehilite .hll {background-color:#ffffcc;}
-.codehilite .c{color:#999988;font-style:italic}
-.codehilite .err{color:#a61717;background-color:#e3d2d2}
-.codehilite .k{font-weight:bold}
-.codehilite .o{font-weight:bold}
-.codehilite .cm{color:#999988;font-style:italic}
-.codehilite .cp{color:#999999;font-weight:bold}
-.codehilite .c1{color:#999988;font-style:italic}
-.codehilite .cs{color:#999999;font-weight:bold;font-style:italic}
-.codehilite .gd{color:#000000;background-color:#ffdddd}
-.codehilite .ge{font-style:italic}
-.codehilite .gr{color:#aa0000}
-.codehilite .gh{color:#999999}
-.codehilite .gi{color:#000000;background-color:#ddffdd}
-.codehilite .go{color:#888888}
-.codehilite .gp{color:#555555}
-.codehilite .gs{font-weight:bold}
-.codehilite .gu{color:#800080;font-weight:bold}
-.codehilite .gt{color:#aa0000}
-.codehilite .kc{font-weight:bold}
-.codehilite .kd{font-weight:bold}
-.codehilite .kn{font-weight:bold}
-.codehilite .kp{font-weight:bold}
-.codehilite .kr{font-weight:bold}
-.codehilite .kt{color:#445588;font-weight:bold}
-.codehilite .m{color:#009999}
-.codehilite .s{color:#dd1144}
-.codehilite .n{color:#333333}
-.codehilite .na{color:teal}
-.codehilite .nb{color:#0086b3}
-.codehilite .nc{color:#445588;font-weight:bold}
-.codehilite .no{color:teal}
-.codehilite .ni{color:purple}
-.codehilite .ne{color:#990000;font-weight:bold}
-.codehilite .nf{color:#990000;font-weight:bold}
-.codehilite .nn{color:#555555}
-.codehilite .nt{color:navy}
-.codehilite .nv{color:teal}
-.codehilite .ow{font-weight:bold}
-.codehilite .w{color:#bbbbbb}
-.codehilite .mf{color:#009999}
-.codehilite .mh{color:#009999}
-.codehilite .mi{color:#009999}
-.codehilite .mo{color:#009999}
-.codehilite .sb{color:#dd1144}
-.codehilite .sc{color:#dd1144}
-.codehilite .sd{color:#dd1144}
-.codehilite .s2{color:#dd1144}
-.codehilite .se{color:#dd1144}
-.codehilite .sh{color:#dd1144}
-.codehilite .si{color:#dd1144}
-.codehilite .sx{color:#dd1144}
-.codehilite .sr{color:#009926}
-.codehilite .s1{color:#dd1144}
-.codehilite .ss{color:#990073}
-.codehilite .bp{color:#999999}
-.codehilite .vc{color:teal}
-.codehilite .vg{color:teal}
-.codehilite .vi{color:teal}
-.codehilite .il{color:#009999}
-.codehilite .gc{color:#999;background-color:#EAF2F5}
-
-/*Image Container CSS */
-.icon-container{
-            display: flex;
-            width: 50%;
-            margin: 10px auto;
-        }
-.icon-container img {
-    width: 100%;
-    height: auto;
-}
-/* .icon-container div img {
+  </div>
+  </div>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body .markdown-body {
+      padding: 45px;
+    }
+
+    .markdown-body {
+      font-family: sans-serif;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      color: #333333;
+      overflow: hidden;
+      font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      word-wrap: break-word;
+    }
+
+    .markdown-body a {
+      background: transparent;
+    }
+
+    .markdown-body a:active,
+    .markdown-body a:hover {
+      outline: 0;
+    }
+
+    .markdown-body b,
+    .markdown-body strong {
+      font-weight: bold;
+    }
+
+    .markdown-body mark {
+      background: #ff0;
+      color: #000;
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    .markdown-body sub,
+    .markdown-body sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+
+    .markdown-body sup {
+      top: -0.5em;
+    }
+
+    .markdown-body sub {
+      bottom: -0.25em;
+    }
+
+    .markdown-body h1 {
+      font-size: 2em;
+      margin: 0.67em 0;
+    }
+
+    .markdown-body img {
+      border: 0;
+    }
+
+    .markdown-body hr {
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      height: 0;
+    }
+
+    .markdown-body pre {
+      overflow: auto;
+    }
+
+    .markdown-body code,
+    .markdown-body kbd,
+    .markdown-body pre,
+    .markdown-body samp {
+      font-family: monospace, monospace;
+      font-size: 1em;
+    }
+
+    .markdown-body input {
+      color: inherit;
+      font: inherit;
+      margin: 0;
+    }
+
+    .markdown-body html input[disabled] {
+      cursor: default;
+    }
+
+    .markdown-body input {
+      line-height: normal;
+    }
+
+    .markdown-body input[type="checkbox"] {
+      box-sizing: border-box;
+      padding: 0;
+    }
+
+    .markdown-body table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    .markdown-body td,
+    .markdown-body th {
+      padding: 0;
+    }
+
+    .markdown-body .codehilitetable {
+      border: 0;
+      border-spacing: 0;
+    }
+
+    .markdown-body .codehilitetable tr {
+      border: 0;
+    }
+
+    .markdown-body .codehilitetable pre,
+    .markdown-body .codehilitetable div.codehilite {
+      margin: 0;
+    }
+
+    .markdown-body .linenos,
+    .markdown-body .code,
+    .markdown-body .codehilitetable td {
+      border: 0;
+      padding: 0;
+    }
+
+    .markdown-body td:not(.linenos) .linenodiv {
+      padding: 0 !important;
+    }
+
+    .markdown-body .code {
+      width: 100%;
+    }
+
+    .markdown-body .linenos div pre,
+    .markdown-body .linenodiv pre,
+    .markdown-body .linenodiv {
+      border: 0;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      border-radius: 0;
+      -webkit-border-top-left-radius: 3px;
+      -webkit-border-bottom-left-radius: 3px;
+      -moz-border-radius-topleft: 3px;
+      -moz-border-radius-bottomleft: 3px;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+
+    .markdown-body .code div pre,
+    .markdown-body .code div {
+      border: 0;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      border-radius: 0;
+      -webkit-border-top-right-radius: 3px;
+      -webkit-border-bottom-right-radius: 3px;
+      -moz-border-radius-topright: 3px;
+      -moz-border-radius-bottomright: 3px;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+
+    .markdown-body * {
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .markdown-body input {
+      font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+      line-height: 1.4;
+    }
+
+    .markdown-body a {
+      color: #4183c4;
+      text-decoration: none;
+    }
+
+    .markdown-body a:hover,
+    .markdown-body a:focus,
+    .markdown-body a:active {
+      text-decoration: underline;
+    }
+
+    .markdown-body hr {
+      height: 0;
+      margin: 15px 0;
+      overflow: hidden;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .markdown-body hr:before,
+    .markdown-body hr:after {
+      display: table;
+      content: " ";
+    }
+
+    .markdown-body hr:after {
+      clear: both;
+    }
+
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3,
+    .markdown-body h4,
+    .markdown-body h5,
+    .markdown-body h6 {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      line-height: 1.1;
+    }
+
+    .markdown-body h1 {
+      font-size: 30px;
+    }
+
+    .markdown-body h2 {
+      font-size: 21px;
+    }
+
+    .markdown-body h3 {
+      font-size: 16px;
+    }
+
+    .markdown-body h4 {
+      font-size: 14px;
+    }
+
+    .markdown-body h5 {
+      font-size: 12px;
+    }
+
+    .markdown-body h6 {
+      font-size: 11px;
+    }
+
+    .markdown-body blockquote {
+      margin: 0;
+    }
+
+    .markdown-body ul,
+    .markdown-body ol {
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .markdown-body ol ol,
+    .markdown-body ul ol {
+      list-style-type: lower-roman;
+    }
+
+    .markdown-body ul ul ol,
+    .markdown-body ul ol ol,
+    .markdown-body ol ul ol,
+    .markdown-body ol ol ol {
+      list-style-type: lower-alpha;
+    }
+
+    .markdown-body dd {
+      margin-left: 0;
+    }
+
+    .markdown-body code,
+    .markdown-body pre,
+    .markdown-body samp {
+      font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      font-size: 12px;
+    }
+
+    .markdown-body pre {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .markdown-body kbd {
+      background-color: #e7e7e7;
+      background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+      background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+      background-image: linear-gradient(#fefefe, #e7e7e7);
+      background-repeat: repeat-x;
+      border-radius: 2px;
+      border: 1px solid #cfcfcf;
+      color: #000;
+      padding: 3px 5px;
+      line-height: 10px;
+      font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      display: inline-block;
+    }
+
+    .markdown-body>*:first-child {
+      margin-top: 0 !important;
+    }
+
+    .markdown-body>*:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .markdown-body .headerlink {
+      font: normal 400 16px fontawesome-mini;
+      vertical-align: middle;
+      margin-left: -16px;
+      float: left;
+      display: inline-block;
+      text-decoration: none;
+      opacity: 0;
+      color: #333;
+    }
+
+    .markdown-body .headerlink:focus {
+      outline: none;
+    }
+
+    .markdown-body h1 .headerlink {
+      margin-top: 0.8rem;
+    }
+
+    .markdown-body h2 .headerlink,
+    .markdown-body h3 .headerlink {
+      margin-top: 0.6rem;
+    }
+
+    .markdown-body h4 .headerlink {
+      margin-top: 0.2rem;
+    }
+
+    .markdown-body h5 .headerlink,
+    .markdown-body h6 .headerlink {
+      margin-top: 0;
+    }
+
+    .markdown-body .headerlink:hover,
+    .markdown-body h1:hover .headerlink,
+    .markdown-body h2:hover .headerlink,
+    .markdown-body h3:hover .headerlink,
+    .markdown-body h4:hover .headerlink,
+    .markdown-body h5:hover .headerlink,
+    .markdown-body h6:hover .headerlink {
+      opacity: 1;
+      text-decoration: none;
+    }
+
+    .markdown-body h1 {
+      padding-bottom: 0.3em;
+      font-size: 2.25em;
+      line-height: 1.2;
+      border-bottom: 1px solid #eee;
+    }
+
+    .markdown-body h2 {
+      padding-bottom: 0.3em;
+      font-size: 1.75em;
+      line-height: 1.225;
+      border-bottom: 1px solid #eee;
+    }
+
+    .markdown-body h3 {
+      font-size: 1.5em;
+      line-height: 1.43;
+    }
+
+    .markdown-body h4 {
+      font-size: 1.25em;
+    }
+
+    .markdown-body h5 {
+      font-size: 1em;
+    }
+
+    .markdown-body h6 {
+      font-size: 1em;
+      color: #777;
+    }
+
+    .markdown-body p,
+    .markdown-body blockquote,
+    .markdown-body ul,
+    .markdown-body ol,
+    .markdown-body dl,
+    .markdown-body table,
+    .markdown-body pre,
+    .markdown-body .admonition {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    .markdown-body hr {
+      height: 4px;
+      padding: 0;
+      margin: 16px 0;
+      background-color: #e7e7e7;
+      border: 0 none;
+    }
+
+    .markdown-body ul,
+    .markdown-body ol {
+      padding-left: 2em;
+    }
+
+    .markdown-body ul ul,
+    .markdown-body ul ol,
+    .markdown-body ol ol,
+    .markdown-body ol ul {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .markdown-body li>p {
+      margin-top: 16px;
+    }
+
+    .markdown-body dl {
+      padding: 0;
+    }
+
+    .markdown-body dl dt {
+      padding: 0;
+      margin-top: 16px;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    .markdown-body dl dd {
+      padding: 0 16px;
+      margin-bottom: 16px;
+    }
+
+    .markdown-body blockquote {
+      padding: 0 15px;
+      color: #777;
+      border-left: 4px solid #ddd;
+    }
+
+    .markdown-body blockquote>:first-child {
+      margin-top: 0;
+    }
+
+    .markdown-body blockquote>:last-child {
+      margin-bottom: 0;
+    }
+
+    .markdown-body table {
+      display: block;
+      width: 100%;
+      overflow: auto;
+      word-break: normal;
+      word-break: keep-all;
+    }
+
+    .markdown-body table th {
+      font-weight: bold;
+    }
+
+    .markdown-body table th,
+    .markdown-body table td {
+      padding: 6px 13px;
+      border: 1px solid #ddd;
+    }
+
+    .markdown-body table tr {
+      background-color: #fff;
+      border-top: 1px solid #ccc;
+    }
+
+    .markdown-body table tr:nth-child(2n) {
+      background-color: #f8f8f8;
+    }
+
+    .markdown-body img {
+      max-width: 100%;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .markdown-body code,
+    .markdown-body samp {
+      padding: 0;
+      padding-top: 0.2em;
+      padding-bottom: 0.2em;
+      margin: 0;
+      font-size: 85%;
+      background-color: rgba(0, 0, 0, 0.04);
+      border-radius: 3px;
+    }
+
+    .markdown-body code:before,
+    .markdown-body code:after {
+      letter-spacing: -0.2em;
+      content: "\00a0";
+    }
+
+    .markdown-body pre>code {
+      padding: 0;
+      margin: 0;
+      font-size: 100%;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0;
+    }
+
+    .markdown-body .codehilite {
+      margin-bottom: 16px;
+    }
+
+    .markdown-body .codehilite pre,
+    .markdown-body pre {
+      padding: 16px;
+      overflow: auto;
+      font-size: 85%;
+      line-height: 1.45;
+      background-color: #f7f7f7;
+      border-radius: 3px;
+    }
+
+    .markdown-body .codehilite pre {
+      margin-bottom: 0;
+      word-break: normal;
+    }
+
+    .markdown-body pre {
+      word-wrap: normal;
+    }
+
+    .markdown-body pre code {
+      display: inline;
+      max-width: initial;
+      padding: 0;
+      margin: 0;
+      overflow: initial;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0;
+    }
+
+    .markdown-body pre code:before,
+    .markdown-body pre code:after {
+      content: normal;
+    }
+
+    /* Admonition */
+    .markdown-body .admonition {
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      position: relative;
+      border-radius: 3px;
+      border: 1px solid #e0e0e0;
+      border-left: 6px solid #333;
+      padding: 10px 10px 10px 30px;
+    }
+
+    .markdown-body .admonition table {
+      color: #333;
+    }
+
+    .markdown-body .admonition p {
+      padding: 0;
+    }
+
+    .markdown-body .admonition-title {
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .markdown-body .admonition>.admonition-title {
+      color: #333;
+    }
+
+    .markdown-body .attention>.admonition-title {
+      color: #a6d796;
+    }
+
+    .markdown-body .caution>.admonition-title {
+      color: #d7a796;
+    }
+
+    .markdown-body .hint>.admonition-title {
+      color: #96c6d7;
+    }
+
+    .markdown-body .danger>.admonition-title {
+      color: #c25f77;
+    }
+
+    .markdown-body .question>.admonition-title {
+      color: #96a6d7;
+    }
+
+    .markdown-body .note>.admonition-title {
+      color: #d7c896;
+    }
+
+    .markdown-body .admonition:before,
+    .markdown-body .attention:before,
+    .markdown-body .caution:before,
+    .markdown-body .hint:before,
+    .markdown-body .danger:before,
+    .markdown-body .question:before,
+    .markdown-body .note:before {
+      font: normal normal 16px fontawesome-mini;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      line-height: 1.5;
+      color: #333;
+      position: absolute;
+      left: 0;
+      top: 0;
+      padding-top: 10px;
+      padding-left: 10px;
+    }
+
+    .markdown-body .admonition:before {
+      content: "\f056\00a0";
+      color: 333;
+    }
+
+    .markdown-body .attention:before {
+      content: "\f058\00a0";
+      color: #a6d796;
+    }
+
+    .markdown-body .caution:before {
+      content: "\f06a\00a0";
+      color: #d7a796;
+    }
+
+    .markdown-body .hint:before {
+      content: "\f05a\00a0";
+      color: #96c6d7;
+    }
+
+    .markdown-body .danger:before {
+      content: "\f057\00a0";
+      color: #c25f77;
+    }
+
+    .markdown-body .question:before {
+      content: "\f059\00a0";
+      color: #96a6d7;
+    }
+
+    .markdown-body .note:before {
+      content: "\f040\00a0";
+      color: #d7c896;
+    }
+
+    .markdown-body .admonition::after {
+      content: normal;
+    }
+
+    .markdown-body .attention {
+      border-left: 6px solid #a6d796;
+    }
+
+    .markdown-body .caution {
+      border-left: 6px solid #d7a796;
+    }
+
+    .markdown-body .hint {
+      border-left: 6px solid #96c6d7;
+    }
+
+    .markdown-body .danger {
+      border-left: 6px solid #c25f77;
+    }
+
+    .markdown-body .question {
+      border-left: 6px solid #96a6d7;
+    }
+
+    .markdown-body .note {
+      border-left: 6px solid #d7c896;
+    }
+
+    .markdown-body .admonition>*:first-child {
+      margin-top: 0 !important;
+    }
+
+    .markdown-body .admonition>*:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    /* progress bar*/
+    .markdown-body .progress {
+      display: block;
+      width: 300px;
+      margin: 10px 0;
+      height: 24px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      background-color: #ededed;
+      position: relative;
+      box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+    }
+
+    .markdown-body .progress-label {
+      position: absolute;
+      text-align: center;
+      font-weight: bold;
+      width: 100%;
+      margin: 0;
+      line-height: 24px;
+      color: #333;
+      text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+      -webkit-font-smoothing: antialiased !important;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .markdown-body .progress-bar {
+      height: 24px;
+      float: left;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      background-color: #96c6d7;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+      background-size: 30px 30px;
+      background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, .4) 27%,
+        transparent 27%,
+        transparent 52%, rgba(255, 255, 255, .4) 52%,
+        rgba(255, 255, 255, .4) 77%,
+        transparent 77%, transparent);
+      background-image: -moz-linear-gradient(135deg,
+        rgba(255, 255, 255, .4) 27%, transparent 27%,
+        transparent 52%, rgba(255, 255, 255, .4) 52%,
+        rgba(255, 255, 255, .4) 77%, transparent 77%,
+        transparent);
+      background-image: -ms-linear-gradient(135deg,
+        rgba(255, 255, 255, .4) 27%, transparent 27%,
+        transparent 52%, rgba(255, 255, 255, .4) 52%,
+        rgba(255, 255, 255, .4) 77%, transparent 77%,
+        transparent);
+      background-image: -o-linear-gradient(135deg,
+        rgba(255, 255, 255, .4) 27%, transparent 27%,
+        transparent 52%, rgba(255, 255, 255, .4) 52%,
+        rgba(255, 255, 255, .4) 77%, transparent 77%,
+        transparent);
+      background-image: linear-gradient(135deg,
+        rgba(255, 255, 255, .4) 27%, transparent 27%,
+        transparent 52%, rgba(255, 255, 255, .4) 52%,
+        rgba(255, 255, 255, .4) 77%, transparent 77%,
+        transparent);
+    }
+
+    .markdown-body .progress-100plus .progress-bar {
+      background-color: #a6d796;
+    }
+
+    .markdown-body .progress-80plus .progress-bar {
+      background-color: #c6d796;
+    }
+
+    .markdown-body .progress-60plus .progress-bar {
+      background-color: #d7c896;
+    }
+
+    .markdown-body .progress-40plus .progress-bar {
+      background-color: #d7a796;
+    }
+
+    .markdown-body .progress-20plus .progress-bar {
+      background-color: #d796a6;
+    }
+
+    .markdown-body .progress-0plus .progress-bar {
+      background-color: #c25f77;
+    }
+
+    .markdown-body .candystripe-animate .progress-bar {
+      -webkit-animation: animate-stripes 3s linear infinite;
+      -moz-animation: animate-stripes 3s linear infinite;
+      animation: animate-stripes 3s linear infinite;
+    }
+
+    @-webkit-keyframes animate-stripes {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 60px 0;
+      }
+    }
+
+    @-moz-keyframes animate-stripes {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 60px 0;
+      }
+    }
+
+    @keyframes animate-stripes {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 60px 0;
+      }
+    }
+
+    .markdown-body .gloss .progress-bar {
+      box-shadow:
+        inset 0 4px 12px rgba(255, 255, 255, .7),
+        inset 0 -12px 0 rgba(0, 0, 0, .05);
+    }
+
+    /* MultiMarkdown Critic Blocks */
+    .markdown-body .critic_mark {
+      background: #ff0;
+    }
+
+    .markdown-body .critic_delete {
+      color: #c82829;
+      text-decoration: line-through;
+    }
+
+    .markdown-body .critic_insert {
+      color: #718c00;
+      text-decoration: underline;
+    }
+
+    .markdown-body .critic_comment {
+      color: #8e908c;
+      font-style: italic;
+    }
+
+    .markdown-body .headeranchor {
+      font: normal normal 16px fontawesome-mini;
+      line-height: 1;
+      display: inline-block;
+      text-decoration: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .headeranchor:before {
+      content: '\e157';
+    }
+
+    .markdown-body .task-list-item {
+      list-style-type: none;
+    }
+
+    .markdown-body .task-list-item+.task-list-item {
+      margin-top: 3px;
+    }
+
+    .markdown-body .task-list-item input {
+      margin: 0 4px 0.25em -20px;
+      vertical-align: middle;
+    }
+
+    /* Media */
+    @media only screen and (min-width: 480px) {
+      .markdown-body {
+        font-size: 14px;
+      }
+    }
+
+    @media only screen and (min-width: 768px) {
+      .markdown-body {
+        font-size: 16px;
+      }
+    }
+
+    @media print {
+      .markdown-body * {
+        background: transparent !important;
+        color: black !important;
+        filter: none !important;
+        -ms-filter: none !important;
+      }
+
+      .markdown-body {
+        font-size: 12pt;
+        max-width: 100%;
+        outline: none;
+        border: 0;
+      }
+
+      .markdown-body a,
+      .markdown-body a:visited {
+        text-decoration: underline;
+      }
+
+      .markdown-body .headeranchor-link {
+        display: none;
+      }
+
+      .markdown-body a[href]:after {
+        content: " ("attr(href) ")";
+      }
+
+      .markdown-body abbr[title]:after {
+        content: " ("attr(title) ")";
+      }
+
+      .markdown-body .ir a:after,
+      .markdown-body a[href^="javascript:"]:after,
+      .markdown-body a[href^="#"]:after {
+        content: "";
+      }
+
+      .markdown-body pre {
+        white-space: pre;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+
+      .markdown-body pre,
+      .markdown-body blockquote {
+        border: 1px solid #999;
+        padding-right: 1em;
+        page-break-inside: avoid;
+      }
+
+      .markdown-body .progress,
+      .markdown-body .progress-bar {
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+
+      .markdown-body .progress {
+        border: 1px solid #ddd;
+      }
+
+      .markdown-body .progress-bar {
+        height: 22px;
+        border-right: 1px solid #ddd;
+      }
+
+      .markdown-body tr,
+      .markdown-body img {
+        page-break-inside: avoid;
+      }
+
+      .markdown-body img {
+        max-width: 100% !important;
+      }
+
+      .markdown-body p,
+      .markdown-body h2,
+      .markdown-body h3 {
+        orphans: 3;
+        widows: 3;
+      }
+
+      .markdown-body h2,
+      .markdown-body h3 {
+        page-break-after: avoid;
+      }
+    }
+  </style>
+  <style>
+    /*GitHub*/
+    .codehilite {
+      background-color: #fff;
+      color: #333333;
+    }
+
+    .codehilite .hll {
+      background-color: #ffffcc;
+    }
+
+    .codehilite .c {
+      color: #999988;
+      font-style: italic
+    }
+
+    .codehilite .err {
+      color: #a61717;
+      background-color: #e3d2d2
+    }
+
+    .codehilite .k {
+      font-weight: bold
+    }
+
+    .codehilite .o {
+      font-weight: bold
+    }
+
+    .codehilite .cm {
+      color: #999988;
+      font-style: italic
+    }
+
+    .codehilite .cp {
+      color: #999999;
+      font-weight: bold
+    }
+
+    .codehilite .c1 {
+      color: #999988;
+      font-style: italic
+    }
+
+    .codehilite .cs {
+      color: #999999;
+      font-weight: bold;
+      font-style: italic
+    }
+
+    .codehilite .gd {
+      color: #000000;
+      background-color: #ffdddd
+    }
+
+    .codehilite .ge {
+      font-style: italic
+    }
+
+    .codehilite .gr {
+      color: #aa0000
+    }
+
+    .codehilite .gh {
+      color: #999999
+    }
+
+    .codehilite .gi {
+      color: #000000;
+      background-color: #ddffdd
+    }
+
+    .codehilite .go {
+      color: #888888
+    }
+
+    .codehilite .gp {
+      color: #555555
+    }
+
+    .codehilite .gs {
+      font-weight: bold
+    }
+
+    .codehilite .gu {
+      color: #800080;
+      font-weight: bold
+    }
+
+    .codehilite .gt {
+      color: #aa0000
+    }
+
+    .codehilite .kc {
+      font-weight: bold
+    }
+
+    .codehilite .kd {
+      font-weight: bold
+    }
+
+    .codehilite .kn {
+      font-weight: bold
+    }
+
+    .codehilite .kp {
+      font-weight: bold
+    }
+
+    .codehilite .kr {
+      font-weight: bold
+    }
+
+    .codehilite .kt {
+      color: #445588;
+      font-weight: bold
+    }
+
+    .codehilite .m {
+      color: #009999
+    }
+
+    .codehilite .s {
+      color: #dd1144
+    }
+
+    .codehilite .n {
+      color: #333333
+    }
+
+    .codehilite .na {
+      color: teal
+    }
+
+    .codehilite .nb {
+      color: #0086b3
+    }
+
+    .codehilite .nc {
+      color: #445588;
+      font-weight: bold
+    }
+
+    .codehilite .no {
+      color: teal
+    }
+
+    .codehilite .ni {
+      color: purple
+    }
+
+    .codehilite .ne {
+      color: #990000;
+      font-weight: bold
+    }
+
+    .codehilite .nf {
+      color: #990000;
+      font-weight: bold
+    }
+
+    .codehilite .nn {
+      color: #555555
+    }
+
+    .codehilite .nt {
+      color: navy
+    }
+
+    .codehilite .nv {
+      color: teal
+    }
+
+    .codehilite .ow {
+      font-weight: bold
+    }
+
+    .codehilite .w {
+      color: #bbbbbb
+    }
+
+    .codehilite .mf {
+      color: #009999
+    }
+
+    .codehilite .mh {
+      color: #009999
+    }
+
+    .codehilite .mi {
+      color: #009999
+    }
+
+    .codehilite .mo {
+      color: #009999
+    }
+
+    .codehilite .sb {
+      color: #dd1144
+    }
+
+    .codehilite .sc {
+      color: #dd1144
+    }
+
+    .codehilite .sd {
+      color: #dd1144
+    }
+
+    .codehilite .s2 {
+      color: #dd1144
+    }
+
+    .codehilite .se {
+      color: #dd1144
+    }
+
+    .codehilite .sh {
+      color: #dd1144
+    }
+
+    .codehilite .si {
+      color: #dd1144
+    }
+
+    .codehilite .sx {
+      color: #dd1144
+    }
+
+    .codehilite .sr {
+      color: #009926
+    }
+
+    .codehilite .s1 {
+      color: #dd1144
+    }
+
+    .codehilite .ss {
+      color: #990073
+    }
+
+    .codehilite .bp {
+      color: #999999
+    }
+
+    .codehilite .vc {
+      color: teal
+    }
+
+    .codehilite .vg {
+      color: teal
+    }
+
+    .codehilite .vi {
+      color: teal
+    }
+
+    .codehilite .il {
+      color: #009999
+    }
+
+    .codehilite .gc {
+      color: #999;
+      background-color: #EAF2F5
+    }
+
+    /*Image Container CSS */
+    .icon-container {
+      display: flex;
+      width: 50%;
+      margin: 10px auto;
+    }
+
+    .icon-container img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* .icon-container div img {
             -webkit-transform: scale(1);
             transform: scale(1);
             -webkit-transition: .3s ease-in-out;
@@ -1413,1057 +1642,1124 @@ body .markdown-body
             -webkit-transform: scale(1.3);
             transform: scale(1.3);
         } */
-        /* Back To Top button CSS*/
-        #button {
-  display: inline-block;
-  background-color: #1e6add;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  border-radius: 4px;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  transition: background-color .3s, opacity .5s, visibility .5s;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 1000;
-}
-#button::after {
-  content: "\f077";
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 2em;
-  line-height: 50px;
-  color: #fff;
-}
-#button:hover {
-  cursor: pointer;
-  background-color: #333;
-}
-#button:active {
-  background-color: #555;
-}
-#button.show {
-  opacity: 1;
-  visibility: visible;
-}
-.container-logo{
-  position: relative;
-}
-.img__description_layer {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color: #fff;
-  visibility: hidden;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity .2s, visibility .2s;
-}
+    /* Back To Top button CSS*/
+    #button {
+      display: inline-block;
+      background-color: #1e6add;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      border-radius: 4px;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      transition: background-color .3s, opacity .5s, visibility .5s;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1000;
+    }
 
-.container-logo:hover .img__description_layer {
-  visibility: visible;
-  opacity: 1;
-}
+    #button::after {
+      content: "\f077";
+      font-family: FontAwesome;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 2em;
+      line-height: 50px;
+      color: #fff;
+    }
 
-.img__description {
-  transition: .2s;
-  transform: translateY(1em);
-}
+    #button:hover {
+      cursor: pointer;
+      background-color: #333;
+    }
 
-.container-logo:hover .img__description {
-  transform: translateY(0);
-}
-.icon-container div:hover img {
-            opacity: 0.4;
-        }
-</style><title>Mobile_check_list_table_102</title></head>
-<body>
-<!-- Back to Top Button -->
-<a id="button"></a>
+    #button:active {
+      background-color: #555;
+    }
 
-<div class="icon-container">
-  <div class="android-logo container-logo">
-    <img src="images/android_logo.png" alt="android_logo">
-    <div class="img__description_layer">
-      <a href="#android">
-        <h3 class="img__description">Android Checklist</h3>
-      </a>
+    #button.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .container-logo {
+      position: relative;
+    }
+
+    .img__description_layer {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      color: #fff;
+      visibility: hidden;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity .2s, visibility .2s;
+    }
+
+    .container-logo:hover .img__description_layer {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .img__description {
+      transition: .2s;
+      transform: translateY(1em);
+    }
+
+    .container-logo:hover .img__description {
+      transform: translateY(0);
+    }
+
+    .icon-container div:hover img {
+      opacity: 0.4;
+    }
+  </style>
+  <title>Mobile_check_list_table_102</title>
+  </head>
+
+  <body>
+    <!-- Back to Top Button -->
+    <a id="button"></a>
+
+    <div class="icon-container">
+      <div class="android-logo container-logo">
+        <img src="images/android_logo.png" alt="android_logo">
+        <div class="img__description_layer">
+          <a href="#android">
+            <h3 class="img__description">Android Checklist</h3>
+          </a>
+        </div>
+      </div>
+      <div class="ios-logo container-logo">
+        <img src="images/apple_logo.png" alt="ios_logo"></a>
+        <div class="img__description_layer">
+          <a href="#ios">
+            <h3 class="img__description">iOS Checklist</h3>
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="ios-logo container-logo">
-    <img src="images/apple_logo.png" alt="ios_logo"></a>
-    <div class="img__description_layer">
-      <a href="#ios">
-        <h3 class="img__description">iOS Checklist</h3>
-      </a>
-    </div>
-  </div>
-</div>
-<article class="markdown-body">
-  <h2 id="ios" class=" mt-5 pt-5 text-center mb-5" style="text-decoration: underline; text-decoration-color:blue">
-      <strong>iOS Pentesting Checklist </strong><br></h2>
+    <article class="markdown-body">
+      <h2 id="ios" class=" mt-5 pt-5 text-center mb-5" style="text-decoration: underline; text-decoration-color:blue">
+        <strong>iOS Pentesting Checklist </strong><br></h2>
 
-  <div class="container">
-      <table>
+      <div class="container">
+        <table>
           <thead>
-              <tr>
-                  <th>Category</th>
-                  <th>Description</th>
-                  <th>Tools</th>
-              </tr>
+            <tr>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Tools</th>
+            </tr>
           </thead>
           <tr>
-              <td colspan="4;" style=" text-align: center;"><strong>Information Gathering</strong> </td>
+            <td colspan="4;" style=" text-align: center;"><strong>Information Gathering</strong> </td>
           </tr>
           <tr>
-              <td>
-                  <p style="text-align:justify"> Getting the IPA file </p>
-              </td>
-              <td>
-                  <ul>
-                      <li>Get the IPA from the client or download the IPA from the app store.</li><br>
-                      <li>The IPA from the app store is encrypted so it needs to be decrypted by dumping the
-                          binary from memory.</li><br>
-                      <ul></ul>
-                  </ul>
-              </td>
-              <td>
-                  <ul>
-                      <li><a href="https://github.com/AloneMonkey/frida-ios-dumpd"
-                              target="_blank">Frida-iOS-Dump</a></li>
-                      <li><a href="https://github.com/integrity-sa/frida-ipa-dump"
-                              target="_blank">Frida-IPA-Dump</a></li>
-              </td>
+            <td>
+              <p style="text-align:justify"> Getting the IPA file </p>
+            </td>
+            <td>
+              <ul>
+                <li>Get the IPA from the client or download the IPA from the app store.</li><br>
+                <li>The IPA from the app store is encrypted so it needs to be decrypted by dumping the
+                  binary from memory.</li><br>
+                <ul></ul>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><a href="https://github.com/AloneMonkey/frida-ios-dumpd" target="_blank">Frida-iOS-Dump</a></li>
+                <li><a href="https://github.com/integrity-sa/frida-ipa-dump" target="_blank">Frida-IPA-Dump</a></li>
+            </td>
           </tr>
           <tr>
-              <td>
-                  <p style="text-align:justify">Installing on the device</p>
-              </td>
-              <td>
-                  <ul>
-                      <li>Sign the IPA using iOS-app-signer and install the IPA using iOS-deploy</li><br>
-                      <li>If using a free developer account then the provisioning profile needs to be trusted
-                          and the app needs to be verified from “General &gt; Profile and Device Management”.
-                      </li><br>
-                      <li>Currently Cydia-impactor does not work reliably and you’ll need a mac in order to
-                          install the app on the device.</li>
-                  </ul>
-              </td>
-              <td>
-                  <ul>
-                      <li><a href="https://dantheman827.github.io/ios-app-signer/"
-                              target="_blank">iOS-app-signer</a></li>
-                      <li><a href="https://www.npmjs.com/package/ios-deploy" target="_blank">iOS-deploy</a>
-                      </li>
-                  </ul>
-              </td>
+            <td>
+              <p style="text-align:justify">Installing on the device</p>
+            </td>
+            <td>
+              <ul>
+                <li>Sign the IPA using iOS-app-signer and install the IPA using iOS-deploy</li><br>
+                <li>If using a free developer account then the provisioning profile needs to be trusted
+                  and the app needs to be verified from “General &gt; Profile and Device Management”.
+                </li><br>
+                <li>Currently Cydia-impactor does not work reliably and you’ll need a mac in order to
+                  install the app on the device.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><a href="https://dantheman827.github.io/ios-app-signer/" target="_blank">iOS-app-signer</a></li>
+                <li><a href="https://www.npmjs.com/package/ios-deploy" target="_blank">iOS-deploy</a>
+                </li>
+              </ul>
+            </td>
           </tr>
           <tr>
-              <td colspan=4; style="text-align: center;"><strong>Filesystem analysis</strong></td>
+            <td colspan=4; style="text-align: center;"><strong>Filesystem analysis</strong></td>
 
           </tr>
           <tr>
-              <td>
-                  <p style="text-align:justify">Filesystem analysis</p>
-              </td>
-              <td>
-                  <ul>
-                      <li> Each app is given a unique 36 char UUID which represents its App directory sandbox
-                          location</li><br>
-                      <li>Each app is also given a unique 36 char Data-UUID which contains all the application
-                          data.</li><br>
-                      <li>The app IPA package can be found at the following
-                          location.<code>/private/var/containers/Bundle/Application/UUID/App.app</code>This
-                          contains all the resources that are shipped with the IPA and hence should always be
-                          checked for Sensitive Credentials.</li><br>
-                      <li>The Info.plist file is located at the following
-                          location.<code>/private/var/containers/Bundle/Application/UUID/App.app/Info.plist</code>The
-                          file contains all the details about the application and so much also be checked for
-                          hard coded secrets/credentials.</li><br>
-                      <li>All the application data is located at the following
-                          location.<code>/private/var/mobile/Containers/Data/Application/Data-UUID</code>This
-                          data location should be checked for local storage issues like storage of sensitive
-                          data in encrypted format and storing it in Plist files.</li>
-                  </ul>
-                  <ul>
-                      <li>Data Protection API is an additional protection mechanism which can be used to
-                          provide additional protection to important files like financial records and personal
-                          data.There are mainly four main Data Protection Classes.</li><br>
-                      <li>No Protection (NSFileProtectionNone): No protection applied on file.</li><br>
-                      <li>Protected Until First User Authentication
-                          (NSFileProtectionCompleteUntilFirstUserAuthentication):File will remain accessible
-                          while the phone is unlocked and will remain unlocked until reboot.</li><br>
-                      <li>Protected Unless Open (NSFileProtectionCompleteUnlessOpen): The file will be
-                          unlocked when accessed and will be unlocked till reboot.</li><br>
-                      <li>Complete Protection (NSFileProtectionComplete): The file is unlocked when opened and
-                          then shorts after the device is locked the file is made inaccessible.</li><br>
-                      <li>Use this frida codeshare script* to list Data protection classes of files in the
-                          app/data directory.</li><br>
-                      <ul>
-                          <li> When looking for insecure storage of sensitive data on the file system focus on
-                              the following key areas.</li><br>
-                          <li>Sensitive data stored in plist files instead of the keychain as they can be
-                              easily read in the itunes backup.</li><br>
-                          <li>Sensitive data stored in bad encoding schemes like base64.</li><br>
-                          <li>Sensitive data stored in unencrypted SQLite, Core Data or RealmDB databases.
-                          </li><br>
-                          <li>Sensitive data leaked in caches in the Data Directory of the app.</li>
-                      </ul><br>
-                  </ul>
-                  <ul>
-                      <li>References to learn more</li>
-                      <ul>
-                          <li><a href="https://github.com/OWASP/owasp-mstg/blob/master/Document/0x06c-Reverse-Engineering-and-Tampering.md"
-                                  target="_blank">Reverse Engineering</a> </li>
-                      </ul>
-                  </ul>
-              </td>
-              <td>
-                  <ul>
-                      <li><a href="https://github.com/sensepost/objection" target="_blank">Objection</a></li>
-                      <li><a href="https://github.com/chaitin/passionfruit" target="_blank">Passionfruit</a>
-                      </li>
-                      <li><a href="https://cydia.saurik.com/openssh.html" target="_blank">OpenSSH on Cydia</a>
-                      </li>
-                  </ul>
-              </td>
+            <td>
+              <p style="text-align:justify">Filesystem analysis</p>
+            </td>
+            <td>
+              <ul>
+                <li> Each app is given a unique 36 char UUID which represents its App directory sandbox
+                  location</li><br>
+                <li>Each app is also given a unique 36 char Data-UUID which contains all the application
+                  data.</li><br>
+                <li>The app IPA package can be found at the following
+                  location.<code>/private/var/containers/Bundle/Application/UUID/App.app</code>This
+                  contains all the resources that are shipped with the IPA and hence should always be
+                  checked for Sensitive Credentials.</li><br>
+                <li>The Info.plist file is located at the following
+                  location.<code>/private/var/containers/Bundle/Application/UUID/App.app/Info.plist</code>The
+                  file contains all the details about the application and so much also be checked for
+                  hard coded secrets/credentials.</li><br>
+                <li>All the application data is located at the following
+                  location.<code>/private/var/mobile/Containers/Data/Application/Data-UUID</code>This
+                  data location should be checked for local storage issues like storage of sensitive
+                  data in encrypted format and storing it in Plist files.</li>
+              </ul>
+              <ul>
+                <li>Data Protection API is an additional protection mechanism which can be used to
+                  provide additional protection to important files like financial records and personal
+                  data.There are mainly four main Data Protection Classes.</li><br>
+                <li>No Protection (NSFileProtectionNone): No protection applied on file.</li><br>
+                <li>Protected Until First User Authentication
+                  (NSFileProtectionCompleteUntilFirstUserAuthentication):File will remain accessible
+                  while the phone is unlocked and will remain unlocked until reboot.</li><br>
+                <li>Protected Unless Open (NSFileProtectionCompleteUnlessOpen): The file will be
+                  unlocked when accessed and will be unlocked till reboot.</li><br>
+                <li>Complete Protection (NSFileProtectionComplete): The file is unlocked when opened and
+                  then shorts after the device is locked the file is made inaccessible.</li><br>
+                <li>Use this frida codeshare script* to list Data protection classes of files in the
+                  app/data directory.</li><br>
+                <ul>
+                  <li> When looking for insecure storage of sensitive data on the file system focus on
+                    the following key areas.</li><br>
+                  <li>Sensitive data stored in plist files instead of the keychain as they can be
+                    easily read in the itunes backup.</li><br>
+                  <li>Sensitive data stored in bad encoding schemes like base64.</li><br>
+                  <li>Sensitive data stored in unencrypted SQLite, Core Data or RealmDB databases.
+                  </li><br>
+                  <li>Sensitive data leaked in caches in the Data Directory of the app.</li>
+                </ul><br>
+              </ul>
+              <ul>
+                <li>References to learn more</li>
+                <ul>
+                  <li><a
+                      href="https://github.com/OWASP/owasp-mstg/blob/master/Document/0x06c-Reverse-Engineering-and-Tampering.md"
+                      target="_blank">Reverse Engineering</a> </li>
+                </ul>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><a href="https://github.com/sensepost/objection" target="_blank">Objection</a></li>
+                <li><a href="https://github.com/chaitin/passionfruit" target="_blank">Passionfruit</a>
+                </li>
+                <li><a href="https://cydia.saurik.com/openssh.html" target="_blank">OpenSSH on Cydia</a>
+                </li>
+              </ul>
+            </td>
           </tr>
           <tr>
-              <td colspan=4; style="text-align: center;"><strong>Network analysis</strong></td>
+            <td colspan=4; style="text-align: center;"><strong>Network analysis</strong></td>
 
           </tr>
           <tr>
-              <td>
-                  <p style="text-align:justify">Network analysis</p>
-              </td>
-              <td>
-                  <ul> Check if the application does SSL pinning by adding burp CA and trusting it as a root
-                      CA.<li>Setup burp proxy and goto <code>http://burp</code></li>
-                      <li>Download the certificate and goto General &gt; Profile to install the certificate
-                      </li>
-                      <li>Goto General &gt; About &gt; Certificate trust Settings to trust the certificate as
-                          a Root CA by toggling the Portswigger CA option</li>
-                  </ul><br>
-                  <ul>To do API testing and traffic capture you’ll need to bypass the SSL pinning if
-                      implemented.<br>
-                      <li>Download SSL Kill Switch -2 deb file from github.</li><br>
-                      <ul>
-                          <li>- Transfer deb file to the device using SSH</li><br>
-                          <li>- Install via: <code>dpkg -i &lt;package&gt;.deb</code></li><br>
-                          <li> Restart SpringBoard: killall -HUP SpringBoard</li>
-                      </ul><br>OR<br>
-                      <li>Use ios ssl-pinning disable from objection to bypass SSL ssl-pinning implementations
-                          during the run time of the application.</li>
-                      <ul><br></ul>
-                  </ul>
-                  <ul>
-                      <li>References to learn more</li>
-                      <ul>
-                          <li><a href="https://portswigger.net/support/configuring-an-ios-device-to-work-with-burp"
-                                  target="_blank">SSL-Pinning check/Setup Proxy</a></li>
-                      </ul>
-                  </ul>
-              </td>
-              <td>
-                  <ul>
-                      <li><a href="https://portswigger.net/burp/communitydownload" target="_blank">Burp
-                              Suite</a></li>
-                      <li><a href="https://github.com/nabla-c0d3/ssl-kill-switch2"
-                              target="_blank">ssl-kill-switch2</a></li>
-                      <li><a href="https://blog.netspi.com/four-ways-to-bypass-ios-ssl-verification-and-certificate-pinning/"
-                              target="_blank">iOS SSL pinning bypass</a></li>
-                  </ul>
-              </td>
+            <td>
+              <p style="text-align:justify">Network analysis</p>
+            </td>
+            <td>
+              <ul> Check if the application does SSL pinning by adding burp CA and trusting it as a root
+                CA.<li>Setup burp proxy and goto <code>http://burp</code></li>
+                <li>Download the certificate and goto General &gt; Profile to install the certificate
+                </li>
+                <li>Goto General &gt; About &gt; Certificate trust Settings to trust the certificate as
+                  a Root CA by toggling the Portswigger CA option</li>
+              </ul><br>
+              <ul>To do API testing and traffic capture you’ll need to bypass the SSL pinning if
+                implemented.<br>
+                <li>Download SSL Kill Switch -2 deb file from github.</li><br>
+                <ul>
+                  <li>- Transfer deb file to the device using SSH</li><br>
+                  <li>- Install via: <code>dpkg -i &lt;package&gt;.deb</code></li><br>
+                  <li> Restart SpringBoard: killall -HUP SpringBoard</li>
+                </ul><br>OR<br>
+                <li>Use ios ssl-pinning disable from objection to bypass SSL ssl-pinning implementations
+                  during the run time of the application.</li>
+                <ul><br></ul>
+              </ul>
+              <ul>
+                <li>References to learn more</li>
+                <ul>
+                  <li><a href="https://portswigger.net/support/configuring-an-ios-device-to-work-with-burp"
+                      target="_blank">SSL-Pinning check/Setup Proxy</a></li>
+                </ul>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><a href="https://portswigger.net/burp/communitydownload" target="_blank">Burp
+                    Suite</a></li>
+                <li><a href="https://github.com/nabla-c0d3/ssl-kill-switch2" target="_blank">ssl-kill-switch2</a></li>
+                <li><a href="https://blog.netspi.com/four-ways-to-bypass-ios-ssl-verification-and-certificate-pinning/"
+                    target="_blank">iOS SSL pinning bypass</a></li>
+              </ul>
+            </td>
           </tr>
           <tr>
-              <td colspan=4; style="text-align: center;"><strong>Application Issues</strong></td>
+            <td colspan=4; style="text-align: center;"><strong>Application Issues</strong></td>
           </tr>
           <tr>
-              <td>
-                  <p style="text-align:justify">Check if UI screens with sensitive details are protected
-                      against screenshots</p>
-              </td>
-              <td>
-                  <ul>
-                      <li>This data is located at
-                          <code>/var/mobile/Containers/Data/Application/UUID/Library/Caches/Snapshots/</code>Sensitive
-                          details should not get captured in the screenshot</li>
-                  </ul>
-                  <ul>
-                      <li>Sensitive data in iOS is recommended to be stored in the keychain, however there is
-                          no platform API to clear keychain data on app uninstall. This is called keychain
-                          persistence.</li><br>
-                      <ul>
-                          <li>The application should clear keychain items on logout like authentication token
-                              etc.</li>
-                          <li><br></li>
-                          <li> To test install and use the app to populate the keychain and then uninstall the
-                              app.</li><br>
-                          <li>Reinstall the app to check if you can still access the app with the user login
-                              details.</li>
-                      </ul><br>
-                      <li>Text input is cached for UITextFields inputs and stored in the following location
-                          for language prediction which can cause leakage of sensitive data like credit card
-                          info.<code>/private/var/mobile/Library/Keyboard/dynamic-text.dat</code>Input data
-                          into the application at multiple places and see if it appears in the keyboard cache.
-                      </li><br>
-                      <li> URL schemes are a very good attack vector to your application and cause much
-                          damage.</li><br>
-                      <ul>
-                          <li> URL schemes are defined in the CFBundleURLTypes key of the Info.plist file of
-                              the app.</li>
-                          <li>Trace the usage of <code>*[* *openURL*]</code> selecter in the disassembly to
-                              understand the query parameters and the URL handling.</li>
-                          <li>Ensure URL parameters are properly validated and malformed URLs are discarded
-                          </li>
-                          <li><br></li>
-                          <li>Ensure to only open URLs from trusted domains.</li>
-                          <li>Check if domain validation is properly implemented.</li><br>
-                      </ul>
-                  </ul>
-              </td>
-              <td>
-                  <ul>
-                      <li><a href="https://github.com/chaitin/passionfruit" target="_blank">Passionfruit</a>
-                      <li><a href="https://codeshare.frida.re/@dki/ios-url-scheme-fuzzing/"
-                              target="_blank">iOS URL Fuzzer</a>
-                      </li>
-                  </ul>
-              </td>
+            <td>
+              <p style="text-align:justify">Check if UI screens with sensitive details are protected
+                against screenshots</p>
+            </td>
+            <td>
+              <ul>
+                <li>This data is located at
+                  <code>/var/mobile/Containers/Data/Application/UUID/Library/Caches/Snapshots/</code>Sensitive
+                  details should not get captured in the screenshot</li>
+              </ul>
+              <ul>
+                <li>Sensitive data in iOS is recommended to be stored in the keychain, however there is
+                  no platform API to clear keychain data on app uninstall. This is called keychain
+                  persistence.</li><br>
+                <ul>
+                  <li>The application should clear keychain items on logout like authentication token
+                    etc.</li>
+                  <li><br></li>
+                  <li> To test install and use the app to populate the keychain and then uninstall the
+                    app.</li><br>
+                  <li>Reinstall the app to check if you can still access the app with the user login
+                    details.</li>
+                </ul><br>
+                <li>Text input is cached for UITextFields inputs and stored in the following location
+                  for language prediction which can cause leakage of sensitive data like credit card
+                  info.<code>/private/var/mobile/Library/Keyboard/dynamic-text.dat</code>Input data
+                  into the application at multiple places and see if it appears in the keyboard cache.
+                </li><br>
+                <li> URL schemes are a very good attack vector to your application and cause much
+                  damage.</li><br>
+                <ul>
+                  <li> URL schemes are defined in the CFBundleURLTypes key of the Info.plist file of
+                    the app.</li>
+                  <li>Trace the usage of <code>*[* *openURL*]</code> selecter in the disassembly to
+                    understand the query parameters and the URL handling.</li>
+                  <li>Ensure URL parameters are properly validated and malformed URLs are discarded
+                  </li>
+                  <li><br></li>
+                  <li>Ensure to only open URLs from trusted domains.</li>
+                  <li>Check if domain validation is properly implemented.</li><br>
+                </ul>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><a href="https://github.com/chaitin/passionfruit" target="_blank">Passionfruit</a>
+                <li><a href="https://codeshare.frida.re/@dki/ios-url-scheme-fuzzing/" target="_blank">iOS URL Fuzzer</a>
+                </li>
+              </ul>
+            </td>
 
           </tr>
           <tr>
-              <td>
-                  <p style="text-align:justify">WebViews should be properly protected against XSS and phishing
-                      attacks.</p>
-              </td>
-              <td>
-                  <ul>
-                      <li>UIWebVIew is deprecated since iOS 12 and is not recommended because JavaScript
-                          cannot be disable for it.</li><br>
-                      <li>WXWebView features much richer JavaScript support and also comes with JS enabled by
-                          default which can be disabled</li><br>
-                      <li> SFSafariViewContruller is another common choice, JS is enabled by default and
-                          cannot be disabled and shared cookies and site data with Apple Safari.</li><br>
-                      <li>Verify if the app is allowing local files read via loaded WebView content by
-                          checking the value/s of loadFileURL:allowingReadAccessToURL:. in the disassembly of
-                          the app binary.</li>
-                  </ul>
-              </td>
-              <td>—</td>
+            <td>
+              <p style="text-align:justify">WebViews should be properly protected against XSS and phishing
+                attacks.</p>
+            </td>
+            <td>
+              <ul>
+                <li>UIWebVIew is deprecated since iOS 12 and is not recommended because JavaScript
+                  cannot be disable for it.</li><br>
+                <li>WXWebView features much richer JavaScript support and also comes with JS enabled by
+                  default which can be disabled</li><br>
+                <li> SFSafariViewContruller is another common choice, JS is enabled by default and
+                  cannot be disabled and shared cookies and site data with Apple Safari.</li><br>
+                <li>Verify if the app is allowing local files read via loaded WebView content by
+                  checking the value/s of loadFileURL:allowingReadAccessToURL:. in the disassembly of
+                  the app binary.</li>
+              </ul>
+            </td>
+            <td>—</td>
           </tr>
           <tr>
-              <td>
-                  <p style="text-align:justify">Check if LocalAuthentication mechanisms like TouchID/FaceID
-                      are properly implemented.</p>
-              </td>
-              <td>
-                  <ul>
-                      <li>Find any sensitive data which is protected by Biometric lock using the
-                          LocaAuthentication framework.</li><br>
-                      <li> Use the ios ui biometric_bypass from objection to check if we are able to bypass
-                          the biometric authentication.</li>
-                  </ul>
-              </td>
-              <td>
-                  <ul>
-                      <li><a href="https://github.com/sensepost/objection/wiki/Understanding-the-iOS-Biometrics-Bypass"
-                              target="_blank">iOS Biometric Bypass</a>
-                      </li>
-                  </ul>
-              </td>
+            <td>
+              <p style="text-align:justify">Check if LocalAuthentication mechanisms like TouchID/FaceID
+                are properly implemented.</p>
+            </td>
+            <td>
+              <ul>
+                <li>Find any sensitive data which is protected by Biometric lock using the
+                  LocaAuthentication framework.</li><br>
+                <li> Use the ios ui biometric_bypass from objection to check if we are able to bypass
+                  the biometric authentication.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><a href="https://github.com/sensepost/objection/wiki/Understanding-the-iOS-Biometrics-Bypass"
+                    target="_blank">iOS Biometric Bypass</a>
+                </li>
+              </ul>
+            </td>
           </tr>
           <tr>
-              <td>
-                  <p style="text-align:justify">Always check for hard coded credentials in the application
-                      binary</p>
-              </td>
-              <td>
-                  <ul>
-                      <li>Many developers hard coded credentials in the app, search for secret, crypt,
-                          private, token etc.</li>
-                      <li>Many apps use third party backend systems, analyse and .json and .xml files for
-                          credentials.</li>
-                      <li>Many apps contain hidden features, search for develop, debug, fake, test in the app
-                          binary.</li> <br>
-                      <li>Referrences <ul>
-                              <li><a href="https://spaceraccoon.dev/low-hanging-apples-hunting-credentials-and-secrets-in-ios-apps"
-                                      target="_blank">iOS Hardcoded credentials</a>
-                          </ul>
-                      </li>
+            <td>
+              <p style="text-align:justify">Always check for hard coded credentials in the application
+                binary</p>
+            </td>
+            <td>
+              <ul>
+                <li>Many developers hard coded credentials in the app, search for secret, crypt,
+                  private, token etc.</li>
+                <li>Many apps use third party backend systems, analyse and .json and .xml files for
+                  credentials.</li>
+                <li>Many apps contain hidden features, search for develop, debug, fake, test in the app
+                  binary.</li> <br>
+                <li>Referrences <ul>
+                    <li><a
+                        href="https://spaceraccoon.dev/low-hanging-apples-hunting-credentials-and-secrets-in-ios-apps"
+                        target="_blank">iOS Hardcoded credentials</a>
                   </ul>
-              </td>
-              <td>
-                  <ul>
-                      <li><a href="https://www.hopperapp.com/" target="_blank">Hopper Disassembler</a>
-                      </li>
-                  </ul>
-              </td>
+                </li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><a href="https://www.hopperapp.com/" target="_blank">Hopper Disassembler</a>
+                </li>
+              </ul>
+            </td>
           </tr>
           <tr>
-              <td>
-                  <p style="text-align:justify">Check if app logs contain any sensitive data which the
-                      developer might have left during the development process and forgot to remove the
-                      logging</p>
-              </td>
-              <td>
-                  <ul>
-                      <li>To check logs connect the device to mac.</li>
-                      <li>Goto Xcode -&gt; Devices and Simulators -&gt; View device logs to see the logs&nbsp;
-                      </li>
-                      <li> Grep the logs for sensitive data files</li>
-                  </ul><br>
-              </td>
-              <td>—</td>
+            <td>
+              <p style="text-align:justify">Check if app logs contain any sensitive data which the
+                developer might have left during the development process and forgot to remove the
+                logging</p>
+            </td>
+            <td>
+              <ul>
+                <li>To check logs connect the device to mac.</li>
+                <li>Goto Xcode -&gt; Devices and Simulators -&gt; View device logs to see the logs&nbsp;
+                </li>
+                <li> Grep the logs for sensitive data files</li>
+              </ul><br>
+            </td>
+            <td>—</td>
           </tr>
           <tr>
-              <td>
-                  <p style="text-align:justify">Check for Jailbreak detection Implementation</p>
-              </td>
-              <td>
-                  <ul>
-                      <li>Install the app on the jailbroken device if it is not showing any alert regarding
-                          the jailbroken device or not blocking the app to run. Then it is not protected with
-                          jailbreak detection</li>
-                  </ul>
-              </td>
-              <td>
-                  --
-              </td>
+            <td>
+              <p style="text-align:justify">Check for Jailbreak detection Implementation</p>
+            </td>
+            <td>
+              <ul>
+                <li>Install the app on the jailbroken device if it is not showing any alert regarding
+                  the jailbroken device or not blocking the app to run. Then it is not protected with
+                  jailbreak detection</li>
+              </ul>
+            </td>
+            <td>
+              --
+            </td>
           </tr>
           </tbody>
-      </table>
-      <!-- Android Penstesting Checklist -->
-      <h2 id="android" class=" mt-5 pt-5 text-center mb-5" style="text-decoration: underline; text-decoration-color:blue">
+        </table>
+        <!-- Android Penstesting Checklist -->
+        <h2 id="android" class=" mt-5 pt-5 text-center mb-5"
+          style="text-decoration: underline; text-decoration-color:blue">
           <strong>Android Pentesting Checklist</strong><br></h2>
-      <table>
+        <table>
           <thead>
-              <tr>
-                  <th>Category</th>
-                  <th>Description</th>
-                  <th>Tools</th>
-              </tr>
+            <tr>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Tools</th>
+            </tr>
           </thead>
           <tbody>
-              <tr>
-                  <td colspan=4; style="text-align: center;"><strong>APK files and Information
-                          Gathering</strong></td>
-              </tr>
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Getting APK files and gathering info</p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li>Get the Application directly from the client</li>
-                          <li>Download the app from the play store and pull it using ADB(rooted android
-                              device/non-rooted devices).</li>
-                          <li>Search for the app on play store and download it</li>
-                          <ul>
-                              <li> <code>adb shell pm list packages -f | grep app_name</code></li>
-                              <li><code>It will show the com.package_name</code></li><br> or <br>
-                              <li><code>Look manually from the list of packages</code></li><br>
-                              <li><code>adb shell pm path com.package_name.</code></li><br>
-                              <li><code>adb pull /data/app/com.package_name..apk</code> </li>
-                          </ul>
-                          <br>
-                          <li>Check for application ecosystem</li>
-                          <li> React Native Application</li>
-                          <ul>
-                              <li>com.facebook.com.react entry in the AndroidManifest.xml file</li>
-                          </ul>
-                          <li> Flutter Application</li>
-                          <ul>
-                              <li>io.flutter folder from decompiling the app</li>
-                              <li>flutter.embedding entry in the AndroidManifest.xml file</li>
-                          </ul>
-                          <br>
-                          <li>Download it from </li>
-                          <ul>
-                              <li><a href="https://apkpure.com/" target="_blank">APKpure</a></li><br>
-                              <li><a href="https://apps.evozi.com/apk-downloader/"
-                                      target="_blank">apk-downloader</a></li><br>
-                              <li><a href="https://www.apkmirror.com/" target="_blank">apkmirror</a></li><br>
-                              <li><a href="https://apk-dl.com/" target="_blank">apk-dl</a></li><br>
-                              <li><a href="https://androidappsapk.co/" target="_blank">androidappsapk</a></li>
-                              <br>
-                              <li>- A tool to download apk directly from play store <a
-                                      href="https://github.com/ClaudiuGeorgiu/PlaystoreDownloader"
-                                      target="_blank">PlaystoreDownloader</a></li>
-                          </ul>
-                      </ul><br>
-                  </td>
-                  <td>
-                      <ul>
-                          <li> <a href="https://developer.android.com/studio/releases/platform-tools"
-                                  target="_blank">adb tools</a></li>
-                      </ul> <br>
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Installing on the device</p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li>Simple to install it from the play store.</li><br>
-                          <li>If have apk on host system use <br><code>“adb install application.apk”</code>
-                          </li>
-                          <li>
-                              <p>Note: Make sure and keep an eye on the Mobile device for the permission pop
-                                  up while installing it.</p>
-                          </li>
-                      </ul>
-                  </td>
-                  <td>
-                      <ul>
-                          <li><a href="https://developer.android.com/studio/releases/platform-tools"
-                                  target="_blank">adb tools</a></li>
-                          <li><a href="https://www.genymotion.com/fun-zone/" target="_blank"> Emulator
-                              </a><br>or<br>
-                          <li>Mobile device</li>
-                          </ul></td> </tr> <tr>
-                  <td colspan=4; style="text-align: center;"><strong>Reverse engineering and Analysis
-                      </strong></td>
-              </tr>
-              <tr>
-                  <td>
-                      <p style="text-align:justify">APk file analysis by reverse engineering</p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li>APK package file contains the code of the application. (it is similar to zip
-                              file).it contains assets, res, lib, META-INF, AndroidManifest.xml,
-                              classes.dex(Dalvik binary bytecode)</li><br>
-                          <li>To see all these contents Convert .apk file to .zip file and extract(unzip) it.
-                          </li><br>
-                          <li>To read AndroidManifest.xml use Apktool<p><code>Apktool d application.apk</code>
-                              </p>
-                              <p><code>cd application</code></p>
-                              <p><code>Open AndroidManifest.XML in any text editor and analyze it.</code></p>
-                          </li><br>
-                          <li> Reverse engineering DEX bytecode : </li><br>
-                          <ul>
-                              <li>Rename <code>application.apk to application.zip</code> and extract it.You
-                                  will get classes.dex file</li><br>
-                              <li>Use <code>d2j-dex2jar -f classes.dex</code> file to get the java classes
-                                  files.</li><br>
-                              <p>JD-GUI (java decompiler ) to read the java source code from the java classes
-                                  files.</p>
-                          </ul>
-                      </ul>
-                      <ul>
-                          <li>References to learn more</li>
-                          <ul>
-                              <li><a href="https://maddiestone.github.io/AndroidAppRE/">AndroidAPPRE </a></li>
-                              <li><a href="https://www.youtube.com/watch?v=BijZmutY0CQ&feature=yout"
-                                  target="_blank">Android App Reverse Engineering LIVE!</a></li>
-                          </ul>
-                      </ul>
-                  </td>
-                  <td>
-                      <ul>
-                          <li> <a href="https://developer.android.com/studio/releases/platform-tools"
-                                  target="_blank">adb tools</a></li>
-                          <li><a href="https://github.com/pxb1988/dex2jar" target="_blank">dex2jar</a> </li>
-                          <li><a href="https://github.com/java-decompiler/jd-gui/releases"
-                                  target="_blank">JDGUI</a></li>
-                      </ul>
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Static Analysis (manually and automated)</p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li>After getting the java source code, Analyze it and look for the sensitive
-                              information hardcoded into code like password, API keys</li><br>
-                              <li>Case Study: <a target="_blank" href="https://hackerone.com/reports/351555">https://hackerone.com/reports/351555</a></li><br>
-                          <li>Use MobSF for Static Analysis to speed up the process</li>
-                      </ul>
-                  </td>
-                  <td>
-                      <ul>
-                          <li><a href="https://github.com/MobSF/Mobile-Security-Framework-MobSF"
-                                  target="_blank">MobSF</a></li>
-                          <li><a href="https://developer.android.com/studio/releases/platform-tools"
-                                  target="_blank">adb tools</a></li>
-                          <li><a href="https://ibotpeaches.github.io/Apktool/" target="_blank">apktool</a>
-                          </li>
-                          <li><a href=" https://github.com/pxb1988/dex2jar" target="_blank">dex2jar</a> </li>
-                          <li> <a href="https://github.com/java-decompiler/jd-gui/releases" target="_blank">
-                                  JDGUI</a></li>
-                      </ul>
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Check App is Debuggable</p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li>Android allows full-system backup which includes app data which are debuggable</li>
-                          <li>Attacker could take the backup of a debuggable app via adb </li>
-                          <li>Check android:debuggable attribute in AndroidManifest.xml file</li>
-                          <li>if the attribute value is true then its vulerable</li>                              
-                      </ul>
-                  </td>
-                  <td>
-                      -
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Check for Typos in custom permission in Android manifest file</p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li>Developers can use custom permission for android components to be used by autorized application only</li><br>
-                          <li>Typo in using custom permissions which don’t match declared custom permissions can be misused by unauthorized application</li>
-                          <li>Case Study: <a target="_blank" href="https://hackerone.com/reports/440749">https://hackerone.com/reports/440749</a></li>
-                      </ul>
-                  </td>
-                  <td>
-                      --
-                  </td>
-              </tr>
-              <tr>
-                  <td colspan=4; style="text-align: center;"><strong>Network Analysis</strong></td>
-              </tr>
-              </tr>
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Check for SSL pinning &amp; its bypass</p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li>Setup burp proxy(or another similar proxy) go to <code>Http://burp</code></li>
-                          <li> Go to
-                              <code>Settings &gt; additional settings &gt; privacy &gt; certificates &gt;install certificates from sd card</code>
-                              (select the downloaded location) to install as a root CA certificate </li>
-                          <li> Capture the traffic of app</li><br>
-                          <p>or</p><br>
-                          <li>If SSL certificate pinning is enabled you need to bypass it to capture and
-                              analyze the app traffic.</li>
-                          <ul>Use Frida and objection to bypass<br>
-                              <li>Install Frida client on the host and run Frida server on a Mobile
-                                  device(place the Frida server on a mobile device using:</li>
-                              <br><code>&gt;adb push Frida-server /data/local/tmp/</code><br>
-                              <code>&gt; adb shell</code><br><code>&gt; cd /data/local/tmp/</code><br>
-                              <code>&gt; chmod +x frida-server (make it executable )</code><br>
-                              <code>&gt; ./frida-server &amp;</code><br>
-                              <p>or</p><br>
-                              <code>&gt; adb shell "chmod 755 /data/local/tmp/frida-server"</code><br>
-                              <code>&gt; adb shell "/data/local/tmp/frida-server &amp;"</code><br>
-                              <li>Test if Frida server is running properly using :</li>
-                              <br><code>&gt; Frida-ps -Ua</code>
-                          </ul><br>
-                          <li> Using objection to bypass sslpinning </li><br>
-                          <code>&gt; objection -g com.package_name explore</code><br>
-                          <code>&gt; android sslpinning disable</code> <br>
-                      </ul>
-                      <ul>
-                          <li>References to learn more</li>
-                          <ul>
-                              <li><a href="https://www.bugcrowd.com/blog/mobile-testing-setting-up-your-android-device-part-1/"
-                                      target="_blank" <>SSL pinning/proxy setup</a></li>
-                              <li><a href="https://enciphers.com/xposed-framework-plugins-for-android-pentesting/"
-                                      target="_blank" <> Xposed-framework</a></li>
-                              <li><a href="https://frida.re/docs/android/" target="_blank" <>Frida</a></li>
-                              <li><a href="https://github.com/sensepost/objection" target="_blank"
-                                      <>Objection</a></li>
-                          </ul>
-                      </ul>
-                  </td>
-                  <td>
-                      <ul>
-                          <li><a href="https://portswigger.net/burp/communitydownload" target="_blank"> Burp
-                                  Proxy</a></li>
-                          <li><a href="https://www.genymotion.com/fun-zone/"
-                                  target="_blank">Device/Emulator</a></li>
-                          <li><a href="https://repo.xposed.info/module/de.robv.android.xposed.installer"
-                                  target="_blank">Xposed</a></li>
-                          <li><a href="https://frida.re/docs/android/" target="_blank">frida</a></li>
-                          <li><a href="https://github.com/sensepost/objection" target="_blank">Objection</a>
-                          </li>
-                      </ul>
-                  </td>
-              </tr>
-              <tr>
-                  <td colspan=4; style="text-align: center;"><strong>Dynamic Analysis</strong></td>
-              </tr>
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Analyzing App logs using pidcat tool</p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li>shows log entries for processes from a specific application package</li>
-                      </ul>
-                  </td>
-                  <td>
-                      <ul>
-                          <li><a href="https://github.com/JakeWharton/pidcat/blob/master/README.md"
-                                  target="_blank">Pidcat</a></li>
-                          <li><a href="https://developer.android.com/studio/command-line/logcat"
-                                  target="_blank">Logcat</a></li>
+            <tr>
+              <td colspan=4; style="text-align: center;"><strong>APK files and Information
+                  Gathering</strong></td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Getting APK files and gathering info</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Get the Application directly from the client</li>
+                  <li>Download the app from the play store and pull it using ADB(rooted android
+                    device/non-rooted devices).</li>
+                  <li>Search for the app on play store and download it</li>
+                  <ul>
+                    <li> <code>adb shell pm list packages -f | grep app_name</code></li>
+                    <li><code>It will show the com.package_name</code></li><br> or <br>
+                    <li><code>Look manually from the list of packages</code></li><br>
+                    <li><code>adb shell pm path com.package_name.</code></li><br>
+                    <li><code>adb pull /data/app/com.package_name..apk</code> </li>
+                  </ul>
+                  <br>
+                  <li>Check for application ecosystem</li>
+                  <li> React Native Application</li>
+                  <ul>
+                    <li>com.facebook.com.react entry in the AndroidManifest.xml file</li>
+                  </ul>
+                  <li> Flutter Application</li>
+                  <ul>
+                    <li>io.flutter folder from decompiling the app</li>
+                    <li>flutter.embedding entry in the AndroidManifest.xml file</li>
+                  </ul>
+                  <br>
+                  <li>Download it from </li>
+                  <ul>
+                    <li><a href="https://apkpure.com/" target="_blank">APKpure</a></li><br>
+                    <li><a href="https://apps.evozi.com/apk-downloader/" target="_blank">apk-downloader</a></li><br>
+                    <li><a href="https://www.apkmirror.com/" target="_blank">apkmirror</a></li><br>
+                    <li><a href="https://apk-dl.com/" target="_blank">apk-dl</a></li><br>
+                    <li><a href="https://androidappsapk.co/" target="_blank">androidappsapk</a></li>
+                    <br>
+                    <li>- A tool to download apk directly from play store <a
+                        href="https://github.com/ClaudiuGeorgiu/PlaystoreDownloader"
+                        target="_blank">PlaystoreDownloader</a></li>
+                  </ul>
+                </ul><br>
+              </td>
+              <td>
+                <ul>
+                  <li> <a href="https://developer.android.com/studio/releases/platform-tools" target="_blank">adb
+                      tools</a></li>
+                </ul> <br>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Installing on the device</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Simple to install it from the play store.</li><br>
+                  <li>If have apk on host system use <br><code>“adb install application.apk”</code>
+                  </li>
+                  <li>
+                    <p>Note: Make sure and keep an eye on the Mobile device for the permission pop
+                      up while installing it.</p>
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><a href="https://developer.android.com/studio/releases/platform-tools" target="_blank">adb
+                      tools</a></li>
+                  <li><a href="https://www.genymotion.com/fun-zone/" target="_blank"> Emulator
+                    </a><br>or<br>
+                  <li>Mobile device</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td colspan=4; style="text-align: center;"><strong>Reverse engineering and Analysis
+                </strong></td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">APk file analysis by reverse engineering</p>
+              </td>
+              <td>
+                <ul>
+                  <li>APK package file contains the code of the application. (it is similar to zip
+                    file).it contains assets, res, lib, META-INF, AndroidManifest.xml,
+                    classes.dex(Dalvik binary bytecode)</li><br>
+                  <li>To see all these contents Convert .apk file to .zip file and extract(unzip) it.
+                  </li><br>
+                  <li>To read AndroidManifest.xml use Apktool<p><code>Apktool d application.apk</code>
+                    </p>
+                    <p><code>cd application</code></p>
+                    <p><code>Open AndroidManifest.XML in any text editor and analyze it.</code></p>
+                  </li><br>
+                  <li> Reverse engineering DEX bytecode : </li><br>
+                  <ul>
+                    <li>Rename <code>application.apk to application.zip</code> and extract it.You
+                      will get classes.dex file</li><br>
+                    <li>Use <code>d2j-dex2jar -f classes.dex</code> file to get the java classes
+                      files.</li><br>
+                    <p>JD-GUI (java decompiler ) to read the java source code from the java classes
+                      files.</p>
+                  </ul>
+                </ul>
+                <ul>
+                  <li>References to learn more</li>
+                  <ul>
+                    <li><a href="https://maddiestone.github.io/AndroidAppRE/">AndroidAPPRE </a></li>
+                    <li><a href="https://www.youtube.com/watch?v=BijZmutY0CQ&feature=yout" target="_blank">Android App
+                        Reverse Engineering LIVE!</a></li>
+                  </ul>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li> <a href="https://developer.android.com/studio/releases/platform-tools" target="_blank">adb
+                      tools</a></li>
+                  <li><a href="https://github.com/pxb1988/dex2jar" target="_blank">dex2jar</a> </li>
+                  <li><a href="https://github.com/java-decompiler/jd-gui/releases" target="_blank">JDGUI</a></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Static Analysis (manually and automated)</p>
+              </td>
+              <td>
+                <ul>
+                  <li>After getting the java source code, Analyze it and look for the sensitive
+                    information hardcoded into code like password, API keys</li><br>
+                  <li>Case Study: <a target="_blank"
+                      href="https://hackerone.com/reports/351555">https://hackerone.com/reports/351555</a></li><br>
+                  <li>Use MobSF for Static Analysis to speed up the process</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><a href="https://github.com/MobSF/Mobile-Security-Framework-MobSF" target="_blank">MobSF</a></li>
+                  <li><a href="https://developer.android.com/studio/releases/platform-tools" target="_blank">adb
+                      tools</a></li>
+                  <li><a href="https://ibotpeaches.github.io/Apktool/" target="_blank">apktool</a>
+                  </li>
+                  <li><a href=" https://github.com/pxb1988/dex2jar" target="_blank">dex2jar</a> </li>
+                  <li> <a href="https://github.com/java-decompiler/jd-gui/releases" target="_blank">
+                      JDGUI</a></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Check App is Debuggable</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Android allows full-system backup which includes app data which are debuggable</li>
+                  <li>Attacker could take the backup of a debuggable app via adb </li>
+                  <li>Check android:debuggable attribute in AndroidManifest.xml file</li>
+                  <li>if the attribute value is true then its vulerable</li>
+                </ul>
+              </td>
+              <td>
+                -
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Check for Typos in custom permission in Android manifest file</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Developers can use custom permission for android components to be used by autorized application
+                    only</li><br>
+                  <li>Typo in using custom permissions which don’t match declared custom permissions can be misused by
+                    unauthorized application</li>
+                  <li>Case Study: <a target="_blank"
+                      href="https://hackerone.com/reports/440749">https://hackerone.com/reports/440749</a></li>
+                </ul>
+              </td>
+              <td>
+                --
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Test for Exported Activity</p>
+              </td>
+              <td>
+                <ul>
+                  <li>By default android activitiy is not exported but if an intent-filter is defined then it's
+                    generally exported</li><br>
+                  <li>It is also possible that non exported activities could be executed by the exported activity, Check
+                    if you can control the execution of non exported activity via exported one using adb </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><a href="https://github.com/MobSF/Mobile-Security-Framework-MobSF" target="_blank">MobSF</a></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Test for exported broadcast receiver</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Check for the exported broadcast receiver in the AndroidManifest.xml file </li><br>
+                  <li>Check if the attacker could send the payload to this exported broadcast receiver or the input is
+                    handled by the apk in any way
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><a href="https://github.com/MobSF/Mobile-Security-Framework-MobSF" target="_blank">MobSF</a></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td colspan=4; style="text-align: center;"><strong>Network Analysis</strong></td>
+            </tr>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Check for SSL pinning &amp; its bypass</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Setup burp proxy(or another similar proxy) go to <code>Http://burp</code></li>
+                  <li> Go to
+                    <code>Settings &gt; additional settings &gt; privacy &gt; certificates &gt;install certificates from sd card</code>
+                    (select the downloaded location) to install as a root CA certificate </li>
+                  <li> Capture the traffic of app</li><br>
+                  <p>or</p><br>
+                  <li>If SSL certificate pinning is enabled you need to bypass it to capture and
+                    analyze the app traffic.</li>
+                  <ul>Use Frida and objection to bypass<br>
+                    <li>Install Frida client on the host and run Frida server on a Mobile
+                      device(place the Frida server on a mobile device using:</li>
+                    <br><code>&gt;adb push Frida-server /data/local/tmp/</code><br>
+                    <code>&gt; adb shell</code><br><code>&gt; cd /data/local/tmp/</code><br>
+                    <code>&gt; chmod +x frida-server (make it executable )</code><br>
+                    <code>&gt; ./frida-server &amp;</code><br>
+                    <p>or</p><br>
+                    <code>&gt; adb shell "chmod 755 /data/local/tmp/frida-server"</code><br>
+                    <code>&gt; adb shell "/data/local/tmp/frida-server &amp;"</code><br>
+                    <li>Test if Frida server is running properly using :</li>
+                    <br><code>&gt; Frida-ps -Ua</code>
+                  </ul><br>
+                  <li> Using objection to bypass sslpinning </li><br>
+                  <code>&gt; objection -g com.package_name explore</code><br>
+                  <code>&gt; android sslpinning disable</code> <br>
+                </ul>
+                <ul>
+                  <li>References to learn more</li>
+                  <ul>
+                    <li><a href="https://www.bugcrowd.com/blog/mobile-testing-setting-up-your-android-device-part-1/"
+                        target="_blank" <>SSL pinning/proxy setup</a></li>
+                    <li><a href="https://enciphers.com/xposed-framework-plugins-for-android-pentesting/" target="_blank"
+                        <> Xposed-framework</a></li>
+                    <li><a href="https://frida.re/docs/android/" target="_blank" <>Frida</a></li>
+                    <li><a href="https://github.com/sensepost/objection" target="_blank" <>Objection</a></li>
+                  </ul>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><a href="https://portswigger.net/burp/communitydownload" target="_blank"> Burp
+                      Proxy</a></li>
+                  <li><a href="https://www.genymotion.com/fun-zone/" target="_blank">Device/Emulator</a></li>
+                  <li><a href="https://repo.xposed.info/module/de.robv.android.xposed.installer"
+                      target="_blank">Xposed</a></li>
+                  <li><a href="https://frida.re/docs/android/" target="_blank">frida</a></li>
+                  <li><a href="https://github.com/sensepost/objection" target="_blank">Objection</a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td colspan=4; style="text-align: center;"><strong>Dynamic Analysis</strong></td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Analyzing App logs using pidcat tool</p>
+              </td>
+              <td>
+                <ul>
+                  <li>shows log entries for processes from a specific application package</li>
+                  <li><code>pidcat target-app-package-name</code></li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><a href="https://github.com/JakeWharton/pidcat/blob/master/README.md" target="_blank">Pidcat</a>
+                  </li>
+                  <li><a href="https://developer.android.com/studio/command-line/logcat" target="_blank">Logcat</a></li>
 
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Check app UI is protected against a screenshot of
-                          sensitive information</p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li> <code>adb shell /system/bin/screencap /sdcard/img.png</code><br>
-                              <p>Here screen cap is the command-line utility to take screenshots of a device.
-                              </p>
-                          </li><br>
-                          <li> Download it using <code>adb pull /sdcard/img.png</code></li><br>
-                          <li>Read it using display img.png (on linux)</li>
-                          <br><code>Note (Sensitive info should not be captured in the screenshot)</code>
-                          <p></p>
-                      </ul>
-                  </td>
-                  <td>—</td>
-              </tr>
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Check root detection mechanism is implemented</p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li>Install the app on the rooted device if it is not showing any alert regarding
-                              the rooted device or not blocking the app to run. Then it is not protected with
-                              root detection.</li>
-                      </ul>
-                  </td>
-                  <td>—</td>
-              </tr>
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Check shared preferences for persistent login</p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li> For the first time for the login, the app asks for the user name and password
-                              and later it does not ask for the username and password.it stores the login key
-                              in login_account.xml at the shared preferences.it can be stolen by other app and
-                              attacker can use it</li>
-                      </ul>
-                  </td>
-                  <td>—</td>
-              </tr>
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Checking for Keyboard cache</p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li> Location
-                              <code>/data/data/com.android.providers.userdictionary/databases/user_dict.db</code>
-                          </li><br>
-                          <li>- Use SQLite to read it(user_dict.db)</li>
-                      </ul>
-                  </td>
-                  <td>
-                      <ul>
-                          <li><a href="https://sqlitebrowser.org/" target="_blank">SQLite browser </a></li>
-                      </ul>
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Test for vulnerable Broadcast receivers</p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li>Check for the intent which send by the broadcast (it can be a user input)<br>and
-                              Check AndroidManifest file for broadcast receiver which has android
-                              exported=”true”(insecure way)</li>
-                          <li> - And develop the exploit according to the app functionality</li>
-                      </ul>
-                  </td>
-                  <td>–-</td>
-              </tr>
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Test for Intent Sniffing</p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li>Application could send broadcast intent without specifying the broadcast target</li>
-                          <li>Any malicious app could intercept these implicit broadcast </li>
-                          <li>Search <code>sendBroadcast</code> function in the decompiled code</li>
-                          <li>Case Study: <a target="_blank" href="https://hackerone.com/reports/56002">https://hackerone.com/reports/56002</a></li>
-                      </ul>
-                  </td>
-                  <td>—</td>
-              </tr>
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Test for Deep Linking</p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li>Deep link are URLs which navigate users directly to the specific content in an applications</li>
-                          <li>To define deep links, intent filters are defined in AndroidManifest.xml file </li>
-                          <li>Intent filter must also include a category with the DEFAULT or BROWSABLE value</li>
-                          <li>Check for if scheme,host and parameters are validated properly</li>
-                      </ul>
-                  </td>
-                  <td>—</td>
-              </tr>
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Test for local encryption issues</p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li>Check for weak crypto alogs if used</li><br>
-                          <ul>
-                              <li>Vulnerable algo/outdated cipher: such as DES and 3DES,RC2,RC4, MD5 and
-                                  SHA1,Dual_EC_DRBG and SHA1PRNG,BLOWFISH</li><br>
-                              <li> Inspect the app code to check used crypto algo instances</li>
-                          </ul><br>
-                          <li>Common configuration issues</li><br>
-                          <ul>
-                              <li>Check if symmetric encryption is used with hardcoded crypto keys.</li><br>
-                              <li>If app is using two way ssl ,check for the client SSL Certificate password
-                                  locally (should not store it locally )</li>
-                          </ul>
-                      </ul>
-                  </td>
-                  <td>—</td>
-              </tr>
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Finding Storage issues from android manifest file</p>
-                  </td>
-                  <td>Check for external storage by looking <br>
-                      <ul>
-                          <li>uses-permission :
-                              <code>android:name="android.permission.WRITE_EXTERNAL_STORAGE"</code></li><br>
-                          <li> Check code for used file permission keywords/API to store data like :
-                              MODE_WORLD_READABLE or MODE_WORLD_WRITABLE (these two allow any app to read the
-                              file and write to this file)</li>
-                          <li>Check external storage for sensitive info stored (you can analyse the code to
-                              know more like above)</li>
-                          <br><code>cd /mnt/sdcard</code><br><code>use ls and ls -l file_name_found_from_source_code</code><br><code>Note : In unix files starting with . are ignored by the ls command</code><br><code>so use ls -l file_name_to_check</code>
-                      </ul><br>Look for classes and functions:<br>
-                      <ul>
-                          <li><code>SharedPreferences class (it stores key-value pairs)</code></li><br>
-                          <li><code>FileOutPutStream class (it uses internal or external storage),getExternal* function (use external storage)</code>
-                          </li>
-                          <li><code>getReadableDatabase function (returns a SQLiteDatabase for reading)</code>
-                          </li>
-                          <li><br><code> getCacheDir and getExternalCacheDirs(use cached files)</code></li>
-                          <br>
-                          <li><code>Check for the bad practises used for encrypting the files</code></li><br>
-                          <li><code>getWritableDatabase function (returns a SQLiteDatabase for writing)</code>
-                          </li>
-                      </ul>
-                  </td>
-                  <td></td>
-              </tr>
-              <tr>
-                  <td>Check location for the secrets</td>
-                  <td>- res/values/strings.xml<br>- build configs like - local.properties,
-                      gradle.properties<br>- /data/misc/keystore/</td>
-                  <td>—</td>
-              </tr>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Check app UI is protected against a screenshot of
+                  sensitive information</p>
+              </td>
+              <td>
+                <ul>
+                  <li> <code>adb shell /system/bin/screencap /sdcard/img.png</code><br>
+                    <p>Here screen cap is the command-line utility to take screenshots of a device.
+                    </p>
+                  </li><br>
+                  <li> Download it using <code>adb pull /sdcard/img.png</code></li><br>
+                  <li>Read it using display img.png (on linux)</li>
+                  <br><code>Note (Sensitive info should not be captured in the screenshot)</code>
+                  <p></p>
+                </ul>
+              </td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Check root detection mechanism is implemented</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Install the app on the rooted device if it is not showing any alert regarding
+                    the rooted device or not blocking the app to run. Then it is not protected with
+                    root detection.</li>
+                </ul>
+              </td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Check shared preferences for persistent login</p>
+              </td>
+              <td>
+                <ul>
+                  <li> For the first time for the login, the app asks for the user name and password
+                    and later it does not ask for the username and password.it stores the login key
+                    in login_account.xml at the shared preferences.it can be stolen by other app and
+                    attacker can use it</li>
+                </ul>
+              </td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Checking for Keyboard cache</p>
+              </td>
+              <td>
+                <ul>
+                  <li> Location
+                    <code>/data/data/com.android.providers.userdictionary/databases/user_dict.db</code>
+                  </li><br>
+                  <li>- Use SQLite to read it(user_dict.db)</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li><a href="https://sqlitebrowser.org/" target="_blank">SQLite browser </a></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Test for vulnerable Broadcast receivers</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Check for the intent which send by the broadcast (it can be a user input)<br>and
+                    Check AndroidManifest file for broadcast receiver which has android
+                    exported=”true”(insecure way)</li>
+                  <li> - And develop the exploit according to the app functionality</li>
+                </ul>
+              </td>
+              <td>–-</td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Test for Intent Sniffing</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Application could send broadcast intent without specifying the broadcast target</li>
+                  <li>Any malicious app could intercept these implicit broadcast </li>
+                  <li>Search <code>sendBroadcast</code> function in the decompiled code</li>
+                  <li>Case Study: <a target="_blank"
+                      href="https://hackerone.com/reports/56002">https://hackerone.com/reports/56002</a></li>
+                </ul>
+              </td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Test for Deep Linking Vulnerabilities</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Deep link are URLs which navigate users directly to the specific content in an applications</li>
+                  <li>To define deep links, intent filters are defined in AndroidManifest.xml file </li>
+                  <li>Intent filter must also include a category with the DEFAULT or BROWSABLE value</li>
+                  <li>Check for if scheme,host and parameters are validated properly</li>
+                </ul>
+              </td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify"> Test for WebView Vulnerabilities</p>
+              </td>
+              <td>
+                <ul>
+                  <li>It allows to show web pages as an activity</li>
+                  <li>In smali code look for these strings </li>
+                  <li><code>@JavascriptInterface ,setJavaScriptEnabled ,setWebViewClient</code></li>
+                  <li>Check for dangerous WebView settings like setAllowFileAccess(true)</li>
+                </ul>
+              </td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Test for local encryption issues</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Check for weak crypto alogs if used</li><br>
+                  <ul>
+                    <li>Vulnerable algo/outdated cipher: such as DES and 3DES,RC2,RC4, MD5 and
+                      SHA1,Dual_EC_DRBG and SHA1PRNG,BLOWFISH</li><br>
+                    <li> Inspect the app code to check used crypto algo instances</li>
+                  </ul><br>
+                  <li>Common configuration issues</li><br>
+                  <ul>
+                    <li>Check if symmetric encryption is used with hardcoded crypto keys.</li><br>
+                    <li>If app is using two way ssl ,check for the client SSL Certificate password
+                      locally (should not store it locally )</li>
+                  </ul>
+                </ul>
+              </td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Finding Storage issues from android manifest file</p>
+              </td>
+              <td>Check for external storage by looking <br>
+                <ul>
+                  <li>uses-permission :
+                    <code>android:name="android.permission.WRITE_EXTERNAL_STORAGE"</code></li><br>
+                  <li> Check code for used file permission keywords/API to store data like :
+                    MODE_WORLD_READABLE or MODE_WORLD_WRITABLE (these two allow any app to read the
+                    file and write to this file)</li>
+                  <li>Check external storage for sensitive info stored (you can analyse the code to
+                    know more like above)</li>
+                  <br><code>cd /mnt/sdcard</code><br><code>use ls and ls -l file_name_found_from_source_code</code><br><code>Note : In unix files starting with . are ignored by the ls command</code><br><code>so use ls -l file_name_to_check</code>
+                </ul><br>Look for classes and functions:<br>
+                <ul>
+                  <li><code>SharedPreferences class (it stores key-value pairs)</code></li><br>
+                  <li>
+                    <code>FileOutPutStream class (it uses internal or external storage),getExternal* function (use external storage)</code>
+                  </li>
+                  <li><code>getReadableDatabase function (returns a SQLiteDatabase for reading)</code>
+                  </li>
+                  <li><br><code> getCacheDir and getExternalCacheDirs(use cached files)</code></li>
+                  <br>
+                  <li><code>Check for the bad practises used for encrypting the files</code></li><br>
+                  <li><code>getWritableDatabase function (returns a SQLiteDatabase for writing)</code>
+                  </li>
+                </ul>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Check location for the secrets</td>
+              <td>- res/values/strings.xml<br>- build configs like - local.properties,
+                gradle.properties<br>- /data/misc/keystore/</td>
+              <td>—</td>
+            </tr>
 
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Check for Input Validation issues </p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li>For e.g. : login page ,try to login without using username and password (vai
-                              SQLinjection),keep checking the logs of the app you might see the SQli error
-                          </li><br>
-                          <li>Input validation check for URI schemes :</li>
-                          <li>Reading app files stored in sdcard or internal storage using
-                              "file:///path_of_file" schema to read the files</li>
-                          <code>file:///sdcard/.file_name.txt</code> or
-                          <code>file:///data/data/com.app.name/shared_prefs/ app_preferences.xml</code>
-                      </ul>
-                  </td>
-                  <td>
-                      --
-                  </td>
-              </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Check for Input Validation issues </p>
+              </td>
+              <td>
+                <ul>
+                  <li>For e.g. : login page ,try to login without using username and password (vai
+                    SQLinjection),keep checking the logs of the app you might see the SQli error
+                  </li><br>
+                  <li>Input validation check for URI schemes :</li>
+                  <li>Reading app files stored in sdcard or internal storage using
+                    "file:///path_of_file" schema to read the files</li>
+                  <code>file:///sdcard/.file_name.txt</code> or
+                  <code>file:///data/data/com.app.name/shared_prefs/ app_preferences.xml</code>
+                </ul>
+              </td>
+              <td>
+                --
+              </td>
+            </tr>
 
-              <tr>
-                  <td>
-                      <p style="text-align:justify">Check for Access Control issues</p>
-                  </td>
-                  <td>
-                      <ul>
-                          <li>Some of the componentes can be accessed by other apps if the are not properly
-                              protected.Components like activities,services,content providers</li>
-                          <li>e.g. In a app one activity shows the API key and password (activity might handle
-                              some other sensitive info) inside the app.Try to get the same info from the
-                              outside of the
-                              app.<code>Note: Check if the Activity/Component is exported and app is allowing access of info outside the application.then it is an issue </code>
-                          </li>
-                          <li>check
-                              using<code>adb shell am start com.app_name/.Activity_name(activity which is exported and have sensitive information)</code>this
-                              will launch the
-                              activity<code>adb shell am start -n com.app_name/.Activity_name -a com.app_name.action.VIEW_Action_name</code>-a
-                              it specifies the intent action and above will launch the activity</li>
-                      </ul>
-                  </td>
-                  <td>
-                      --
-                  </td>
-              </tr>
+            <tr>
+              <td>
+                <p style="text-align:justify">Check for Access Control issues</p>
+              </td>
+              <td>
+                <ul>
+                  <li>Some of the componentes can be accessed by other apps if the are not properly
+                    protected.Components like activities,services,content providers</li>
+                  <li>e.g. In a app one activity shows the API key and password (activity might handle
+                    some other sensitive info) inside the app.Try to get the same info from the
+                    outside of the
+                    app.<code>Note: Check if the Activity/Component is exported and app is allowing access of info outside the application.then it is an issue </code>
+                  </li>
+                  <li>check
+                    using<code>adb shell am start com.app_name/.Activity_name(activity which is exported and have sensitive information)</code>this
+                    will launch the
+                    activity<code>adb shell am start -n com.app_name/.Activity_name -a com.app_name.action.VIEW_Action_name</code>-a
+                    it specifies the intent action and above will launch the activity</li>
+                </ul>
+              </td>
+              <td>
+                --
+              </td>
+            </tr>
           </tbody>
-      </table>
-</article>
-</div>
-
-
-<br>
-<br>
-
-
-
-<div class="container mb-4">
-
-
-
-
-  <div class="intro">
-    <h2 class=" mt-3 pt-3" style="text-decoration: underline; text-decoration-color:blue"><strong>References & Credits
-
-
-      </strong><br></h2>
-    <ul>
-
-      <li><a href="https://www.enciphers-trainings.com/p/ios-application-security">iOS Application Security Training, By
-          ENCIPHERS</a></li>
-      <li><a href="https://www.owasp.org/index.php/OWASP_Mobile_Security_Testing_Guide">OWASP Mobile Security Testing
-          Guide</a></li>
-      <li><a href="https://www.amazon.in/Mobile-Application-Hackers-Handbook-MISL-WILEY/dp/8126554916">The Mobile
-          Application Hacker's Handbook</a></li>
-
-    </ul>
-  </div>
-</div>
-
-
-<div class="container mb-4">
-
-
-
-
-  <div>
-    <h2 style="font-size:40px;"><strong>Last Updated On: 1st September 2020
-
-
-      </strong><br></h2>
-  </div>
-</div>
-<br></p>
-<!-- Site footer -->
-<footer class="site-footer ">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 col-md-4">
-        <h6>About</h6>
-        <a href="/"><img src="images/logo-light.png" alt="" class="logo-dark" height="122" /></a>
-
-        <p class="text-justify">One of the most hassle free mobile penetration testing platform by team enciphers..</p>
-      </div>
-
-      <div class="col-xs-6 col-md-4">
-        <h6>Mobexler Links</h6>
-        <ul class="footer-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/download.htm">Download</a></li>
-          <li><a href="/setup.htm">Setup</a></li>
-          <li><a href="/tools.htm">Tools</a></li>
-          <li><a href="/license.htm">License</a></li>
-          <li><a href="/credits.htm">Credits</a></li>
-          <li><a href="/resources.htm">Resources</a></li>
-        </ul>
-
-      </div>
-
-      <div class="col-xs-6 col-md-4">
-        <h6>Enciphers Links</h6>
-        <ul class="footer-links">
-          <li><a href="https://enciphers.com/">Enciphers</a></li>
-          <li><a href="https://enciphers.com/about-us/">About Us</a></li>
-          <li><a href="https://enciphers.com/services/">Services</a></li>
-          <li><a href="https://enciphers.com/trainings/">Trainings</a></li>
-          <li><a href="https://enciphers.com/contact/">Contact</a></li>
-          <li><a href="https://enciphers.com/blog/">Blog</a></li>
-
-        </ul>
-        <a href="https://www.enciphers-trainings.com/" class="btn mt-2 btn-primary" target="_blank">Online Training<span
-            class="ml-2 right-icon">&#8594;</span></a>
-      </div>
+        </table>
+    </article>
     </div>
-    <hr>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-sm-6 col-xs-12">
-        <p class="copyright-text">2020 © Enciphers. Design by
-          <a href="/index.html">Enciphers</a>.
-        </p>
-      </div>
 
-      <div class="col-md-4 col-sm-6 col-xs-12">
-        <ul class="social-icons">
-          <li><a class="facebook" href="https://twitter.com/mobexler"><i class="mdi mdi-twitter"></i></a></li>
+
+    <br>
+    <br>
+
+
+
+    <div class="container mb-4">
+
+
+
+
+      <div class="intro">
+        <h2 class=" mt-3 pt-3" style="text-decoration: underline; text-decoration-color:blue"><strong>References &
+            Credits
+
+
+          </strong><br></h2>
+        <ul>
+
+          <li><a href="https://www.enciphers-trainings.com/p/ios-application-security">iOS Application Security
+              Training, By
+              ENCIPHERS</a></li>
+          <li><a href="https://www.owasp.org/index.php/OWASP_Mobile_Security_Testing_Guide">OWASP Mobile Security
+              Testing
+              Guide</a></li>
+          <li><a href="https://www.amazon.in/Mobile-Application-Hackers-Handbook-MISL-WILEY/dp/8126554916">The Mobile
+              Application Hacker's Handbook</a></li>
 
         </ul>
       </div>
     </div>
-  </div>
-</footer>
 
-<!-- javascript -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/scrollspy.min.js"></script>
-<script src="js/jquery.easing.min.js"></script>
-<!-- COUNTER -->
-<!-- <script src="js/counter.int.js"></script> -->
-<!-- carousel -->
-<script src="js/owl.carousel.min.js"></script>
-<!-- Main Js -->
-<script src="js/app.js"></script>
-<script>
-  var btn = $('#button');
 
-  $(window).scroll(function () {
-    if ($(window).scrollTop() > 1000) {
+    <div class="container mb-4">
 
-      btn.addClass('show');
-    } else {
-      btn.removeClass('show');
-    }
-  });
 
-  btn.on('click', function (e) {
-    e.preventDefault();
-    $('html, body').animate({ scrollTop: 175 }, '300');
-  });
-</script>
 
-</body>
+
+      <div>
+        <h2 style="font-size:40px;"><strong>Last Updated On: 1st September 2020
+
+
+          </strong><br></h2>
+      </div>
+    </div>
+    <br></p>
+    <!-- Site footer -->
+    <footer class="site-footer ">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-4">
+            <h6>About</h6>
+            <a href="/"><img src="images/logo-light.png" alt="" class="logo-dark" height="122" /></a>
+
+            <p class="text-justify">One of the most hassle free mobile penetration testing platform by team enciphers..
+            </p>
+          </div>
+
+          <div class="col-xs-6 col-md-4">
+            <h6>Mobexler Links</h6>
+            <ul class="footer-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="/download.htm">Download</a></li>
+              <li><a href="/setup.htm">Setup</a></li>
+              <li><a href="/tools.htm">Tools</a></li>
+              <li><a href="/license.htm">License</a></li>
+              <li><a href="/credits.htm">Credits</a></li>
+              <li><a href="/resources.htm">Resources</a></li>
+            </ul>
+
+          </div>
+
+          <div class="col-xs-6 col-md-4">
+            <h6>Enciphers Links</h6>
+            <ul class="footer-links">
+              <li><a href="https://enciphers.com/">Enciphers</a></li>
+              <li><a href="https://enciphers.com/about-us/">About Us</a></li>
+              <li><a href="https://enciphers.com/services/">Services</a></li>
+              <li><a href="https://enciphers.com/trainings/">Trainings</a></li>
+              <li><a href="https://enciphers.com/contact/">Contact</a></li>
+              <li><a href="https://enciphers.com/blog/">Blog</a></li>
+
+            </ul>
+            <a href="https://www.enciphers-trainings.com/" class="btn mt-2 btn-primary" target="_blank">Online
+              Training<span class="ml-2 right-icon">&#8594;</span></a>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">2020 © Enciphers. Design by
+              <a href="/index.html">Enciphers</a>.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="https://twitter.com/mobexler"><i class="mdi mdi-twitter"></i></a></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- javascript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/scrollspy.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- COUNTER -->
+    <!-- <script src="js/counter.int.js"></script> -->
+    <!-- carousel -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- Main Js -->
+    <script src="js/app.js"></script>
+    <script>
+      var btn = $('#button');
+
+      $(window).scroll(function () {
+        if ($(window).scrollTop() > 1000) {
+
+          btn.addClass('show');
+        } else {
+          btn.removeClass('show');
+        }
+      });
+
+      btn.on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: 175 }, '300');
+      });
+    </script>
+
+  </body>
+
 </html>
