@@ -161,8 +161,8 @@
             font-weight: 600;
           }
         }
-        
-        
+
+
         </style>
     <style>
     /* .setupImgs{
@@ -218,19 +218,19 @@
                     <li class="nav-item">
                         <a href="/tools.htm" class="nav-link">Tools</a>
                     </li>
-                  
+
                     <li class="nav-item">
                         <a href="/license.htm" class="nav-link">License</a>
                     </li>
                     <li class="nav-item">
                         <a href="/credits.htm" class="nav-link">Credits</a>
-                    </li>    
+                    </li>
                     <li class="nav-item">
 <a href="/resources.htm" class="nav-link">Resources</a>
-                    </li>    
+                    </li>
                     <li class="nav-item">
                         <a href="/checklist.htm" class="nav-link">Mobile App PenTesting Checklist</a>
-                    </li> 
+                    </li>
                 </ul>
             </div>
         </div>
@@ -241,28 +241,66 @@
 
        <!-- Hero Start -->
        <section class="hero-4-bg position-relative d-flex align-items-center" style="background: url(images/hero-4-bg.png) center center" id="home">
+
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <h1 class="text-dark hero-4-title text-center font-weight-light mb-4">Setting Up Penetration Testing Lab Using <span class="font-weight-medium"> Mobexler</span></h1>
-                    <p class="text-muted text-center">Setting up Mobile Application Pen-testing Environment Using Mobexler</p>
 
-                 <iframe width="1100" height="500" src="https://www.youtube.com/embed/Im7NX4jdQtc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
-                    <iframe width="1100" height="500" align="center" src="https://www.youtube.com/embed/iBwaqspo0EQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                   
-                    <br>
+                <div class="col-lg-12">
+                    <h1 class="text-dark mb-4 text-center font-weight-light mb-4 card-title"> <span class="font-weight-medium">Let's Dive in ~</span></h1>
+                    <br><br>
+                    <h4 class="text-dark   font-weight-light mb-4"> <span class="font-weight-medium"> Contents</span></h4>
+                    <ul class="mb-3">
+                        <li>Requirements</li>
+                        <li>Setting Up Mobile Peneteration Testing Lab Using Mobexler</li>
+                        <li> Connecting Android Physcial device with Mobexler </li>
+                        <li> Connecting iOS Physical device with Mobexler </li>
+                        <li>Setting Up Genymotion As a Test Device/Emulator </li>
+                        <li>Setting Up Corellium Virtual Device As a Test Device/Emulator </li>
+                        <li> Connecting Corellium Android device using Mobexler </li>
+                        <li> Connecting Corellium iOS device using Mobexler </li>
+                        <li> Video Walkthrough </li>
+                          
+                    </ul>
+                    <br> <br>
                     <h4 class="text-dark   font-weight-light mb-4"> <span class="font-weight-medium"> Requirements</span></h4>
                     <ul class="mb-3">
                         <li>Hard Disk: ~25 GB</li>
-                        <li>Ram: 2 GB</li>
-                    </ul>    
+                        <li>RAM: 2 GB min</li>
+                        <li>iOS device: </li>
+                          <ul>
+                            <li>
+                              Real iPhone/iPad, preferrably jailbroken
+                            </li>
+                            <li>
+                              Using <a href="https://corellium.com/">Corellium</a> platform for virtual test devices
+                            </li>
+                          </ul>
+                        <li>Android device: </li>
+                          <ul>
+                            <li>
+                              Real android devices. preferrably rooted
+                            </li>
+                            <li>
+                              Android virtual devices running on host machine
+                            </li>
+                            <li>
+                              Using emulators like Genymotion
+                            </li>
+                            <li>
+                              Using <a href="https://corellium.com/">Corellium</a> platform for virtual test devices
+                            </li>
+                          </ul>
+                    </ul>
+                    <br>
+                    <br>
+<h2 class="text-dark mb-4 text-center font-weight-light mb-4 card-title"> <span class="font-weight-medium">Setting Up Mobile App Penetration Testing Lab Using Mobexler</span></h2>
 <div class="card">
     <div class="card-body">
-                    <h2 class="text-dark mb-4 text-center font-weight-light mb-4 card-title"> <span class="font-weight-medium">Steps</span></h2>
-                    
+
                     <ul class="mb-3 card-text">
-                        <li>Download the ova file from links given above.</li>
-                        <li>Install VirtualBox latest version available: Download Link</li>
-                        <li>Once installed, start virtual box, go to File → Import Appliance → Select the Downloaded OVA file →Click Import → Click Import.</li>
+                        <li>The first step is to download the <a href="https://mobexler.com/download.htm">Mobexler OVA</a> file and importing it as a virtual machine using virtualization softwares like VrtualBox or VMware etc. </li>
+                        <h4 class="text-dark mb-4 text-center font-weight-light mb-4 card-title"> <span class="font-weight-medium">Importing Mobexler virtual machine in VirtualBox</span></h4>
+                        <li>If you are using VirtualBoxOnce, go to File → Import Appliance → Select the Downloaded OVA file → Click Import.</li>
                        <!-- <center> <img src="./images/setupimg/1.png" class="setupImgs my-4"></center> -->
                        <div class='section content'>
                         <div class='illustration'>
@@ -281,12 +319,66 @@
                         <div class='illustration'>
                             <center><img src='./images/setupimg/login.PNG'class="mb-4" style='max-width: 1000px'/></center>
                         </div>
-                        <li class="mt-5">Once logged in, verify if you can connect to the internet. Go to Applications → Internet → Launch Firefox and open any website. 
+                        <li class="mt-5">Once logged in, verify if you can connect to the internet. Go to Applications → Internet → Launch Firefox and open any website.
                             <br><b>Note:</b> Mobexler comes preinstalled with Android Studio. But because of the limitation of running an ARM based emulator inside the virtualbox, the emulator becomes extremely slow (10 times slower). Due to this reason, we strongly suggest setting up the lab using Genymotion as the emulator, or using any real android device as the test device.</li>
-                    </ul>  
+                    </ul>
+                  </div>
+                </div>
+                <br>
+                <br>
+                <div class="card">
+                                    <div class="card-body">
+                                    <h2 class="text-dark mb-4 text-center font-weight-light mb-4 card-title"> <span class="font-weight-medium">Connecting Android Physical Device With Mobexler</span></h2>
+                                    <h6><span class="font-weight-medium">Using VMWare Player/Workstation/Fusion</span></h6>
+                                    <ul class="mb-3 card-text">
+                                        <li>Connect your USB cable to your system →  Click on Virtual Machine → Removable Device → Android Device, and connect your Android Device to Mobexler Virtual Machine by clicking on Connect to Linux Prompt.</li>
+                                        <h6><span class="font-weight-medium">Using Virtualbox</span></h6>
+                                        <li>Connect your USB cable to your system →  Start or go to VM. Right Click USB Icon in the VM Status Bar at bottom of screen, OR from Menu go Devices > USB Devices, and select Android device. </li>
+                                        <div class="section content">
+                                        <div class="illustration">
+                                         <center> <img src="./images/setupimg/24.png" style="max-width: 600px"></center>
+                                        </div>
+                                        <li>Once done open terminal → Enter Command "$: adb devices" , that should list out your Android connected device.
+                                        </li>
+                                        <div class="section content">
+                                        <div class="illustration">
+                                         <center> <img src="./images/setupimg/25.png" style="max-width: 600px"></center>
+                                        </div>
+                                      </div>
+                                                                         
+                                </div>
+                            </div></div>
+                            <br> <br>
 
+                            <div class="card">
+                                    <div class="card-body">
+                                    <h2 class="text-dark mb-4 text-center font-weight-light mb-4 card-title"> <span class="font-weight-medium">Connecting iOS Physical Device With Mobexler</span></h2>
+                                    
+                                    <h6><span class="font-weight-medium">Using VMWare Player/Workstation/Fusion</span></h6>
+                                    <ul class="mb-3 card-text">
+                                        <li>Connect your USB cable to your system →  Click on Virtual Machine → Removable Device → iPhone Device, and connect your iOS Device to Mobexler Virtual Machine by Clicking on Connect to Liux.</li>
+                                        <h6><span class="font-weight-medium">Using Virtualbox</span></h6>
+                                        <li>Connect your USB cable to your system →  Start or go to VM. Right Click USB Icon in the VM Status Bar at bottom of screen, OR from Menu go Devices > USB Devices, and select iOS device. </li>
+                                        <li>Connect your USB cable to your system →  Click on Virtual Machine in case you are using VMWare → Removable Device → iPhone Device , and connect your iOS Device to Mobexler Virtual Machine.</li>
+                                        <div class="section content">
+                                        <div class="illustration">
+                                         <center> <img src="./images/setupimg/26.png" style="max-width: 600px"></center>
+                                        </div>
+                                        <li>Once done open terminal → Enter Command "$: ideviceinfo" , that should list out your iOS device information.
+                                        </li>
+                                        <div class="section content">
+                                        <div class="illustration">
+                                         <center> <img src="./images/setupimg/27.png" style="max-width: 600px"></center>
+                                        </div>
+                                      </div>
+                                      </div>                                   
+                                </div>
+                            </div>
+                            <br> <br> 
+                <div class="card">
+                    <div class="card-body">
                     <h2 class="text-dark mb-4 text-center font-weight-light mb-4 card-title"> <span class="font-weight-medium">Setting Up Genymotion As a Test Device/Emulator</span></h2>
-                    
+
                     <ul class="mb-3 card-text">
                         <li>Go to the Genymotion Website and download a “Genymotion For Fun” application → Genymotion For Fun.</li>
                         <li>Installed the downloaded application, register/sign in to free account and launch “Genymotion” from application/program list.
@@ -336,10 +428,106 @@
                             <div class='illustration'>
                                 <center><img src='./images/setupimg/11.png' style='max-width: 1000px'/></center>
                         </div>
-                    </ul>  
+                    </ul>
+
+                          
                             
-                            Note: Make sure to follow the licensing requirement of Genymotion while using it. 
-                </div>  
+                                </div>
+                            </div>
+                                <br>
+                                <br>
+                                <div class="card">
+                                    <div class="card-body">
+                                    <h2 class="text-dark mb-4 text-center font-weight-light mb-4 card-title"> <span class="font-weight-medium">Setting Up Corellium As a Test Device/Emulator</span></h2>
+                                    
+                                    <ul class="mb-3 card-text">
+                                        <li>Go to the Corellium Website and register/sign in with your credentials</li>
+                                        <li>Once done give a name to your project and click on "CREATE DEVICE"
+                                            <b>Note:</b> Here you are going to choose the mobile device in which you are going to do your testing, scroll using the sliders to find all the devices and choose the most appropriate one which suits your testing purpose. Here we are going to choose Android → Click on Next (Note the same steps are required to build iOS device).
+                                        </li>
+                                        <div class="section content">
+                                        <div class="illustration">
+                                         <center> <img src="./images/setupimg/12.png" style="max-width: 800px"></center>
+                                        </div>
+                                      </div>
+                                       <div class="section content">
+                                        <div class="illustration">
+                                         <center> <img src="./images/setupimg/13.png" style="max-width: 800px"></center>
+                                        </div>
+                                      </div>
+                                        <li>Select OS Version → Select.
+                                            <div class="section content">
+                                                <div class="illustration">
+                                                 <center> <img src="./images/setupimg/14.png" style="max-width: 800px"></center>
+                                                </div>
+                                              </div>
+                                       </li><li>Give a Device name and in case you need advanced boot options before creating virtual device, you can click on the check box, once done click on "CREATE DEVICE". It will take few seconds to create and build the device. </li>
+                                       <div class="section content">
+                                        <div class="illustration">
+                                            <center><img src="./images/setupimg/15.png" class="mb-4" style="max-width: 800px"></center>
+                                        </div>
+                                        <li class="mt-5">Now click on "CONNECT TO DISPLAY" inorder to see the display of your device, next click on "OVPN FILE" to download the VPN Configuration file, copy or save the file in your destination folder in Mobexler. <br><b>Connect to VPN</b> $: ​sudo openvpn filename.ovpn </li>
+                                        <div class="section content">
+                                            <div class="illustration">
+                                                <center><img src="./images/setupimg/17.png" class="mb-4" style="max-width: 1000px"></center>
+                                        </div>
+                                        <div class="section content">
+                                            <div class="illustration">
+                                                <center><img src="./images/setupimg/18.png" class="mb-4" style="max-width: 1000px"></center>
+                                        </div>
+                                         <h2 class="text-dark mb-4 text-center font-weight-light mb-4 card-title"> <span class="font-weight-medium">Connecting Corellium Android Virtual Device</span></h2>
+                                        <li class="mt-5">Once the connection is established open new tab (dont close the terminal running the ovpn configuration file) and type " $: adb connect IP:PORT " to connect to the device with android debug bridge.</li>
+                                        <div class="section content">
+                                            <div class="illustration">
+                                                <center><img src="./images/setupimg/19.png" class="mb-4" style="max-width: 800px"></center>
+                                        </div>
+                                    </div></div></div></div>
+                                </div>
+                            </div>
+                                    <br>
+                                    <br>
+                                <div class="card">
+                                    <div class="card-body">
+                                    <h2 class="text-dark mb-4 text-center font-weight-light mb-4 card-title"> <span class="font-weight-medium">Connecting iOS device using Mobexler</span></h2>
+                                        <div class="section content">
+                                            <div class="illustration">
+                                                <center><img src="./images/setupimg/23.png" class="mb-4" style="max-width: 800px"></center>
+                                        </div>
+
+                                        <li class="mt-5">After creating your iOS mobile device by following the same procedure as mentioned above </li>
+                                        <li class="mt-5">Go to Mobexler → Launch Terminal from Dock at bottom → Enter the command " $: sudo openvpn filename.ovpn " → Launch new Terminal, Enter the command " $: sudo usbmuxd -f " → Open another Terminal, Enter the command " $: sudo usbfluxd -f ". </li>
+
+                                        <div class="section content">
+                                            <div class="illustration">
+                                                <center><img src="./images/setupimg/20.png" class="mb-4" style="max-width: 1000px"></center>
+                                        </div>
+                                        <div class="section content">
+                                            <div class="illustration">
+                                                <center><img src="./images/setupimg/21.png" style="max-width: 1000px"></center>
+                                        </div>
+                                        <li class="mt-5">Your device is connected to Mobexler, in order to confirm → Open New Terminal and Enter command " $: ideviceinfo " this should give corellium device info .</li>
+                                        <div class="section content">
+                                            <div class="illustration">
+                                                <center><img src="./images/setupimg/27.png" style="max-width: 1000px"></center>
+                                        </div></div>
+                                    </div></div></div></div></div></div></ul>
+                </div>
+                
+                <br>
+                <br>
+                
+                <div class="card">
+                    <div class="card-body">
+                <div class="container">
+                    <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <h2 class="text-dark hero-4-title text-center font-weight-light mb-4">Setting Up Penetration Testing Lab Using Mobexler<span class="font-weight-medium">(Video Content) </span></h1>
+                    <h4 class="text-dark hero-4-title text-center font-weight-light mb-4">Everything You Need to Know About Mobexler</h4>
+                 <iframe width="1000" height="500" src="https://www.youtube.com/embed/Im7NX4jdQtc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
+                 <h4 class="text-dark hero-4-title text-center font-weight-light mb-4">Setting Up Mobile Peneteration Testing Environment Using Mobexler</h4>
+                    <iframe width="1000" height="500" align="center" src="https://www.youtube.com/embed/iBwaqspo0EQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                               
+                </div>
                 </div>
                 </div>
                 </div>
@@ -347,10 +535,10 @@
         </div>
     </section>
     <!-- Hero End -->
-  
 
 
-    
+
+
         <!-- Site footer -->
         <footer class="site-footer ">
           <div class="container">
@@ -358,10 +546,10 @@
               <div class="col-sm-12 col-md-4">
                 <h6>About</h6>
                 <a href="/"><img src="images/logo-light.png" alt="" class="logo-dark" height="122" /></a>
-  
+
                 <p class="text-justify">One of the most hassle free mobile penetration testing platform by team enciphers..</p>
               </div>
-    
+
               <div class="col-xs-6 col-md-4">
                 <h6>Mobexler Links</h6>
                 <ul class="footer-links">
@@ -375,7 +563,7 @@
                 </ul>
 
               </div>
-    
+
               <div class="col-xs-6 col-md-4">
                 <h6>Enciphers Links</h6>
                 <ul class="footer-links">
@@ -385,7 +573,7 @@
                   <li><a href="https://enciphers.com/trainings/">Trainings</a></li>
                   <li><a href="https://enciphers.com/contact/">Contact</a></li>
                   <li><a href="https://enciphers.com/blog/">Blog</a></li>
-  
+
                 </ul>
                 <a href="https://www.enciphers-trainings.com/" class="btn mt-2 btn-primary" target="_blank">Online Training<span class="ml-2 right-icon">&#8594;</span></a>
               </div>
@@ -395,15 +583,15 @@
           <div class="container">
             <div class="row">
               <div class="col-md-8 col-sm-6 col-xs-12">
-                <p class="copyright-text">2020 © Enciphers. Design by 
+                <p class="copyright-text">2020 © Enciphers. Design by
              <a href="/index.html">Enciphers</a>.
                 </p>
               </div>
-    
+
               <div class="col-md-4 col-sm-6 col-xs-12">
                 <ul class="social-icons">
                   <li><a class="facebook" href="https://twitter.com/mobexler"><i class="mdi mdi-twitter"></i></a></li>
-                
+
                 </ul>
               </div>
             </div>
