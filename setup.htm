@@ -492,8 +492,12 @@
                                                 <center><img src="./images/setupimg/23.png" class="mb-4" style="max-width: 800px"></center>
                                         </div>
 
-                                        <li class="mt-5">After creating your iOS mobile device by following the same procedure as mentioned above </li>
-                                        <li class="mt-5">Go to Mobexler → Launch Terminal from Dock at bottom → Enter the command " $: sudo openvpn filename.ovpn " → Launch new Terminal, Enter the command " $: sudo usbmuxd -f " → Open another Terminal, Enter the command " $: sudo usbfluxd -f ". </li>
+                                        <li class="mt-5">After creating your iOS mobile device by following the same procedure as mentioned above, and have downloaded the Corellium OVPN file. </li>
+                                        <li class="mt-5">Go to Mobexler → Launch Terminal from Dock at bottom → Enter the command " $: sudo openvpn filename.ovpn " → This would connect Mobexler to the device VPN. </li>
+                                        <li class="mt-5">You can confirm if the VPN is connected properly, by trying to ssh into the device using the command "$: ssh root@10.11.1.1" (where 10.11.1.1 is the device IP). </li>
+                                        <li>Now, let's try to connect the device using Usbfluxd. To do this.→ Launch new Terminal, Enter the command " $: sudo usbmuxd -f " to run Usbmuxd in foreground. You can also run "$: sudo systemctl start usbmuxd.service" to start it as a service. 
+                                            followed by " $: sudo usbfluxd -v -r 10.11.1.1" (Where IP is iOS Device IP), in a new terminal </li>
+                                        <li>Once all three connections i.e. VPN, Usbmuxd and Usbfluxd are running and connected, you can run the command "$: ideviceinfo" to fetch the device info as if it was connected over usb.</li>
 
                                         <div class="section content">
                                             <div class="illustration">
@@ -501,13 +505,8 @@
                                         </div>
                                         <div class="section content">
                                             <div class="illustration">
-                                                <center><img src="./images/setupimg/21.png" style="max-width: 1000px"></center>
-                                        </div>
-                                        <li class="mt-5">Your device is connected to Mobexler, in order to confirm → Open New Terminal and Enter command " $: ideviceinfo " this should give corellium device info .</li>
-                                        <div class="section content">
-                                            <div class="illustration">
-                                                <center><img src="./images/setupimg/27.png" style="max-width: 1000px"></center>
-                                        </div></div>
+                                                <center><img src="./images/setupimg/28.png" style="max-width: 1000px"></center>
+                                            </div>
                                       </div></div></div></div></div></div></ul>
                 </div>
                 
